@@ -1,21 +1,30 @@
 <template name="home_page">
-	<h1>Welcome to Meteor! This is the {{site_title}}.</h1>
-	
-	{{> hello}}
-	{{> info}}
-</template>
-
-<template name="hello">
-	<button>Click Me</button>
-	<p>You've pressed the button {{counter}} times.</p>
-</template>
-
-<template name="info">
-	<h2>Learn Meteor!</h2>
-	<ul>
-		<li><a href="https://www.meteor.com/try">Do the Tutorial</a></li>
-		<li><a href="http://guide.meteor.com">Follow the Guide</a></li>
-		<li><a href="https://docs.meteor.com">Read the Docs</a></li>
-		<li><a href="https://forums.meteor.com">Discussions</a></li>
-	</ul>
+  <div class="col-xs-12">
+    <div class="animated fadeIn row">
+      <!-- Flame animation from http://codepen.io/dazulu/pen/fGFyj -->
+    	<div class="flame-container">
+        <div class="red flame"></div>
+        <div class="orange flame"></div>
+        <div class="yellow flame"></div>
+        <div class="white flame"></div>
+        <div class="blue circle"></div>
+        <div class="black circle"></div>
+      </div>
+    </div>
+    <div id="navigation" class="row" role="navigation">
+      <div class="col-xs-8 col-xs-offset-2">
+      <ul class="nav navbar-nav">
+        <li><a href="{{pathFor route='man'}}" class="white-circle hidden">
+          A Man
+        </a></li>
+        <li><a href="{{pathFor route='cookbook'}}" class="white-circle hidden">
+          A Cookbook
+        </a></li>
+        <li><a href="{{pathFor route='computer'}}" class="white-circle hidden">
+          A Computer
+        </a></li>
+      </ul>
+      </div>
+    </div>
+  </div>
 </template>

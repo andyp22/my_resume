@@ -1,26 +1,15 @@
+import './home.html';
+
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
-import './home.html';
-
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
-
-function counterHelper() {
-  return Template.instance().counter.get();
+function onFlameClicked(evt, tpl)  {
+  console.log('click');
+  tpl.$('.white-circle').removeClass('hidden');
+  tpl.$('.white-circle').addClass('animated');
+  tpl.$('.white-circle').addClass('bounceInUp');
 }
 
-function onButtonClick(event, instance) {
-  // increment the counter when button is clicked
-  instance.counter.set(instance.counter.get() + 1);
-}
-
-Template.hello.helpers({
-  counter: counterHelper,
-});
-
-Template.hello.events({
-  'click button': onButtonClick,
+Template.home_page.events({
+  'click .flame-container' : onFlameClicked,
 });
