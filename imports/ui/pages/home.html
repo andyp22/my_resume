@@ -1,15 +1,7 @@
 <template name="home_page">
-  <div class="col-xs-12">
-    <div class="animated fadeIn row">
-      <!-- Flame animation from http://codepen.io/dazulu/pen/fGFyj -->
-    	<div class="flame-container">
-        <div class="red flame"></div>
-        <div class="orange flame"></div>
-        <div class="yellow flame"></div>
-        <div class="white flame"></div>
-        <div class="blue circle"></div>
-        <div class="black circle"></div>
-      </div>
+  <div id="home_page" class="col-xs-12">
+    <div id="flame" class="animated fadeIn row">
+      {{> flame}}
     </div>
     <div id="navigation" class="row" role="navigation">
       <div class="col-xs-8 col-xs-offset-2">
