@@ -1,6 +1,9 @@
 <template name="CookbookPageLayout">
   <div id="wrapper" class="container">
     <div class="row">
+      {{#linkTo route="home" class="btn btn-default"}}Back{{/linkTo}}
+    </div>
+    <div class="row">
         {{> yield }}
     </div>
   </div>
