@@ -19,7 +19,7 @@ Router.configure({
 Router.route('home', {
   name: 'home',
   path: '/',
-  template: 'home_page',
+  template: 'homePage',
   layoutTemplate: 'HomePageLayout',
 });
 
