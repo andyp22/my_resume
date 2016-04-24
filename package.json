@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/andyp22/meteor_boilerplate",
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0"
+    "meteor-node-stubs": "~0.2.0",
+    "skrollr": "0.6.26"
   },
   "devDependencies": {
     "eslint": "2.8.0",
