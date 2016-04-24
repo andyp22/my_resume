@@ -1,3 +1,77 @@
-<template name="cookbook_page">
-  <h2>Cookbook Page</h2>
+<template name="cookbookPage">
+  <div id="cookbook" class="loading">
+  {{> skrollr}}
+</div>
 </template>
+
+<template name="skrollr">
+  <div id="skrollr-body">
+    {{#each sections}}
+      {{#if equals type 'curtain'}}
+        {{> parallaxCurtain}}
+      {{else}}
+        {{> parallaxSection}}
+      {{/if}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="parallaxSection">
+  <section id="{{id}}" class="{{class}}">
+      <div class="bcg" 
+            data-start="{{bcgDataStart}}" 
+            data-center="{{bcgDataCenter}}" 
+            data-top-bottom="{{bcgDataTopBottom}}" 
+            data-top="{{bcgDataTop}}" data-100-top="{{bcgData100Top}}" data-200-top="{{bcgData200Top}}" 
+            data-bottom-top="{{bcgDataBottomTop}}" 
+            data-bottom="{{bcgDataBottom}}" data-100-bottom="{{bcgData100Bottom}}" data-200-bottom="{{bcgData200Bottom}}" 
+            data--100-bottom="{{bcgDataM100Bottom}}" data--200-bottom="{{bcgDataM200Bottom}}" 
+            data-anchor-target="{{bcgTarget}}" style="{{style}}">
+        <div class="hsContainer">
+          <div class="hsContent" 
+              data-start="{{hsDataStart}}" 
+              data-center="{{hsDataCenter}}" 
+              data-top-bottom="{{hsDataTopBottom}}" 
+              data-top="{{hsDataTop}}" data-100-top="{{hsData100Top}}" data-200-top="{{hsData200Top}}" 
+              data-bottom-top="{{hsDataBottomTop}}" 
+              data-bottom="{{hsDataBottom}}" data-100-bottom="{{hsData100Bottom}}" data-200-bottom="{{hsData200Bottom}}" 
+              data--100-bottom="{{hsDataM100Bottom}}" data--200-bottom="{{hsDataM200Bottom}}" 
+              data-anchor-target="{{hsContentTarget}}">
+            {{{content}}}
+          </div>
+        </div>
+      </div>
+  </section>
+</template>
+
+<template name="parallaxCurtain">
+  <section id="{{id}}" class="{{class}}">
+      <div class="bcg" 
+            data-start="{{bcgDataStart}}" 
+            data-center="{{bcgDataCenter}}" 
+            data-top-bottom="{{bcgDataTopBottom}}" 
+            data-top="{{bcgDataTop}}" data-100-top="{{bcgData100Top}}" data-200-top="{{bcgData200Top}}" 
+            data-bottom-top="{{bcgDataBottomTop}}" 
+            data-bottom="{{bcgDataBottom}}" data-100-bottom="{{bcgData100Bottom}}" data-200-bottom="{{bcgData200Bottom}}" 
+            data--100-bottom="{{bcgDataM100Bottom}}" data--200-bottom="{{bcgDataM200Bottom}}" 
+            data-anchor-target="{{bcgTarget}}" style="{{style}}">
+        <div class="curtainContainer">
+          <div class="curtain" 
+              data-bottom-top="{{curtainDataBottomTop}}" 
+              data-100-top="{{curtainData100Top}}" 
+              data-center="{{curtainDataCenter}}" 
+              data-anchor-target="{{curtainAnchor}}"></div>
+          <div class="copy" 
+              data-bottom-top="{{copyDataBottomTop}}" 
+              data--100-bottom="{{copyDataM100Bottom}}" 
+              data--300-bottom="copyDataM300Bottom" 
+              data-300-top="{{copyData300Top}}" 
+              data-100-top="{{copyData100Top}}" 
+              data-anchor-target="{{copyAnchor}}">
+            {{{content}}}
+          </div>
+        </div>
+      </div>
+  </section>
+</template>
+
