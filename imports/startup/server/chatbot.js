@@ -16,10 +16,12 @@ let cbapi = '';
 if (Meteor.settings) {
   if (Meteor.settings.private) {
     if (Meteor.settings.private.cleverbot_api_key) {
-      title = Meteor.settings.private.cleverbot_api_key;
+      cbapi = Meteor.settings.private.cleverbot_api_key;
     }
   }
 }
+
+console.log(cbuid, cbapi);
 
 const bot = new cleverbot(cbuid, cbapi);
 
