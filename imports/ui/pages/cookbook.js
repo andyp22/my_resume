@@ -58,6 +58,7 @@ function onCookbookPageDestroyed()  {
   if (s) {
     s.destroy();
   }
+  window.scrollTo(0, 0);
 }
 
 Template.cookbookPage.onDestroyed(onCookbookPageDestroyed);
