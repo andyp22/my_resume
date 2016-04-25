@@ -27,10 +27,10 @@ Router.route('home', {
 Router.route('man', {
   name: 'man',
   path: '/man',
-  template: 'man_page',
+  template: 'manPage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    ManHeader: { to: 'header' },
+    ManFooter: { to: 'footer' },
   },
 });
 

@@ -1,3 +1,149 @@
-<template name="man_page">
-  <h2>Man Page</h2>
+<template name="manPage">
+  <div id="manPage" class="animated bounceInUp">
+    <div id="left-page" class="dossier-page col-xs-6">
+      <div class="page row">
+        {{> topSecret}}
+        <div id="stats" class="col-xs-6">
+          {{> ManStats}}
+        </div>
+        <div id="actionShot" class="col-xs-6">
+          {{> ManActionShot}}
+        </div>
+        <div id="skills" class="col-xs-12">
+          {{> ManSkills}}
+        </div>
+        <div id="interests" class="col-xs-12">
+          {{> ManPOI}}
+        </div>
+        <div id="projects" class="col-xs-12">
+          {{> ManProjects}}
+        </div>
+        <div id="classified-warning" class="col-xs-12">
+          NOT TO BE TAKEN OFF FLOOR LEVEL 3!
+        </div>
+      </div>
+    </div>
+    <div id="right-page" class="dossier-page col-xs-6">
+      <div class="page row">
+        {{> topSecret}}
+        <div id="mission-history" class="col-xs-12">
+          {{> ManMissions}}
+        </div>
+        <div id="training" class="col-xs-12">
+          {{> ManTraining}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="ManHeader">
+  <div id="header" class="col-xs-12">
+    {{> HeaderBack}}
+    <div class="manHeader">
+      File J7/471 Agent Dossier
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+</template>
+
+<template name="ManFooter">
+  <div id="footer" class="col-xs-12">
+    
+  </div>
+</template>
+
+<template name="ManStats">
+  <ul class="list-group">
+    <li class="list-group-item"><span class="label">Name:</span> {{agent.name}}</li>
+    <li class="list-group-item"><span class="label">Location:</span> {{agent.location.city}}, {{agent.location.state}}, {{agent.location.country}}</li>
+    <li class="list-group-item"><span class="label">Sex:</span> {{agent.sex}}</li>
+    <li class="list-group-item"><span class="label">Nationality:</span> {{agent.nationality}}</li>
+    <li class="list-group-item"><span class="label">Eyes:</span> {{agent.eyes}}</li>
+    <li class="list-group-item"><span class="label">Hair:</span> {{agent.hair}}</li>
+    <li class="list-group-item"><span class="label">D.O.B:</span> {{agent.dob}}</li>
+  </ul>
+</template>
+
+<template name="ManActionShot">
+  <img src="{{agent.actionShotUrl}}" />
+</template>
+
+<template name="topSecret">
+  <img class="stamp" src="/images/top_secret.png" />
+</template>
+
+<template name="ManPOI">
+  <h4>Points of Interest</h4>
+  <div>
+    {{#each agent.poi}}
+      <span class="agent-poi badge">{{this}}</span>
+    {{/each}}
+  </div>
+</template>
+
+<template name="ManSkills">
+  <h4>Skills</h4>
+  <div>
+    {{#each agent.skills}}
+      <span class="agent-skill badge">{{name}}</span>
+    {{/each}}
+  </div>
+</template>
+
+<template name="ManProjects">
+  <h4>Projects of Note</h4>
+  <dl>
+    {{#each agent.projects}}
+      <dt>{{name}}</dt>
+      <dd>
+        <div>
+          {{description}}
+          <ul>
+            {{#each links}}
+              <li>{{label}}: <a href="{{url}}" target="_blank">{{text}}</a></li>
+            {{/each}}
+          </ul>
+        </div>
+      </dd>
+    {{/each}}
+  </dl>
+</template>
+
+<template name="ManMissions">
+  <h4>Mission History</h4>
+  <dl>
+    {{#each agent.missions}}
+      <div class="status">{{dates.start}}-{{dates.end}}</div>
+      {{#if organization}}
+        <dt>{{name}}, {{organization}}, {{location}}</dt>
+      {{else}}
+        <dt>{{name}}, {{location}}</dt>
+      {{/if}}
+      <dd>
+        <div>
+          {{{description}}}
+          <ul>
+            {{#each tasks}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </dd>
+    {{/each}}
+  </dl>
+</template>
+
+<template name="ManTraining">
+  <h4>Training</h4>
+  <dl>
+    {{#each agent.training}}
+      <dt>{{name}}</dt>
+      {{#if degree}}
+        <dd>Studied {{studied}} from {{attended}} and received an {{degree}}</dd>
+      {{else}}
+        <dd>Studied {{studied}} off and on from {{attended}}</dd>
+      {{/if}}
+    {{/each}}
+  </dl>
 </template>

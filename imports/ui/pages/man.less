@@ -1,0 +1,124 @@
+@man-page-dossier-page-gutter: 20px;
+@man-page-action-shot-rotation: 7deg;
+@man-page-dossier-gradient-start-color: #f6f6f6;
+@man-page-dossier-gradient-start-percentage: 0%;
+@man-page-dossier-gradient-middle-color: #efefef;
+@man-page-dossier-gradient-middle-percentage: 47%;
+@man-page-dossier-gradient-end-color: #ffffff;
+@man-page-dossier-gradient-end-percentage: 100%;
+@man-page-background-transition: background-color 250ms ease-in;
+
+#manPage {
+  height: 975px;
+}
+
+.man-background {
+  background-color: #F8F5E1 !important;
+  -webkit-transition: @man-page-background-transition;
+  -moz-transition: @man-page-background-transition;
+  -o-transition: @man-page-background-transition;
+  -ms-transition: @man-page-background-transition;
+  transition: @man-page-background-transition;
+}
+
+.manHeader {
+  font-size: 35px;
+  text-align: right;
+}
+
+.dossier-page {
+  height: 100%;
+}
+
+.dossier-page .page {
+  background-color: @man-page-dossier-gradient-start-color;
+  background: -moz-linear-gradient(top, @man-page-dossier-gradient-start-color @man-page-dossier-gradient-start-percentage, @man-page-dossier-gradient-middle-color @man-page-dossier-gradient-middle-percentage, @man-page-dossier-gradient-end-color @man-page-dossier-gradient-end-percentage); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, @man-page-dossier-gradient-start-color @man-page-dossier-gradient-start-percentage, @man-page-dossier-gradient-middle-color @man-page-dossier-gradient-middle-percentage, @man-page-dossier-gradient-end-color @man-page-dossier-gradient-end-percentage); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, @man-page-dossier-gradient-start-color @man-page-dossier-gradient-start-percentage, @man-page-dossier-gradient-middle-color @man-page-dossier-gradient-middle-percentage, @man-page-dossier-gradient-end-color @man-page-dossier-gradient-end-percentage); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  height: 100%;
+}
+
+#left-page {
+  padding-right: @man-page-dossier-page-gutter;
+  padding-left: 0;
+}
+
+#right-page {
+  padding-right: 0;
+  padding-left: @man-page-dossier-page-gutter;
+}
+
+.page {
+  padding: 30px 20px 15px;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.stamp {
+  position: absolute;
+  top: 50%;
+  left:37%;
+}
+
+#right-page .stamp {
+  top: 47%;
+  left:39%;
+}
+
+.page .label {
+  color: black;
+  font-size: 14px;
+}
+
+#stats .list-group-item {
+  text-align: right;
+  background: none;
+  border: none;
+}
+
+#stats .label {
+  float: left;
+}
+
+#actionShot img {
+  height: 350px;
+  padding: 10px;
+  background-color: white;
+  -webkit-transform: rotate(@man-page-action-shot-rotation);
+  -moz-transform: rotate(@man-page-action-shot-rotation);
+  -o-transform: rotate(@man-page-action-shot-rotation);
+  -ms-transform: rotate(@man-page-action-shot-rotation);
+  transform: rotate(@man-page-action-shot-rotation);
+  margin-top: -35px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#manPage .badge {
+  border: none;
+  color: #000000;
+  background: none;
+}
+
+#projects,
+#skills,
+#mission-history {
+  text-align: justify;
+}
+
+#mission-history li {
+  padding-right: 25px;
+}
+
+#classified-warning {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  color: #f09537;
+}
+
+#manPage .status {
+  float: right;
+  padding-left: 15px;
+  font-size: 80%;
+  margin-top: 3px;
+}
