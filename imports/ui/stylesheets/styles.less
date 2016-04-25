@@ -34,7 +34,10 @@ button:active {
 
 a.btn,
 a.btn:active,
-a.btn:hover {
+a.btn:hover,
+.link,
+.link:hover,
+.link:active {
   text-decoration: none;
 }
 
@@ -92,7 +95,6 @@ img.splash-logo {
 
 //** Header
 #header {
-  border-bottom: @section-border-thickness @section-border-type @section-border-color;
   padding-bottom: 1em;
   font-size: 0.9em;
 }
@@ -108,20 +110,6 @@ nav.navbar {
   margin-top: -10px;
 }
 
-#header .login-section {
-  display: table;
-}
-
-.login-item input {
-  margin-top: -2px;
-}
-
-#header .login-section .login-item {
-  display: table-cell;
-  padding-right: 0.5em;
-  vertical-align: middle;
-}
-
 //** Content
 #content {
   display: -moz-box;
@@ -130,17 +118,35 @@ nav.navbar {
   display: -webkit-flex;
   display: -moz-flex;
   display: flex;
-  border-left: @section-border-thickness @section-border-type @section-border-color;
   padding-left: 0;
 }
 
 //** Footer
 #footer {
-  border-top: @section-border-thickness @section-border-type @section-border-color;
   padding-bottom: 2em;
 }
 
 .hide-scroll {
   height: 100%;
   overflow: hidden;
+}
+
+#backButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#backButton a {
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+
+#backButton .glyphicon {
+  font-size: 20px;
+}
+
+#backButton a:hover {
+  color: #777;
 }

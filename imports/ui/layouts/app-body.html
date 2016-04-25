@@ -3,7 +3,7 @@
 		<div class="row">
 			{{> yield "header" }}
 		</div>
-		<div class="row">
+		<div id="content" class="row">
 	    	{{> yield }}
 		</div>
 		<div class="row">
@@ -19,6 +19,10 @@
         </div>
 		<div style="clear: both;"></div>
 	</div>
+</template>
+
+<template name="HeaderBack">
+  <div id="backButton"><a class="link" href="/"><span class="glyphicon glyphicon-triangle-left"></span>Back</a></div>
 </template>
 
 <template name="ApplicationFooter">
