@@ -14,7 +14,7 @@ manData = {
   email: 'andrew.page32@gmail.com',
   blog: 'andypangus.com',
   github: 'https://github.com/andyp22/',
-  actionShotUrl: '/images/cookbook/pateencroute.jpg',
+  actionShotUrl: '/images/actionShot.jpg',
   skills: [
     {
       name: 'JavaScript',
