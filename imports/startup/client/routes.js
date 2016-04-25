@@ -47,7 +47,7 @@ Router.route('cookbook', {
 Router.route('computer', {
   name: 'computer',
   path: '/computer',
-  template: 'computer_page',
+  template: 'computerPage',
   yieldRegions: {
     ApplicationHeader: { to: 'header' },
     ApplicationFooter: { to: 'footer' },
