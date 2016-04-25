@@ -25,7 +25,8 @@
   "dependencies": {
     "meteor-node-stubs": "~0.2.0",
     "skrollr": "0.6.26",
-    "imagesloaded": "^4.1.0"
+    "imagesloaded": "^4.1.0",
+    "cleverbot.io": "^1.0.4"
   },
   "devDependencies": {
     "eslint": "2.8.0",
