@@ -52,3 +52,12 @@ function onSkrollrRendered()  {
 }
 
 Template.cookbookPage.onRendered(onSkrollrRendered);
+
+function onCookbookPageDestroyed()  {
+  let s = skrollr.get();
+  if (s) {
+    s.destroy();
+  }
+}
+
+Template.cookbookPage.onDestroyed(onCookbookPageDestroyed);
