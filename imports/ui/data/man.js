@@ -239,8 +239,8 @@ manData = {
   poi: [  // points of interest
     'Former Chef, Pastry Chef, & Restaurant Owner',
     'Gardener',
-    'Plays the Frech Horn',
-    'Colonial American history buff',
+    'Plays the French Horn',
+    'Colonial American History Buff',
     'Loves Soccer',
     'Avid Camper and Hiker',
   ]
