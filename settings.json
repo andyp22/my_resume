@@ -1,8 +1,9 @@
 {
-	"public": {
-		"site_title": "A Man, a Cookbook, and a Computer"
-	},
-	"private": {
-		
-	}
+  "public": {
+    "site_title": "A Man, a Cookbook, and a Computer"
+  },
+  "private": {
+    "cleverbot_userid": "",
+    "cleverbot_api_key": ""
+  } 
 }
