@@ -113,7 +113,11 @@ function setTime() {
   if(hours == 0) {
     hours = 12;
   }
-  $('.time').html(today.getHours() + ':' + today.getMinutes() + ' ' + ampm);
+  let minutes = today.getMinutes();
+  if(minutes < 10) {
+    minutes = '0' + minutes;
+  }
+  $('.time').html(hours + ':' + minutes + ' ' + ampm);
 }
 
 Template.chatbot2000.onRendered(onChatbotRendered);
