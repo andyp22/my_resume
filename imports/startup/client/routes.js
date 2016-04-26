@@ -48,10 +48,7 @@ Router.route('computer', {
   name: 'computer',
   path: '/computer',
   template: 'computerPage',
-  yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
-  },
+  layoutTemplate: 'CookbookPageLayout',
 });
 
 Router.route('contact', {
