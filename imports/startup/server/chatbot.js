@@ -21,8 +21,6 @@ if (Meteor.settings) {
   }
 }
 
-console.log(cbuid, cbapi);
-
 const bot = new cleverbot(cbuid, cbapi);
 
 function onCallingChatbot(userId)  {
