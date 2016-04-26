@@ -16,6 +16,18 @@ npm install
 meteor --settings=settings.json
 ```
 
-You will need to add a [cleverbot.io userId and API key](https://cleverbot.io/keys) for all functionality to work properly.
+You will need to add a [cleverbot.io userId and API key](https://cleverbot.io/keys) to the settings.json for all functionality to work properly.
+```json
+{
+  "public": {
+    "site_title": "A Man, a Cookbook, and a Computer"
+  },
+  "private": {
+    "cleverbot_userid": your_user_id,
+    "cleverbot_api_key": your_api_key
+  } 
+}
+```
+
 
 Work in progress. Still needs a contact form.
