@@ -178,7 +178,7 @@ manData = {
         'Defined and implemented a process for converting Word manuscripts to eBooks',
         'Built microsites for books and authors distributed by PPP'
       ],
-      description: 'During his time at Park Place, Andrew was pivotal in unifying PPP\'s web presence and helping their business embrace the web as means to grow.',
+      description: 'During his time at Park Place, Andrew was pivotal in unifying PPP\'s web presence and helping their business embrace the web as a means to grow.',
     },
     {
       name: 'Freelance Developer',
@@ -243,5 +243,6 @@ manData = {
     'Colonial American History Buff',
     'Loves Soccer',
     'Avid Camper and Hiker',
+    'Former WoW Game Master',
   ]
 };
