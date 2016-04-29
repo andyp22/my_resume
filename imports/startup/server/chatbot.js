@@ -1,4 +1,3 @@
-
 import { Meteor } from 'meteor/meteor';
 import cleverbot from 'cleverbot.io';
 import Future from 'fibers/future';
