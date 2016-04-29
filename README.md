@@ -8,6 +8,8 @@ This is my digital resume. It was built using the following:
  - [typed.js](https://github.com/mattboldt/typed.js/)
  - [cleverbot.io](https://cleverbot.io)
 
+Live build: [http://www.mancookbookcomputer.com](http://www.mancookbookcomputer.com)
+
 To install locally:
 ```bash
 git clone https://https:github.com/andyp22/my_resume
@@ -19,15 +21,30 @@ meteor --settings=settings.json
 You will need to add a [cleverbot.io userId and API key](https://cleverbot.io/keys) to the settings.json for all functionality to work properly.
 ```json
 {
-  "public": {
-    "site_title": "A Man, a Cookbook, and a Computer"
-  },
+  ...
   "private": {
-    "cleverbot_userid": your_user_id,
-    "cleverbot_api_key": your_api_key
+    "cleverbot_userid": "your_user_id",
+    "cleverbot_api_key": "your_api_key"
   } 
+  ...
 }
 ```
 
+For email to work you will need to configure the settings.json with your own SMTP settings:
+```json
+{
+  ...
+  "private": {
+    ...
+    "email": {
+      "smtp_user": "your_smtp_user",
+      "smtp_password": "your_smtp_password",
+      "smtp_host": "your_smtp_host",
+      "smtp_port": "your_smtp_port"
+    }
+  }
+  ...
+}
+```
 
-Work in progress. Still needs a contact form.
+Work in progress.
