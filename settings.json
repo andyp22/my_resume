@@ -5,5 +5,11 @@
   "private": {
     "cleverbot_userid": "",
     "cleverbot_api_key": ""
+    "email": {
+      "smtp_user": "",
+      "smtp_password": "",
+      "smtp_host": "",
+      "smtp_port": ""
+    }
   } 
 }
