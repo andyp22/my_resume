@@ -54,7 +54,7 @@ Router.route('computer', {
 Router.route('contact', {
   name: 'contact',
   path: '/contact',
-  template: 'contact_page',
+  template: 'contactPage',
   yieldRegions: {
     ApplicationHeader: { to: 'header' },
     ApplicationFooter: { to: 'footer' },
