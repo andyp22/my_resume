@@ -25,3 +25,5 @@ standard-minifier-css
 standard-minifier-js
 huttonr:bootstrap3
 random
+email
+meteorhacks:ssr
