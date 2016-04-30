@@ -4,7 +4,7 @@
   },
   "private": {
     "cleverbot_userid": "",
-    "cleverbot_api_key": ""
+    "cleverbot_api_key": "",
     "email": {
       "smtp_user": "",
       "smtp_password": "",
