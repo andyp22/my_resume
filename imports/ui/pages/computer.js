@@ -16,13 +16,7 @@ if (Session.equals('session-nick', '')) {
 
 function callingChatbotCallback(err, res) {
   if (err) {
-    console.log(err);
-  } else {
-    if(!res) {
-      console.log("Chat session already started.");
-    } else {
-      console.log(err, res);
-    }
+    Meteor.call('logglyLog', 'Problem setting up cleverbot: ' + err);
   }
 }
 
@@ -30,6 +24,8 @@ function askingChatbotCallback(err, res) {
   if (!err) {
     $('#chatbot2000').empty();
     typeMessage(res, 'chatbotMessage');
+  } else {
+    Meteor.call('logglyLog', 'Problem communicating with cleverbot: ' + err);
   }
 }
 
