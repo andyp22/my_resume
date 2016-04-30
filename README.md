@@ -47,4 +47,39 @@ For email to work you will need to configure the settings.json with your own SMT
 }
 ```
 
+For [Loggly](http://loggly.com) to work you will need to configure the settings.json with your own settings:
+ - env: A string representing the logging environment (live, dev, test, etc)
+ - instance: A unique number representing the application's instance id
+ - subdomain: The Loggly subdomain in which to log messages
+ - loggly
+   - token: Your Loggly token
+   - tags: An array of strings to tag your log messages with
+ - isDev: Boolean value representing whether the app is in a development environment; true (default) disables logging to Loggly and instead logs to the console
+ - isTrace: Boolean value indicating whether to log to Loggly as 'debug' (true - default) or 'info' (false)
+ 
+```json
+{
+  ...
+  "private": {
+    ...
+    "loggly": {
+      "env": "string",
+      "instance": integer,
+      "subdomain": "string",
+      "loggly" : {
+        "token": "string",
+        "tags": [
+          "your",
+          "loggly",
+          "tags"
+        ]
+      },
+      "isDev": boolean,
+      "isTrace": boolean
+    }
+  }
+  ...
+}
+```
+
 Work in progress.
