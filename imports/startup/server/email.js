@@ -1,13 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import { Email } from 'meteor/email';
 
-function getEmailSetting(privateSettingKey)  {
+function getEmailSetting(emailSetting)  {
   let returnVal = '';
   if (Meteor.settings) {
     if (Meteor.settings.private) {
       if (Meteor.settings.private.email) {
-        if (Meteor.settings.private.email[privateSettingKey]) {
-          returnVal = Meteor.settings.private.email[privateSettingKey];
+        if (Meteor.settings.private.email[emailSetting]) {
+          returnVal = Meteor.settings.private.email[emailSetting];
         }
       }
     }
@@ -21,7 +21,10 @@ Meteor.startup( function() {
       smtp_host = getEmailSetting('smtp_host'),
       smtp_port = getEmailSetting('smtp_port');
   
-  process.env.MAIL_URL = "smtp://" + smtp_user + ":" + smtp_password + "@" + smtp_host + ":" + smtp_port;
+  // Should only really need this for local testing.
+  if (smtp_user !== '' && smtp_password !== '' && smtp_host !== '' && smtp_port !== '') {
+    process.env.MAIL_URL = "smtp://" + smtp_user + ":" + smtp_password + "@" + smtp_host + ":" + smtp_port;
+  }
   
   // Email Templates
   const emailDirectory = 'email/';
