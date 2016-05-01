@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
-const Logger = require('../startup/server/logger.js');
+const Logger = require('../../startup/server/logger.js');
 
 let loggingConfig = {
   env: 'dev',
