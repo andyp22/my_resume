@@ -4,7 +4,15 @@ import { Template } from 'meteor/templating';
 import { Router } from 'meteor/iron:router';
 
 function onFlameClicked(evt, tpl) {
-  Router.go('home');
+  $('#content').removeClass('fadeIn').addClass('fadeOut');
+  
+  function loadPageAfterFade() {
+    Router.go('home');
+    $('#content').removeClass('fadeOut');
+  }
+  
+  Meteor.setTimeout(loadPageAfterFade, 1000);
+  return false;
 }
 
 Template.ApplicationHeader.events({
