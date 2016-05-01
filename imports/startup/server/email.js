@@ -1,5 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import { Email } from 'meteor/email';
+import { check } from 'meteor/check';
+import { SSR } from 'meteor/meteorhacks:ssr';
+const Logger = require('./logger.js');
+
+import '../../api/contact.js';
 
 function getEmailSetting(emailSetting)  {
   let returnVal = '';
@@ -28,52 +33,28 @@ Meteor.startup( function() {
   
   // Email Templates
   const emailDirectory = 'email/';
-  SSR.compileTemplate( 'htmlEmail', Assets.getText(emailDirectory + 'html-email.html'));
+  SSR.compileTemplate( 'thankyouEmail', Assets.getText(emailDirectory + 'thankyou-email.html'));
 });
 
-function buildEmailObject(email) {
-  let returnObj = {
-    to: email.to,
-    from: email.from,
-    subject: email.subject,
-  };
-  
-  if (email.text) {
-    returnObj.text = email.text;
-  } else if (email.html) {
-    returnObj.html = email.html;
-  }
-  if (email.cc) {
-    returnObj.cc = email.cc;
-  }
-  if (email.bcc) {
-    returnObj.bcc = email.bcc;
-  }
-  if (email.headers) {
-    returnObj.html = email.headers;
-  }
-  if (email.replyTo) {
-    returnObj.html = email.replyTo;
-  }
-  return returnObj;
-}
-
 function sendEmailMethod(email) {
+  check(email, Schemas.email);
   if (email.text && email.html) {
+    Logger.logglyLog("An email cannot have both text and html.");
     throw new Meteor.Error("email-misformed", "An email cannot have both text and html.");
-  }
-  if (email.to && email.subject && email.from && (email.text || email.html)) {
-    Email.send(buildEmailObject(email));
-    return "Email sent";
   } else {
-    throw new Meteor.Error("email-missing-data", "The email failed to send because it was missing required values.");
+    Logger.logglyLog("Email sent: " + JSON.stringify(email));
+    Email.send(email);
+    return "Email sent";
   }
 }
 
 Meteor.methods({
   sendEmail: sendEmailMethod,
-  sendTemplateEmail: function(email, templateName, templateData) {
-    email.html = SSR.render(templateName, templateData);
+  sendTemplateEmail: function(email, templateName) {
+    check(email, Schemas.email);
+    check(templateName, String);
+    email.html = SSR.render(templateName, email);
+    delete email.text;
     return sendEmailMethod(email);
   }
 });
