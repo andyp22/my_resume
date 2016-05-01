@@ -1,6 +1,6 @@
 # My Digital Resume
 This is my digital resume. It was built using the following:
- - [Meteor v1.3.x](https://www.meteor.com) *currently at v1.3.2.4*
+ - [Meteor v1.3.x](https://www.meteor.com) -- *currently at __v1.3.2.4__*
  - [Bootstrap 3](http://getbootstrap.com)
  - [Less.js](http://lesscss.org)
  - [skrollr](https://github.com/Prinzhorn/skrollr)
@@ -52,14 +52,14 @@ For email to work you will need to configure the settings.json with your own SMT
 
 ## Logging
 For [Loggly](http://loggly.com) to log to your account you will need to configure the settings.json with your own settings:
- - env: A string representing the logging environment (live, dev, test, etc). Set to 'dev' as the default.
- - instance: A unique number representing the application's instance id. Set to 1 as the default.
- - subdomain: The Loggly subdomain in which to log messages. *Optional for dev environments.*
- - loggly: Object containing loggly specific values. *Optional for dev environments.*
-   - token: Your Loggly token
-   - tags: An array of strings to tag your log messages with
- - isDev: Boolean value representing whether the app is in a development environment; true *(default)* disables logging to Loggly and instead logs to the console
- - isTrace: Boolean value indicating whether to log to Loggly as 'debug' (true - *default*) or 'info' (false)
+ - **env:** A string representing the logging environment (live, dev, test, etc). Set to 'dev' as the default.
+ - **instance:** A unique number representing the application's instance id. Set to 1 as the default.
+ - **subdomain:** The Loggly subdomain in which to log messages. *Optional for dev environments.*
+ - **loggly:** Object containing loggly specific values. *Optional for dev environments.*
+   - **token:** Your Loggly token
+   - **tags:** An array of strings to tag your log messages with
+ - **isDev:** Boolean value representing whether the app is in a development environment; true *(default)* disables logging to Loggly and instead logs to the console
+ - **isTrace:** Boolean value indicating whether to log to Loggly as 'debug' (true - *default*) or 'info' (false)
  
 ```json
 {
@@ -91,8 +91,8 @@ Depending on which accounts packages, if any, you choose to use, you may want to
 those services before hand. To do that, add a "services" object to your private settings. 
 Each service you add should have the service name as the object key with and an object containing
 the following properties as the value:
- - clientId: The clientId for the service you are configuring.
- - secret: The secret key for the service you are configuring.
+ - **clientId:** The clientId for the service you are configuring.
+ - **secret:** The secret key for the service you are configuring.
 
 ```json
 {
