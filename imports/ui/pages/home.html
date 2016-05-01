@@ -1,18 +1,15 @@
 <template name="homePage">
   <div id="home_page" class="col-xs-12">
-    <div id="flame" class="animated fadeIn row">
-      {{> flame}}
-    </div>
     <div id="navigation" class="row" role="navigation">
       <div class="col-xs-8 col-xs-offset-2">
         <ul class="nav navbar-nav">
-          <li class="man-icon"><a href="{{pathFor route='man'}}" class="white-circle hidden" title="Man">
+          <li class="man-icon"><a href="{{pathFor route='man'}}" class="white-circle" title="Man">
             <img src="/images/man.png" alt="Man"/>
           </a></li>
-          <li class="cookbook-icon"><a href="{{pathFor route='cookbook'}}" class="white-circle hidden" title="Cookbook">
+          <li class="cookbook-icon"><a href="{{pathFor route='cookbook'}}" class="white-circle" title="Cookbook">
             <img src="/images/cookbook.png" alt="Cookbook"/>
           </a></li>
-          <li class="computer-icon"><a href="{{pathFor route='computer'}}" class="white-circle hidden" title="Computer">
+          <li class="computer-icon"><a href="{{pathFor route='computer'}}" class="white-circle" title="Computer">
             <img src="/images/computer.png" alt="Computer"/>
           </a></li>
         </ul>
