@@ -10,6 +10,8 @@
       "smtp_password": "",
       "smtp_host": "",
       "smtp_port": ""
-    }
+    },
+    "loggly": {},
+    "services": {}
   } 
 }
