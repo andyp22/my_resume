@@ -4,6 +4,7 @@ import { Router } from 'meteor/iron:router';
 import '../../ui/layouts/app-body.js';
 import '../../ui/layouts/home-body.js';
 import '../../ui/layouts/cookbook-body.js';
+import '../../ui/components/app-header.js';
 import '../../ui/pages/home.js';
 import '../../ui/pages/man.js';
 import '../../ui/pages/cookbook.js';
