@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import winston from 'winston'; 
 require('winston-loggly');
@@ -21,6 +22,9 @@ module.exports = {
   configs: {},
   init: function(config) {
     this.configs = Object.assign({}, config);
+    
+    this.configs.hostname = Meteor.absoluteUrl();
+    
     logger = new (winston.Logger)({
       exitOnError: false
     });
@@ -38,7 +42,7 @@ module.exports = {
         inputToken: this.configs.loggly.token,
         subdomain: this.configs.subdomain,
         tags: this.configs.loggly.tags.concat([
-          "app.live-audit-sync",
+          this.configs.hostname,
           "env." + this.configs.env,
           "instance." + this.configs.instance
         ]),
