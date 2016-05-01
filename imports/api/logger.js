@@ -6,8 +6,7 @@ let loggingConfig = {
   env: 'dev',
   instance: 1,
   isDev: true,
-  isTrace: true,
-  hostname: Meteor.absoluteUrl()
+  isTrace: true
 };
 
 Meteor.startup( function() {
