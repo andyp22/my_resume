@@ -1,1 +1,0 @@
-import './cookbook-body.html';
