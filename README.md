@@ -1,6 +1,6 @@
 # My Digital Resume
 This is my digital resume. It was built using the following:
- - [Meteor v1.3.x](https://www.meteor.com)
+ - [Meteor v1.3.x](https://www.meteor.com) *currently at v1.3.2.4*
  - [Bootstrap 3](http://getbootstrap.com)
  - [Less.js](http://lesscss.org)
  - [skrollr](https://github.com/Prinzhorn/skrollr)
@@ -10,6 +10,7 @@ This is my digital resume. It was built using the following:
 
 Live build: [http://www.mancookbookcomputer.com](http://www.mancookbookcomputer.com)
 
+## Installation
 To install locally:
 ```bash
 git clone https://https:github.com/andyp22/my_resume
@@ -18,6 +19,7 @@ npm install
 meteor --settings=settings.json
 ```
 
+## Cleverbot
 You will need to add a [cleverbot.io userId and API key](https://cleverbot.io/keys) to the settings.json for all functionality to work properly.
 ```json
 {
@@ -30,6 +32,7 @@ You will need to add a [cleverbot.io userId and API key](https://cleverbot.io/ke
 }
 ```
 
+## Email
 For email to work you will need to configure the settings.json with your own SMTP settings:
 ```json
 {
@@ -47,6 +50,7 @@ For email to work you will need to configure the settings.json with your own SMT
 }
 ```
 
+## Logging
 For [Loggly](http://loggly.com) to log to your account you will need to configure the settings.json with your own settings:
  - env: A string representing the logging environment (live, dev, test, etc). Set to 'dev' as the default.
  - instance: A unique number representing the application's instance id. Set to 1 as the default.
@@ -82,6 +86,7 @@ For [Loggly](http://loggly.com) to log to your account you will need to configur
 }
 ```
 
+## Account Services
 Depending on which accounts packages, if any, you choose to use, you may want to configure 
 those services before hand. To do that, add a "services" object to your private settings. 
 Each service you add should have the service name as the object key with and an object containing
@@ -110,4 +115,5 @@ the following properties as the value:
 }
 ```
 
-Work in progress.
+***
+### Work in progress.
