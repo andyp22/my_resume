@@ -6,23 +6,6 @@ import { Meteor } from 'meteor/meteor';
 import '../../api/contact.js';
 
 
-Template.contactPage.events({
-  'click #sendEmailBtn': function()  {
-    const email = {
-      to: 'andrew.page32@gmail.com',
-      from: 'andrew.page@mancookbookcomputer.com',
-      subject: 'Test Template'
-    };
-    const templateName = 'htmlEmail';
-    const templateData = {
-      name: "Doug Funny",
-      favoriteRestaurant: "Honker Burger",
-      bestFriend: "Skeeter Valentine"
-    };
-    Meteor.call('sendTemplateEmail', email, templateName, templateData);
-  },
-});
-
 Template.contactForm.helpers({
   contactFormSchema: function() {
     return Schemas.contact;
@@ -32,24 +15,18 @@ Template.contactForm.helpers({
 AutoForm.hooks({
   contactForm: {
     onSubmit: function (insertDoc, updateDoc, currentDoc) {
-      let email = {
-        to: 'andrew.page32@gmail.com',
-        from: 'andrew.page@mancookbookcomputer.com',
-        subject: 'Contact Form email'
-      };
-      const templateName = 'htmlEmail';
-      const templateData = {
-        name: insertDoc.name,
-        favoriteRestaurant: insertDoc.email,
-        bestFriend: insertDoc.message
-      };
-      Meteor.call('sendTemplateEmail', email, templateName, templateData);
+      let contactEmail = Object.assign({}, insertDoc);
+      contactEmail.to = 'andrew.page@mancookbookcomputer.com';
+      Meteor.call('sendEmail', contactEmail);
       
-      //if (customHandler(insertDoc)) {
-      //  this.done();
-      //} else {
-      //  this.done(new Error("Submission failed"));
-      //}
+      let thankYouEmail = Object.assign({}, insertDoc);
+      thankYouEmail.to = thankYouEmail.from;
+      thankYouEmail.from = 'no-reply@mancookbookcomputer.com';
+      thankYouEmail.subject = 'Thank you for contacting me';
+      thankYouEmail.text = 'Thank you for taking the time to drop me a line. I will get back to you as soon as I can.';
+      thankYouEmail.signature = 'Andrew Page';
+      
+      Meteor.call('sendTemplateEmail', thankYouEmail, 'thankyouEmail');
       this.done();
       return false;
     }
