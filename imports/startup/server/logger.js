@@ -1,3 +1,4 @@
+import { check } from 'meteor/check';
 import winston from 'winston'; 
 require('winston-loggly');
 
@@ -17,27 +18,29 @@ module.exports = {
    * @param config.loggly.token
    * @param config.loggly.tags
    */
+  configs: {},
   init: function(config) {
+    this.configs = Object.assign({}, config);
     logger = new (winston.Logger)({
       exitOnError: false
     });
 
     logger.add(winston.transports.Console, {
-      level: config.isTrace ? 'debug' : 'info',
+      level: this.configs.isTrace ? 'debug' : 'info',
       handleExceptions: true,
       colorize: true,
       prettyPrint: true
     });
 
     // for non-dev environments log to Loggly
-    if (!config.isDev) {
+    if (!this.configs.isDev) {
       logger.add(winston.transports.Loggly, {
-        inputToken: config.loggly.token,
-        subdomain: config.subdomain,
-        tags: config.loggly.tags.concat([
+        inputToken: this.configs.loggly.token,
+        subdomain: this.configs.subdomain,
+        tags: this.configs.loggly.tags.concat([
           "app.live-audit-sync",
-          "env." + config.env,
-          "instance." + config.instance
+          "env." + this.configs.env,
+          "instance." + this.configs.instance
         ]),
         json: true,
         level: "info",
@@ -48,5 +51,14 @@ module.exports = {
 
   getInstance: function() {
     return logger;
+  },
+  
+  logglyLog: function(message)  {
+    check(message, String);
+    logger.info(message, {
+      hostname: this.configs.hostname,
+      instance: this.configs.instance,
+      env: this.configs.env
+    });
   }
 };
