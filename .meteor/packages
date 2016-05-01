@@ -20,7 +20,6 @@ insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 less
 accounts-password
-ian:accounts-ui-bootstrap-3
 standard-minifier-css
 standard-minifier-js
 huttonr:bootstrap3
@@ -34,3 +33,4 @@ okgrow:analytics
 accounts-github
 accounts-meteor-developer
 service-configuration
+accounts-ui
