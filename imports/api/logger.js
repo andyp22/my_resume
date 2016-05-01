@@ -24,5 +24,5 @@ Meteor.startup( function() {
 });
 
 Meteor.methods({
-  logglyLog: logglyLog,
+  logglyLog: Logger.logglyLog,
 });
