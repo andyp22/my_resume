@@ -72,12 +72,18 @@ Accounts.onCreateUser(function(options, user) {
       }
     }
     
+    // Create emails if needed.
+    if(!existingUser.emails && user.emails) {
+      existingUser.emails = user.emails;
+    }
+    
     // Create or merge the profiles if needed.
     if(!existingUser.profile && user.profile) {
       existingUser.profile = user.profile;
     } else if (user.profile) {
       existingUser.profile = Object.assign(user.profile, existingUser.profile);
     }
+    
     // Even worse hackery
     Meteor.users.remove({ _id: existingUser._id }); // Remove the existing record
     return existingUser;              // Record is re-inserted
