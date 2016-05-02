@@ -4,22 +4,31 @@ import { Accounts } from 'meteor/accounts-base';
 // Handle new account creation
 Accounts.onCreateUser(function(options, user) {
   // Grab the default profile object if it exists.
-  user.profile = (options.profile != undefined) ? options.profile: new Object();
+  var profile = (options.profile != undefined) ? options.profile: user.profile;
+  var service;
   
   if(user.services)  {
     for(var serviceName in user.services) {
-      var service = user.services[serviceName];
-      var address;
-      var emails = (serviceName == 'password') ? user.emails : service.emails;
-      for(var i = 0; i < emails.length; i++) {
-        var email = emails[i];
-        if(email.primary) {
-          address = email.address;
+      service = user.services[serviceName];
+      var address = (service.email) ? service.email : false;
+      if(!address) {
+        var emails = (serviceName == 'password') ? user.emails : service.emails;
+        for(var i = 0; i < emails.length; i++) {
+          var email = emails[i];
+          if(email.primary) {
+            address = email.address;
+          }
         }
       }
       
-      if(service.username && !user.profile.name)  {
-        user.profile.name = service.username;
+      if(service.username && !profile.name)  {
+        profile.name = service.username;
+      }
+      // Create or merge the profiles if needed.
+      if(!user.profile && profile) {
+        user.profile = profile;
+      } else if(profile) {
+        user.profile = Object.assign(profile, user.profile);
       }
       
       if(address)  {
@@ -63,10 +72,15 @@ Accounts.onCreateUser(function(options, user) {
       }
     }
     
+    // Create or merge the profiles if needed.
+    if(!existingUser.profile && user.profile) {
+      existingUser.profile = user.profile;
+    } else if (user.profile) {
+      existingUser.profile = Object.assign(user.profile, existingUser.profile);
+    }
     // Even worse hackery
     Meteor.users.remove({ _id: existingUser._id }); // Remove the existing record
     return existingUser;              // Record is re-inserted
   }
-  
   return user;
 });
