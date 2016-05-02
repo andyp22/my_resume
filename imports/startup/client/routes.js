@@ -9,6 +9,7 @@ import '../../ui/pages/man.js';
 import '../../ui/pages/cookbook.js';
 import '../../ui/pages/computer.js';
 import '../../ui/pages/contact.js';
+import '../../ui/pages/profile.js';
 
 /*
  * Router settings for the iron:router package.
