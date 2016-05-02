@@ -25,7 +25,6 @@
   "dependencies": {
     "meteor-node-stubs": "~0.2.0",
     "skrollr": "0.6.26",
-    "imagesloaded": "^4.1.0",
     "cleverbot.io": "^1.0.4",
     "fibers": "^1.0.10",
     "typed.js": "^1.1.1",

@@ -18,7 +18,7 @@
 
 <template name="parallaxSection">
   <section id="{{id}}" class="{{class}}">
-      <div class="bcg" 
+      <div class="bcg {{blazy}}" 
             data-start="{{bcgDataStart}}" 
             data-center="{{bcgDataCenter}}" 
             data-top-bottom="{{bcgDataTopBottom}}" 
@@ -26,7 +26,8 @@
             data-bottom-top="{{bcgDataBottomTop}}" 
             data-bottom="{{bcgDataBottom}}" data-100-bottom="{{bcgData100Bottom}}" data-200-bottom="{{bcgData200Bottom}}" 
             data--100-bottom="{{bcgDataM100Bottom}}" data--200-bottom="{{bcgDataM200Bottom}}" 
-            data-anchor-target="{{bcgTarget}}" style="{{style}}">
+            data-anchor-target="{{bcgTarget}}" style="{{style}}"
+            data-src="{{dataSrc}}">
         <div class="hsContainer">
           <div class="hsContent" 
               data-start="{{hsDataStart}}" 

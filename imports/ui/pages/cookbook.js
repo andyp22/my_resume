@@ -3,10 +3,10 @@ import '../data/cookbook.js';
 import '../components/viewportSize.js';
 
 import skrollr from 'skrollr';
-import imagesloaded from 'imagesloaded';
 
 // import { Template } from 'meteor/templating';
-// import { ReactiveVar } from 'meteor/reactive-var';
+import { Meteor } from 'meteor/meteor';
+import { $ } from 'meteor/jquery';
 
 function onSkrollrRendered()  {
   // Setup variables
@@ -16,22 +16,20 @@ function onSkrollrRendered()  {
   $slideTall2 = this.$('.homeSlideTall2');
   $cookbook = this.$('#cookbook');
   
-  //FadeIn all sections   
-  $cookbook.imagesLoaded( function() {
-    setTimeout(function() {
-      // Resize sections
-      adjustWindow();
-      // Fade in sections
-      $cookbook.removeClass('loading').addClass('loaded');
-    }, 800);
-  });
+  //FadeIn all sections
+  Meteor.setTimeout(function() {
+    // Resize sections
+    adjustWindow();
+    // Fade in sections
+    $cookbook.removeClass('loading').addClass('loaded');
+  }, 800);
   
   function adjustWindow(){
     // Init Skrollr
     var s = skrollr.init({
         render: function(data) {
             //Debugging - Log the current scroll position.
-            console.log(data.curTop);
+            //console.log(data.curTop);
         }
     });
     
@@ -49,6 +47,7 @@ function onSkrollrRendered()  {
     // Refresh Skrollr after resizing our sections
     s.refresh($('.homeSlide'));
   }
+  
 }
 
 Template.cookbookPage.onRendered(onSkrollrRendered);
