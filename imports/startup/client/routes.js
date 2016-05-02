@@ -89,4 +89,23 @@ Router.route('profile', {
     ApplicationHeader: { to: 'header' },
     ApplicationFooter: { to: 'footer' },
   },
+  onBeforeAction: function()  {
+    if(!Meteor.userId()) {
+      Router.go('home');
+    } else {
+      this.next();
+    }
+  },
+  onRerun: function()  {
+    if(!Meteor.userId()) {
+      Router.go('home');
+    } else {
+      this.next();
+    }
+  },
+  data: {
+    user: function() {
+      return Meteor.user();
+    }
+  }
 });
