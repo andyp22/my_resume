@@ -3,10 +3,10 @@
     <div id="login-container">{{> loginButtons}}</div>
     <div id="subnav" class="navbar navbar-right">
       <ul class="nav navbar-nav">
-          <li>{{#linkTo route="contact" class="subnav-btn"}}Contact{{/linkTo}}</li>
-          {{#if loggedIn}}
-            <li>{{#linkTo route="profile" class="subnav-btn"}}MyProfile{{/linkTo}}</li>
-          {{/if}}
+        {{#if loggedIn}}
+          <li>{{#linkTo route="profile" class="subnav-btn"}}MyProfile{{/linkTo}}</li>
+        {{/if}}
+        <li>{{#linkTo route="contact" class="subnav-btn"}}Contact{{/linkTo}}</li>
       </ul>
     </div>
     <div id="flame" class="animated fadeIn row">
