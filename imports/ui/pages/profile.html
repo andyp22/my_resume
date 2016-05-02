@@ -1,5 +1,50 @@
 <template name="profilePage">
   <div id="profilePage">
-    {{> underConstruction}}
+    {{> profileView}}
+  </div>
+</template>
+
+<template name="profileView">
+  <div id="profile-page" class="col-xs-6 col-xs-offset-3">
+    <div class="page row">
+      <h1>Profile</h1>
+      {{> topSecret}}
+      <div id="stats" class="col-xs-6">
+        {{> Template.dynamic template=templateName}}
+      </div>
+      <div id="actionShot" class="col-xs-6">
+        {{> ProfileActionShot}}
+      </div>
+      <div id="progression" class="col-xs-12">
+        {{> UserProgression}}
+      </div>
+      <div id="classified-warning" class="col-xs-12">
+          NOT TO BE TAKEN OFF FLOOR LEVEL 3!
+        </div>
+    </div>
+  </div>
+</template>
+
+<template name="ProfileStats">
+  <ul class="list-group">
+    <li class="list-group-item"><span class="label">Handle:</span> {{handle}}</li>
+    <li class="list-group-item"><span class="label">Contact:</span> {{email}}</li>
+  </ul>
+</template>
+
+<template name="ProfileActionShot">
+  <img src="{{actionShotUrl}}" />
+</template>
+
+<template name="UserProgression">
+  <div class="row">
+    <h2>Progression</h2>
+    <ul class="nav navbar-nav col-xs-12">
+      <li><a href="#" class="subnav-btn">Cookbook</a></li>
+      <li><a href="#" class="subnav-btn">Computer</a></li>
+    </ul>
+    <div id="progression-category-view" class="col-xs-12">
+      <p>Click a category to see your progression.</p>
+    </div>
   </div>
 </template>
