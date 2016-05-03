@@ -1,108 +1,88 @@
-cookbookData = {
-  sections: [
-    {
-      id: 'slide-1',
-      class: 'homeSlide',
-      bcgTarget: '#slide-1',
-      hsContentTarget: '#slide-1 h2',
-      style: 'background: url(/images/cookbook/dough1.jpg);',
-      bcgDataCenter: 'background-position: 50% 0px;',
-      bcgDataTopBottom: 'background-position: 50% -100px;',
-      hsDataCenter: 'opacity: 1;',
-      hsData100Top: 'opacity: 0;',
-      content: '<h2>Savory Pastry Dough</h2><p>This pastry is perfect for meat pie crust or other savory dishes.</p>',
+cookbookData = [
+  {
+    content: {
+      images: [
+        {
+          imageUrl: '/images/cookbook/dough1.jpg'
+        },
+        {
+          imageUrl: '/images/cookbook/dough2.jpg'
+        },
+        {
+          imageUrl: '/images/cookbook/dough3.jpg'
+        },
+        {
+          imageUrl: '/images/cookbook/dough4.jpg'
+        },
+        {
+          imageUrl: '/images/cookbook/dough5.jpg'
+        },
+        {
+          imageUrl: '/images/cookbook/dough6.jpg'
+        },
+        {
+          imageUrl: '/images/cookbook/dough7.jpg'
+        }
+      ]
     },
-    {
-      id: 'slide-2',
-      class: 'blank-slide',
-      bcgTarget: '#slide-2',
-      hsContentTarget: '#slide-2 h2',
-      bcgDataStart: 'background-color:rgb(1,27,59);',
-      bcgDataTop: 'background-color:(0,0,0);',
-      hsDataStart: 'opacity: 0',
-      hsData100Top: 'opacity: 0;',
-      hsData200Top: 'opacity: 1;',
-      hsDataCenter: 'opacity: 1;',
-      hsDataM200Bottom: 'opacity: 0',
-      content: '<h2>Fade me in and out</h2><p>Here we are changing the background color from blue to black. Text is fading in at 200 pixels from the bottom and fading out 100 pixels from the top.</p>',
-    },
-    {
-      id: 'slide-3',
-      class: 'homeSlide',
-      bcgTarget: '#slide-3',
-      style: 'background: url(/images/cookbook/dough2.jpg);',
-      bcgDataCenter: 'background-position: 0px 50%;',
-      bcgDataBottomTop: 'background-position: 0px 40%;',
-      bcgDataTopBottom: 'background-position: -40px 50%;',
-      content: '<div class="plaxEl" data-start="opacity: 0; position: fixed; top: 206px; width: 100%; left: 0;" data-600-start="opacity:0;" data-800-start="opacity:1;" data-1075-start="opacity:0;" data-anchor-target="#slide-3"><h2>Fixed element fading in and out</h2><p>Text is fixed 206 pixels from the top, while the background is moving 40 pixels to the left.</p><p>Or did you think that the scooter is driving off?</p></div>',
-    },
-    {
-      id: 'slide-4',
-      class: 'homeSlide homeSlideTall',
-      type: 'curtain',
-      bcgTarget: '#slide-4',
-      style: 'background: url(/images/cookbook/dough3.jpg);',
-      bcgDataCenter: 'background-position: 50% 0px;',
-      bcgDataBottomTop: 'background-position: 50% 100px;',
-      bcgDataTopBottom: 'background-position: 50% -100px;',
-      curtainAnchor: '#slide-4',
-      curtainDataBottomTop: 'opacity: 0',
-      curtainData100Top: 'height: 1%; opacity: 0; top: -10%;',
-      curtainDataCenter: 'height: 100%; opacity: 0.5; top: 0%;',
-      copyAnchor: '#slide-4 .copy',
-      copyDataBottomTop: 'opacity: 0',
-      copyDataM100Bottom: 'opacity: 0',
-      copyDataM300Bottom: 'opacity: 0',
-      copyData100Top: 'opacity: 0;',
-      copyData300Top: 'opacity: 1;',
-      content: '<h2>Curtain effect while you scroll</h2>',
-    },
-    {
-      id: 'slide-5',
-      class: 'homeSlide',
-      bcgTarget: '#slide-5',
-      hsContentTarget: '#slide-5 h2',
-      style: 'background: url(/images/cookbook/dough4.jpg);',
-      bcgDataCenter: 'background-position: 50% 0px;',
-      bcgDataTopBottom: 'background-position: 50% -100px;',
-      hsDataCenter: 'opacity: 1;',
-      hsData100Top: 'opacity: 0;',
-      content: '<h2>A close-up of my hand after squeezing some dough.</h2><p>Before you are done mixing the lard into the flour it should clump like this when squeezed..</p>',
-    },
-    {
-      id: 'slide-6',
-      class: 'homeSlide homeSlideTall',
-      bcgTarget: '#slide-6',
-      hsContentTarget: '#slide-6 h2',
-      style: 'background: url(/images/cookbook/dough5.jpg);',
-      bcgDataCenter: 'background-position: 0px 50%;',
-      bcgDataTopBottom: 'background-position: -30px 30%;',
-      hsDataCenter: 'opacity: 1;',
-      hsData100Top: 'opacity: 0;',
-      content: '<h2>Add your wet ingredients</h2><p>Make a mound of the flour and create a well in the middle. Pour in your wet ingredients and mix until a tacky dough is formed.</p>',
-    },
-    {
-      id: 'slide-7',
-      class: 'homeSlide',
-      bcgTarget: '#slide-7',
-      hsContentTarget: '#slide-7 h2',
-      style: 'background: url(/images/cookbook/dough6.jpg);',
-      bcgDataCenter: 'background-position: 50% 0px;',
-      bcgDataTopBottom: 'background-position: 50% -100px;',
-      hsDataCenter: 'opacity: 1;',
-      hsData100Top: 'opacity: 0;',
-      content: '<h2>Almost there</h2><p>It should look like this after mixing.</p>',
-    },
-    {
-      id: 'slide-8',
-      class: 'homeSlide homeSlideTall',
-      bcgTarget: '#slide-8',
-      hsContentTarget: '#slide-8 h2',
-      style: 'background-image: url(/images/cookbook/dough7.jpg);',
-      bcgDataCenter: 'background-position: 50% 0px;',
-      hsDataCenter: 'opacity: 1;',
-      hsData100Top: 'opacity: 0;',
-      content: '<h2>Done!!!</h2><p>Form the dough into a ball and refrigerate it before rolling out.</p>',
-    },
-  ]
-};
+    templateName: 'ImageSection'
+  },
+  {
+    templateName: 'rellaxTitle',
+    content: {
+      header: 'Savory Pie Dough',
+      body: 'This recipe is the basis for pies and other other savory-crusted dishes.',
+      speed: 4,
+      class: 'rellax'
+    }
+  },
+  {
+    templateName: 'rellaxSteps',
+    content: {
+      steps: [
+        {
+          class: 'rellax step step1 blue-step',
+          speed: 1,
+          header: 'This is the header',
+          body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ultricies lacus. Fusce viverra ornare diam, vel venenatis nisi ultrices tincidunt. Curabitur quis enim ornare, dignissim ante at, consectetur libero. Sed suscipit lobortis magna nec euismod. Sed eu lacus ut eros tristique luctus. Pellentesque eu sapien lectus. Pellentesque massa leo, euismod in maximus in, pretium sed lorem. Proin sollicitudin felis lorem, et posuere tellus vestibulum et. Donec at commodo felis. Praesent a elementum lacus. Phasellus venenatis condimentum ornare. Etiam quis tortor facilisis, sagittis ipsum id, pellentesque purus. Curabitur commodo commodo ante consequat placerat. Nulla semper odio quis tempor eleifend. Phasellus purus odio, viverra a luctus eu, pharetra eu nunc.'
+        },
+        {
+          class: 'rellax step step2 blue-step',
+          speed: 1,
+          header: 'This is the header',
+          body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ultricies lacus. Fusce viverra ornare diam, vel venenatis nisi ultrices tincidunt. Curabitur quis enim ornare, dignissim ante at, consectetur libero. Sed suscipit lobortis magna nec euismod. Sed eu lacus ut eros tristique luctus. Pellentesque eu sapien lectus. Pellentesque massa leo, euismod in maximus in, pretium sed lorem. Proin sollicitudin felis lorem, et posuere tellus vestibulum et. Donec at commodo felis. Praesent a elementum lacus. Phasellus venenatis condimentum ornare. Etiam quis tortor facilisis, sagittis ipsum id, pellentesque purus. Curabitur commodo commodo ante consequat placerat. Nulla semper odio quis tempor eleifend. Phasellus purus odio, viverra a luctus eu, pharetra eu nunc.'
+        },
+        {
+          class: 'rellax step step3 blue-step',
+          speed: 1,
+          header: 'This is the header',
+          body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ultricies lacus. Fusce viverra ornare diam, vel venenatis nisi ultrices tincidunt. Curabitur quis enim ornare, dignissim ante at, consectetur libero. Sed suscipit lobortis magna nec euismod. Sed eu lacus ut eros tristique luctus. Pellentesque eu sapien lectus. Pellentesque massa leo, euismod in maximus in, pretium sed lorem. Proin sollicitudin felis lorem, et posuere tellus vestibulum et. Donec at commodo felis. Praesent a elementum lacus. Phasellus venenatis condimentum ornare. Etiam quis tortor facilisis, sagittis ipsum id, pellentesque purus. Curabitur commodo commodo ante consequat placerat. Nulla semper odio quis tempor eleifend. Phasellus purus odio, viverra a luctus eu, pharetra eu nunc.'
+        },
+        {
+          class: 'rellax step step4 blue-step',
+          speed: 1,
+          header: 'This is the header',
+          body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ultricies lacus. Fusce viverra ornare diam, vel venenatis nisi ultrices tincidunt. Curabitur quis enim ornare, dignissim ante at, consectetur libero. Sed suscipit lobortis magna nec euismod. Sed eu lacus ut eros tristique luctus. Pellentesque eu sapien lectus. Pellentesque massa leo, euismod in maximus in, pretium sed lorem. Proin sollicitudin felis lorem, et posuere tellus vestibulum et. Donec at commodo felis. Praesent a elementum lacus. Phasellus venenatis condimentum ornare. Etiam quis tortor facilisis, sagittis ipsum id, pellentesque purus. Curabitur commodo commodo ante consequat placerat. Nulla semper odio quis tempor eleifend. Phasellus purus odio, viverra a luctus eu, pharetra eu nunc.'
+        },
+        {
+          class: 'rellax step step5 blue-step',
+          speed: 1,
+          header: 'This is the header',
+          body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ultricies lacus. Fusce viverra ornare diam, vel venenatis nisi ultrices tincidunt. Curabitur quis enim ornare, dignissim ante at, consectetur libero. Sed suscipit lobortis magna nec euismod. Sed eu lacus ut eros tristique luctus. Pellentesque eu sapien lectus. Pellentesque massa leo, euismod in maximus in, pretium sed lorem. Proin sollicitudin felis lorem, et posuere tellus vestibulum et. Donec at commodo felis. Praesent a elementum lacus. Phasellus venenatis condimentum ornare. Etiam quis tortor facilisis, sagittis ipsum id, pellentesque purus. Curabitur commodo commodo ante consequat placerat. Nulla semper odio quis tempor eleifend. Phasellus purus odio, viverra a luctus eu, pharetra eu nunc.'
+        },
+        {
+          class: 'rellax step step6 blue-step',
+          speed: 1,
+          header: 'This is the header',
+          body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ultricies lacus. Fusce viverra ornare diam, vel venenatis nisi ultrices tincidunt. Curabitur quis enim ornare, dignissim ante at, consectetur libero. Sed suscipit lobortis magna nec euismod. Sed eu lacus ut eros tristique luctus. Pellentesque eu sapien lectus. Pellentesque massa leo, euismod in maximus in, pretium sed lorem. Proin sollicitudin felis lorem, et posuere tellus vestibulum et. Donec at commodo felis. Praesent a elementum lacus. Phasellus venenatis condimentum ornare. Etiam quis tortor facilisis, sagittis ipsum id, pellentesque purus. Curabitur commodo commodo ante consequat placerat. Nulla semper odio quis tempor eleifend. Phasellus purus odio, viverra a luctus eu, pharetra eu nunc.'
+        },
+        {
+          class: 'rellax step step7',
+          speed: 2,
+          header: 'This is the header',
+          body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ultricies lacus. Fusce viverra ornare diam, vel venenatis nisi ultrices tincidunt. Curabitur quis enim ornare, dignissim ante at, consectetur libero. Sed suscipit lobortis magna nec euismod. Sed eu lacus ut eros tristique luctus. Pellentesque eu sapien lectus. Pellentesque massa leo, euismod in maximus in, pretium sed lorem. Proin sollicitudin felis lorem, et posuere tellus vestibulum et. Donec at commodo felis. Praesent a elementum lacus. Phasellus venenatis condimentum ornare. Etiam quis tortor facilisis, sagittis ipsum id, pellentesque purus. Curabitur commodo commodo ante consequat placerat. Nulla semper odio quis tempor eleifend. Phasellus purus odio, viverra a luctus eu, pharetra eu nunc.'
+        }
+      ]
+    }
+  }
+];

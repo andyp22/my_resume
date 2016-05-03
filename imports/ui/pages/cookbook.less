@@ -1,12 +1,15 @@
 #cookbook {
   overflow: hidden;
   color: white;
+  width: 100%;
+  position: relative;
 }
 /*
  * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
  */
 #cookbook img {
     vertical-align: middle;
+    width: 100%;
 }
 
 /*
@@ -16,154 +19,51 @@
     resize: vertical;
 }
 
-#cookbook .blank-slide {
+.rellaxTitle {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  text-align: center;
+}
+
+.rellaxTitle h1,
+#cookbook .rellaxDescription h1 {
+  font-size: 60px;
+}
+
+.rellaxSteps {
+  position: absolute;
+  top: 0;
+}
+
+#cookbook .step {
   background: none;
-  background-color: #010101;
   height: 310px;
   text-align: center;
-}
-
-/* ==========================================================================
-   Parallax Scroll
-   ========================================================================== */
-.loading {
-  background: url('/images/ico_loading.gif') no-repeat center center;
-}
-
-section {
-  min-width: 960px;
-  opacity: 0;
-}
-
-.loaded section {
-  opacity: 1;
-  -webkit-transition: opacity 300ms ease-out;
-  -moz-transition: opacity 300ms ease-out;
-  transition: opacity 300ms ease-out;
-}
-
-.bcg {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100%;
   width: 100%;
+  margin-top: 700px;
+}
+#cookbook .blue-step {
+  background-color: #21263a;
 }
 
-.curtainContainer {
+#cookbook .step6 {
+  margin-top: 650px;
+}
+
+#cookbook .step7 {
+  margin-top: 800px;
+}
+
+#cookbook .step h1 {
+  padding-top: 20px;
+}
+
+.step p {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#cookbook .rellaxImage {
   width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.curtainContainer .curtain {
-  width: 300%;
-  height: 1px;
-  background-color: #000000;
-  position: absolute;
-  top: 25%;
-  left: 0;
-  opacity: 0
-}
-
-.curtainContainer .copy {
-  position: absolute;
-  bottom: 30%;
-  left: 0;
-  width: 100%;
-  text-align: center;
-}
-
-.hsContainer {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.hsContent {
-  max-width: 450px;
-  margin: -150px auto 0 auto;
-  display: table-cell;
-  vertical-align: middle;
-  padding: 0 8%;
-  text-align: center;
-}
-
-.hsContent h2,
-.copy h2 {
-  font-size: 45px;
-  line-height: 48px;
-  margin-bottom: 12px;
-}
-
-.hsContent p {
-  width: 400px;
-  margin: 0 auto;
-}
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Image replacement
- */
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
-}
-
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
-}
-
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-#cookbookBack #backButton {
-  margin-left: 5px;
-  position: fixed;
-}
-
-#cookbookBack #backButton a {
-  color: white;
-}
-
-#cookbookBack #backButton a:hover {
-  color: #ccc;
 }

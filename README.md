@@ -3,7 +3,7 @@ This is my digital resume. It was built using the following:
  - [Meteor v1.3.x](https://www.meteor.com) -- *currently at __v1.3.2.4__*
  - [Bootstrap 3](http://getbootstrap.com)
  - [Less.js](http://lesscss.org)
- - [skrollr](https://github.com/Prinzhorn/skrollr)
+ - [rellax.js](https://github.com/dixonandmoe/rellax)
  - [Animate.css](https://daneden.github.io/animate.css/)
  - [typed.js](https://github.com/mattboldt/typed.js/)
  - [cleverbot.io](https://cleverbot.io)
