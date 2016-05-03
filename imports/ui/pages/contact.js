@@ -2,15 +2,38 @@ import './contact.html';
 
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
+import { ReactiveVar } from 'meteor/reactive-var';
+import { $ } from 'meteor/jquery';
+import typed from 'typed.js';
 
 import '../../api/contact.js';
 
+let contactFormTemplateName = new ReactiveVar('contactForm');
+
+Template.contactPage.helpers({
+  contactFormTemplate: function() {
+    return contactFormTemplateName.get();
+  }
+});
 
 Template.contactForm.helpers({
   contactFormSchema: function() {
     return Schemas.contact;
   }
 });
+
+Template.contactFormSent.onDestroyed(function() {
+  contactFormTemplateName.set('contactForm');
+});
+
+Template.contactFormSent.onRendered(function() {
+  this.$("#contactFormSent").typed({
+    strings: ['Your email has been sent. ^300 <br/><br/>Thank you.'],
+    contentType: 'html',
+    showCursor: false
+  });
+});
+
 
 AutoForm.hooks({
   contactForm: {
@@ -27,8 +50,12 @@ AutoForm.hooks({
       thankYouEmail.signature = 'Andrew Page';
       
       Meteor.call('sendTemplateEmail', thankYouEmail, 'thankyouEmail');
+      
       this.done();
       return false;
+    },
+    onSuccess: function(formType, result) {
+       contactFormTemplateName.set('contactFormSent');
     }
   }
 });
