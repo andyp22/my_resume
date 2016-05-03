@@ -3,6 +3,7 @@ import './computer.html';
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 import { Session } from 'meteor/session';
+import { $ } from 'meteor/jquery';
 import typed from 'typed.js';
 
 Session.setDefault('session-nick', '');
