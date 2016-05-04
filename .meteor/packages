@@ -35,6 +35,8 @@ accounts-meteor-developer
 service-configuration
 accounts-ui
 ddp-rate-limiter
-underscore
 dburles:factory
 mdg:validated-method
+dburles:collection-helpers
+alanning:roles
+underscore

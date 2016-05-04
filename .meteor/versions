@@ -5,6 +5,7 @@ accounts-oauth@1.1.12
 accounts-password@1.1.8
 accounts-ui@1.1.9
 accounts-ui-unstyled@1.1.12
+alanning:roles@1.2.15
 aldeed:autoform@5.8.1
 aldeed:collection2@2.9.1
 aldeed:collection2-core@1.1.1
@@ -26,6 +27,7 @@ caching-compiler@1.0.4
 caching-html-compiler@1.0.6
 callback-hook@1.0.8
 check@1.2.1
+dburles:collection-helpers@1.0.4
 dburles:factory@1.0.0
 ddp@1.2.5
 ddp-client@1.2.7
