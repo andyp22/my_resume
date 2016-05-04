@@ -31,3 +31,12 @@ Events.publicFields = {
 Events.attachSchema(Events.schema);
 
 Factory.define('event', Events, {});
+
+Events.helpers({
+  editableBy(userId) {
+    if (!this.userId) {
+      return false;
+    }
+    return this.userId === userId;
+  },
+});
