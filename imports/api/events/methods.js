@@ -2,9 +2,14 @@ import { Meteor } from 'meteor/meteor';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter';
-import { _ } from 'meteor/underscore';
+import { Roles } from 'meteor/alanning:roles';
 
 import { Events } from './events.js';
+
+const NAME_AND_USERID_ONLY = new SimpleSchema({
+  name: { type: String },
+  userId: { type: String },
+}).validator();
 
 export const insert = new ValidatedMethod({
   name: 'Events.methods.insert',
@@ -13,106 +18,53 @@ export const insert = new ValidatedMethod({
     return Events.insert(newEvent);
   },
 });
-/*
-export const makePrivate = new ValidatedMethod({
-  name: 'lists.makePrivate',
-  validate: LIST_ID_ONLY,
-  run({ listId }) {
-    if (!this.userId) {
-      throw new Meteor.Error('lists.makePrivate.notLoggedIn',
-        'Must be logged in to make private lists.');
+
+export const resetEvent = new ValidatedMethod({
+  name: 'Events.methods.updateReset',
+  validate: NAME_AND_USERID_ONLY,
+  run({ name, userId }) {
+    const userEvents = Events.find({ name: name, userId: userId, reset: false });
+    let updatedEvents = { ids: [] };
+    if(userEvents.count() > 0)  {
+      userEvents.forEach(function(userEvent, index, cursor) {
+        if(userEvent.editableBy(userId) || Roles.userIsInRole(this.userId, ['admin'], Roles.GLOBAL_GROUP))  {
+          Events.update(userEvent._id, {
+            $set: { reset: true, resetAt: new Date() },
+          });
+          updatedEvents.ids.push(userEvent._id);
+        } else {
+          throw new Meteor.Error('Events.methods.updateReset',
+            'Cannot update the last event.');
+        }
+      });
     }
-
-    const list = Lists.findOne(listId);
-
-    if (list.isLastPublicList()) {
-      throw new Meteor.Error('lists.makePrivate.lastPublicList',
-        'Cannot make the last public list private.');
-    }
-
-    Lists.update(listId, {
-      $set: { userId: this.userId },
-    });
+    return updatedEvents;
   },
 });
 
-export const makePublic = new ValidatedMethod({
-  name: 'lists.makePublic',
-  validate: LIST_ID_ONLY,
-  run({ listId }) {
-    if (!this.userId) {
-      throw new Meteor.Error('lists.makePublic.notLoggedIn',
-        'Must be logged in.');
+export const removeEvent = new ValidatedMethod({
+  name: 'Events.methods.removeEvent',
+  validate: NAME_AND_USERID_ONLY,
+  run({ name, userId }) {
+    if (Roles.userIsInRole(this.userId, ['admin'], Roles.GLOBAL_GROUP)) {
+      const userEvents = Events.find({ name: name, userId: userId });
+      let removedEvents = { ids: [] };
+      userEvents.forEach(function(userEvent, index, cursor) {
+        Events.remove(userEvent._id);
+        removedEvents.ids.push(userEvent._id);
+      });
+      return removedEvents;
+    } else {
+      throw new Meteor.Error('Events.methods.remove', 'You do not have permission to remove events.');
     }
-
-    const list = Lists.findOne(listId);
-
-    if (!list.editableBy(this.userId)) {
-      throw new Meteor.Error('lists.makePublic.accessDenied',
-        'You don\'t have permission to edit this list.');
-    }
-
-    // XXX the security check above is not atomic, so in theory a race condition could
-    // result in exposing private data
-    Lists.update(listId, {
-      $unset: { userId: true },
-    });
   },
 });
 
-export const updateName = new ValidatedMethod({
-  name: 'lists.updateName',
-  validate: new SimpleSchema({
-    listId: { type: String },
-    newName: { type: String },
-  }).validator(),
-  run({ listId, newName }) {
-    const list = Lists.findOne(listId);
-
-    if (!list.editableBy(this.userId)) {
-      throw new Meteor.Error('lists.updateName.accessDenied',
-        'You don\'t have permission to edit this list.');
-    }
-
-    // XXX the security check above is not atomic, so in theory a race condition could
-    // result in exposing private data
-
-    Lists.update(listId, {
-      $set: { name: newName },
-    });
-  },
-});
-
-export const remove = new ValidatedMethod({
-  name: 'lists.remove',
-  validate: LIST_ID_ONLY,
-  run({ listId }) {
-    const list = Lists.findOne(listId);
-
-    if (!list.editableBy(this.userId)) {
-      throw new Meteor.Error('lists.remove.accessDenied',
-        'You don\'t have permission to remove this list.');
-    }
-
-    // XXX the security check above is not atomic, so in theory a race condition could
-    // result in exposing private data
-
-    if (list.isLastPublicList()) {
-      throw new Meteor.Error('lists.remove.lastPublicList',
-        'Cannot delete the last public list.');
-    }
-
-    Lists.remove(listId);
-  },
-});
-*/
 // Get list of all method names on Lists
 const EVENTS_METHODS = _.pluck([
   insert,
-  //makePublic,
-  //makePrivate,
-  //updateName,
-  //remove,
+  resetEvent,
+  removeEvent,
 ], 'name');
 
 if (Meteor.isServer) {
