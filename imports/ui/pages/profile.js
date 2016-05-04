@@ -17,10 +17,18 @@ Template.profileView.helpers({
 
 Template.ProfileStats.helpers({
   handle: function()  {
-    return Meteor.user().profile.name;
+    if(Meteor.user()) {
+      return Meteor.user().profile.name;
+    } else {
+      return "";
+    }
   },
   email: function()  {
-    return Meteor.user().emails[0].address;
+    if(Meteor.user()) {
+      return Meteor.user().emails[0].address;
+    } else {
+      return "";
+    }
   }
 });
 
