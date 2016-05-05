@@ -5,10 +5,9 @@ import '../components/viewportSize.js';
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 import { $ } from 'meteor/jquery';
+import { insertEvent } from '/imports/api/events/methods';
 
 const Rellax = require('../../vendor/rellax.js').init();
-
-import { insertEvent } from '/imports/api/events/methods';
 const COOKBOOK_CATEGORY = 'cookbook';
 
 Template.rellax.helpers({
@@ -28,8 +27,7 @@ Template.cookbookPage.onRendered(function() {
       category: COOKBOOK_CATEGORY,
     }, (err, res) => {
       if (err) {
-        //Meteor.call('logglyLog', 'Problem inserting "spider_eye_clicked" event: ' + err);
-        console.log(err);
+        Meteor.call('Logger.client.logglyLog', 'Problem inserting "savory_pie_dough" event: ' + err);
       }
     });
 });

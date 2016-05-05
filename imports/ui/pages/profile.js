@@ -3,13 +3,11 @@ import './profile.html';
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 import { ReactiveVar } from 'meteor/reactive-var';
-import { Session } from 'meteor/session';
 import { BootstrapModalPrompt } from 'meteor/theduke:bootstrap-modal-prompt';
 
 import { EventsLabels } from '../data/events.js';
 import { Events } from '/imports/api/events/events';
 import { resetCategory } from '/imports/api/events/methods';
-
 
 let templateName = new ReactiveVar('ProfileStats');
 let eventsCategory = new ReactiveVar('cookbook');
@@ -81,9 +79,9 @@ Template.UserProgression.events({
           userId: Meteor.userId(),
         }, (err, res) => {
           if (err) {
-            console.log(err);
+            Meteor.call('Logger.client.logglyLog', 'Problem resetting ' + eventsCategory.get() + ' events for user(' + Meteor.userId() + '): ' + err);
           } else {
-            console.log(res);
+            Meteor.call('Logger.client.logglyLog', 'User(' + Meteor.userId() + ') reset ' + eventsCategory.get() + ' events.' + err);
           }
         });
       }

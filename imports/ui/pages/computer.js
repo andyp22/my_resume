@@ -2,24 +2,20 @@ import './computer.html';
 
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
-import { Session } from 'meteor/session';
+import { ReactiveVar } from 'meteor/reactive-var';
 import { $ } from 'meteor/jquery';
 import typed from 'typed.js';
-
 import { insertEvent } from '/imports/api/events/methods';
 
-Session.setDefault('session-nick', '');
+const COMPUTER_CATEGORY = 'cookbook';
 
+let sessionNick = new ReactiveVar(Random.id());
 let chatbotActive = false;
 let intervalId = -1;
 
-if (Session.equals('session-nick', '')) {
-  Session.set('session-nick', Random.id());
-}
-
 function callingChatbotCallback(err, res) {
   if (err) {
-    Meteor.call('logglyLog', 'Problem setting up cleverbot: ' + err);
+    Meteor.call('Logger.client.logglyLog', 'Problem setting up cleverbot: ' + err);
   }
 }
 
@@ -28,7 +24,7 @@ function askingChatbotCallback(err, res) {
     $('#chatbot2000').empty();
     typeMessage(res, 'chatbotMessage');
   } else {
-    Meteor.call('logglyLog', 'Problem communicating with cleverbot: ' + err);
+    Meteor.call('Logger.client.logglyLog', 'Problem communicating with cleverbot: ' + err);
   }
 }
 
@@ -44,11 +40,10 @@ function onMessageChanged(evt, tpl) {
     insertEvent.call({
       name: 'chatbot2000_conversation',
       userId: Meteor.userId(),
-      category: 'computer',
+      category: COMPUTER_CATEGORY,
     }, (err, res) => {
       if (err) {
-        //Meteor.call('logglyLog', 'Problem inserting "spider_eye_clicked" event: ' + err);
-        console.log(err);
+        Meteor.call('Logger.client.logglyLog', 'Problem inserting "chatbot2000_conversation" event: ' + err);
       }
     });
   }
@@ -85,11 +80,11 @@ function onSpiderEyeClicked(evt, tpl) {
     insertEvent.call({
       name: 'spider_eye_clicked',
       userId: Meteor.userId(),
-      category: 'computer',
+      category: COMPUTER_CATEGORY,
     }, (err, res) => {
       if (err) {
-        //Meteor.call('logglyLog', 'Problem inserting "spider_eye_clicked" event: ' + err);
-        console.log(err);
+        //logglyLog.call({ message: 'Problem inserting "spider_eye_clicked" event: ' + err });
+        Meteor.call('Logger.client.logglyLog', 'Problem setting up cleverbot: ' + err);
       } else {
         Blaze.render(Template.chatbot2000, $('#chatbot-container')[0]);
         $('#chatbot-container').removeClass('hidden');
@@ -114,7 +109,7 @@ function onChatbotRendered() {
 function onComputerPageRendered() {
   $('#content').addClass('computer-page');
   $('#wrapper').addClass('computer-page');
-  Meteor.call('callingChatbot', Session.get('session-nick'), callingChatbotCallback);
+  Meteor.call('callingChatbot', sessionNick.get(), callingChatbotCallback);
   
   setTime();
   intervalId = Meteor.setInterval(setTime, 1000);

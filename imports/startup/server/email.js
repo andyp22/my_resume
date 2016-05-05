@@ -2,9 +2,9 @@ import { Meteor } from 'meteor/meteor';
 import { Email } from 'meteor/email';
 import { check } from 'meteor/check';
 import { SSR } from 'meteor/meteorhacks:ssr';
-const Logger = require('./logger.js');
+import { logglyLog } from '/imports/api/logger/methods';
 
-import '../../api/contact.js';
+import '/imports/api/contact.js';
 
 function getEmailSetting(emailSetting)  {
   let returnVal = '';
@@ -39,10 +39,10 @@ Meteor.startup( function() {
 function sendEmailMethod(email) {
   check(email, Schemas.email);
   if (email.text && email.html) {
-    Logger.logglyLog("An email cannot have both text and html.");
+    logglyLog.call({ message: 'An email cannot have both text and html.' });
     throw new Meteor.Error("email-misformed", "An email cannot have both text and html.");
   } else {
-    Logger.logglyLog("Email sent: " + JSON.stringify(email));
+    logglyLog.call({ message: 'Email sent: ' + JSON.stringify(email) });
     Email.send(email);
     return "Email sent";
   }
