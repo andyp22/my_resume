@@ -39,12 +39,28 @@
 <template name="UserProgression">
   <div class="row">
     <h2>Progression</h2>
+    <p>Choose a category to see your progression.</p>
     <ul class="nav navbar-nav col-xs-12">
-      <li><a href="#" class="subnav-btn">Cookbook</a></li>
-      <li><a href="#" class="subnav-btn">Computer</a></li>
+      <li><a href="#" id="cookbook-cat-btn" class="subnav-btn {{cookbook}}">Cookbook</a></li>
+      <li><a href="#" id="computer-cat-btn" class="subnav-btn {{computer}}">Computer</a></li>
     </ul>
-    <div id="progression-category-view" class="col-xs-12">
-      <p>Click a category to see your progression.</p>
+    <div id="progression-category-container" class="col-xs-12">
+      <div id="progression-category-view">
+        {{#if userEvents}}
+          {{#each userEvents}}
+            <p>{{name}}</p>
+          {{/each}}
+        {{else}}
+          <p>There is no progress to show.</p>
+        {{/if}}
+      </div>
+      <div id="progression-category-controls">
+        {{#if userEvents}}
+          <ul class="nav navbar-nav col-xs-12">
+            <li><a href="#" id="reset-cat-btn" class="subnav-btn">Reset</a></li>
+          </ul>
+        {{/if}}
+      </div>
     </div>
   </div>
 </template>
