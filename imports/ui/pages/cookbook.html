@@ -50,10 +50,15 @@
 <template name="rellaxDescription">
   <div class="rellaxDescription {{class}}" data-rellax-speed="{{speed}}">
     {{#if header}}
-      <h1>{{header}}</h1>
+      <h1>{{{header}}}</h1>
     {{/if}}
     {{#if body}}
-      <p>{{body}}</p>
+      <div>{{{body}}}</div>
     {{/if}}
   </div>
 </template>
+
+
+
+
+
