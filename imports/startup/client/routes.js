@@ -10,6 +10,7 @@ import '../../ui/pages/cookbook.js';
 import '../../ui/pages/computer.js';
 import '../../ui/pages/contact.js';
 import '../../ui/pages/profile.js';
+import '../../ui/pages/faq.js';
 
 /*
  * Router settings for the iron:router package.
@@ -60,8 +61,6 @@ Router.route('cookbook', {
     ApplicationFooter: { to: 'footer' },
   },
   subscriptions: function() {
-    // returning a subscription handle or an array of subscription handles
-    // adds them to the wait list.
     return Meteor.subscribe('events.category', 'cookbook');
   },
 });
@@ -75,8 +74,6 @@ Router.route('computer', {
     ApplicationFooter: { to: 'footer' },
   },
   subscriptions: function() {
-    // returning a subscription handle or an array of subscription handles
-    // adds them to the wait list.
     return Meteor.subscribe('events.category', 'computer');
   },
 });
@@ -119,8 +116,16 @@ Router.route('profile', {
     }
   },
   subscriptions: function() {
-    // returning a subscription handle or an array of subscription handles
-    // adds them to the wait list.
     return Meteor.subscribe('events.user');
+  },
+});
+
+Router.route('faq', {
+  name: 'faq',
+  path: '/faq',
+  template: 'faqPage',
+  yieldRegions: {
+    ApplicationHeader: { to: 'header' },
+    ApplicationFooter: { to: 'footer' },
   },
 });

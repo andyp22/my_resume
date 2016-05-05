@@ -1,0 +1,14 @@
+<template name="faqPage">
+  <div id="faqPage" class="animated fadeIn col-xs-8 col-xs-offset-2">
+    <dl>
+      {{#each faqs}}
+        {{> faqView}}
+      {{/each}}
+    </dl>
+  </div>
+</template>
+
+<template name="faqView">
+  <dt>{{{question}}}</dt>
+  <dd>{{{answer}}}</dd>
+</template>
