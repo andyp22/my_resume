@@ -1,6 +1,6 @@
 {
   "name": "meteor_boilerplate",
-  "version": "0.0.1",
+  "version": "0.5.4",
   "description": "A simple MeteorJS project boilerplate.",
   "main": "main.js",
   "scripts": {
