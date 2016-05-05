@@ -7,28 +7,30 @@ import { Events } from '../events.js';
 
 Meteor.publish('events.user', function() {
   if (!this.userId) {
-    return this.ready();
+    this.stop();
+    return;
+  } else {
+    return Events.find({
+      userId: this.userId,
+    }, {
+      fields: Events.publicFields,
+    });
   }
-  
-  return Events.find({
-    userId: this.userId,
-  }, {
-    fields: Events.publicFields,
-  });
 });
 
 Meteor.publish('events.category', function(category = 'global') {
   check(category, String);
   if (!this.userId) {
-    return this.ready();
+    this.stop();
+    return;
+  } else {
+    return Events.find({
+      userId: this.userId,
+      category: category,
+      reset: false,
+    }, {
+      fields: { name: 1 },
+    });
   }
-  
-  return Events.find({
-    userId: this.userId,
-    category: category,
-    reset: false,
-  }, {
-    fields: { name: 1 },
-  });
 });
 
