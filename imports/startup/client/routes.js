@@ -59,6 +59,11 @@ Router.route('cookbook', {
     ApplicationHeader: { to: 'header' },
     ApplicationFooter: { to: 'footer' },
   },
+  subscriptions: function() {
+    // returning a subscription handle or an array of subscription handles
+    // adds them to the wait list.
+    return Meteor.subscribe('events.category', 'cookbook');
+  },
 });
 
 Router.route('computer', {
@@ -68,6 +73,11 @@ Router.route('computer', {
   yieldRegions: {
     ApplicationHeader: { to: 'header' },
     ApplicationFooter: { to: 'footer' },
+  },
+  subscriptions: function() {
+    // returning a subscription handle or an array of subscription handles
+    // adds them to the wait list.
+    return Meteor.subscribe('events.category', 'computer');
   },
 });
 
@@ -107,5 +117,10 @@ Router.route('profile', {
     user: function() {
       return Meteor.user();
     }
-  }
+  },
+  subscriptions: function() {
+    // returning a subscription handle or an array of subscription handles
+    // adds them to the wait list.
+    return Meteor.subscribe('events.user');
+  },
 });

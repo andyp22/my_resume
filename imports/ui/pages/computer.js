@@ -6,6 +6,8 @@ import { Session } from 'meteor/session';
 import { $ } from 'meteor/jquery';
 import typed from 'typed.js';
 
+import { insertEvent } from '/imports/api/events/methods';
+
 Session.setDefault('session-nick', '');
 
 let chatbotActive = false;
@@ -38,6 +40,17 @@ function onMessageChanged(evt, tpl) {
     Meteor.call('askingChatbot', $input.val(), askingChatbotCallback);
     showMessage($input.val());
     $input.val('');
+
+    insertEvent.call({
+      name: 'chatbot2000_conversation',
+      userId: Meteor.userId(),
+      category: 'computer',
+    }, (err, res) => {
+      if (err) {
+        //Meteor.call('logglyLog', 'Problem inserting "spider_eye_clicked" event: ' + err);
+        console.log(err);
+      }
+    });
   }
 }
 
@@ -69,8 +82,20 @@ function onSpiderEyeClicked(evt, tpl) {
     chatbotActive = true;
     tpl.$('#spidereye img').removeClass('pulse');
     
-    Blaze.render(Template.chatbot2000, $('#chatbot-container')[0]);
-    $('#chatbot-container').removeClass('hidden');
+    insertEvent.call({
+      name: 'spider_eye_clicked',
+      userId: Meteor.userId(),
+      category: 'computer',
+    }, (err, res) => {
+      if (err) {
+        //Meteor.call('logglyLog', 'Problem inserting "spider_eye_clicked" event: ' + err);
+        console.log(err);
+      } else {
+        Blaze.render(Template.chatbot2000, $('#chatbot-container')[0]);
+        $('#chatbot-container').removeClass('hidden');
+      }
+    });
+    
   }
 }
 
