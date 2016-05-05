@@ -7,7 +7,7 @@ import { $ } from 'meteor/jquery';
 import typed from 'typed.js';
 import { insertEvent } from '/imports/api/events/methods';
 
-const COMPUTER_CATEGORY = 'cookbook';
+const COMPUTER_CATEGORY = 'computer';
 
 let sessionNick = new ReactiveVar(Random.id());
 let chatbotActive = false;
