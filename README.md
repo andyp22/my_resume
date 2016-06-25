@@ -1,6 +1,6 @@
 # My Digital Resume
 This is my digital resume. It was built using the following:
- - [Meteor v1.3.x](https://www.meteor.com) -- *currently at __v1.3.2.4__*
+ - [Meteor v1.3.x](https://www.meteor.com) -- *currently at __v1.3.4.1__*
  - [Bootstrap 3](http://getbootstrap.com)
  - [Less.js](http://lesscss.org)
  - [rellax.js](https://github.com/dixonandmoe/rellax)
