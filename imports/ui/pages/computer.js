@@ -37,15 +37,17 @@ function onMessageChanged(evt, tpl) {
     showMessage($input.val());
     $input.val('');
 
-    insertEvent.call({
-      name: 'chatbot2000_conversation',
-      userId: Meteor.userId(),
-      category: COMPUTER_CATEGORY,
-    }, (err, res) => {
-      if (err) {
-        Meteor.call('Logger.client.logglyLog', 'Problem inserting "chatbot2000_conversation" event: ' + err);
-      }
-    });
+    if(Meteor.userId()) {
+      insertEvent.call({
+        name: 'chatbot2000_conversation',
+        userId: Meteor.userId(),
+        category: COMPUTER_CATEGORY,
+      }, (err, res) => {
+        if (err) {
+          Meteor.call('Logger.client.logglyLog', 'Problem inserting "chatbot2000_conversation" event: ' + err);
+        }
+      });
+    }
   }
 }
 
@@ -72,25 +74,32 @@ function typeMessage(message, classes) {
   });
 }
 
+function showChatbot() {
+  Blaze.render(Template.chatbot2000, $('#chatbot-container')[0]);
+  $('#chatbot-container').removeClass('hidden');
+}
+
 function onSpiderEyeClicked(evt, tpl) {
   if (!chatbotActive) {
     chatbotActive = true;
     tpl.$('#spidereye img').removeClass('pulse');
     
-    insertEvent.call({
-      name: 'spider_eye_clicked',
-      userId: Meteor.userId(),
-      category: COMPUTER_CATEGORY,
-    }, (err, res) => {
-      if (err) {
-        //logglyLog.call({ message: 'Problem inserting "spider_eye_clicked" event: ' + err });
-        Meteor.call('Logger.client.logglyLog', 'Problem setting up cleverbot: ' + err);
-      } else {
-        Blaze.render(Template.chatbot2000, $('#chatbot-container')[0]);
-        $('#chatbot-container').removeClass('hidden');
-      }
-    });
-    
+    if(Meteor.userId()) {
+      insertEvent.call({
+        name: 'spider_eye_clicked',
+        userId: Meteor.userId(),
+        category: COMPUTER_CATEGORY,
+      }, (err, res) => {
+        if (err) {
+          //logglyLog.call({ message: 'Problem inserting "spider_eye_clicked" event: ' + err });
+          Meteor.call('Logger.client.logglyLog', 'Problem setting up cleverbot: ' + err);
+        } else {
+          showChatbot();
+        }
+      });
+    } else {
+      showChatbot();
+    }
   }
 }
 
