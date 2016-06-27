@@ -5,3 +5,4 @@ public/
 # Ignore vendor files
 imports/vendor/*
 imports/ui/stylesheets/vendor/*
+imports/ui/components/viewportSize.js
