@@ -22,7 +22,7 @@ import '../../ui/pages/faq.js';
  * Router settings for the iron:router package.
  */
 Router.configure({
-  layoutTemplate: 'ApplicationLayout',
+  layoutTemplate: 'applicationLayout',
 });
 
 Router.onRun(function () {
@@ -40,8 +40,8 @@ Router.route('home', {
   path: '/',
   template: 'homePage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
 });
 
@@ -50,8 +50,8 @@ Router.route('man', {
   path: '/man',
   template: 'manPage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
 });
 
@@ -63,8 +63,8 @@ Router.route('cookbook', {
     sections: cookbookData.sections,
   },
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
   subscriptions: Meteor.subscribe('events.category', 'cookbook'),
 });
@@ -74,8 +74,8 @@ Router.route('computer', {
   path: '/computer',
   template: 'computerPage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
   subscriptions: Meteor.subscribe('events.category', 'computer'),
 });
@@ -85,8 +85,8 @@ Router.route('contact', {
   path: '/contact',
   template: 'contactPage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
 });
 
@@ -95,8 +95,8 @@ Router.route('profile', {
   path: '/profile',
   template: 'profilePage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
   onBeforeAction() {
     if (!Meteor.userId()) {
@@ -121,7 +121,7 @@ Router.route('faq', {
   path: '/faq',
   template: 'faqPage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
 });

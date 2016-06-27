@@ -1,14 +1,14 @@
 import './man.html';
-import '../data/man.js';
 
 import { Template } from 'meteor/templating';
-// import { ReactiveVar } from 'meteor/reactive-var';
+import { $ } from 'meteor/jquery';
+import { manData } from '/imports/ui/data/man.js';
 
-function onManPageRendered()  {
+function onManPageRendered() {
   $('body').addClass('man-background');
 }
 
-function onManPageDestroyed()  {
+function onManPageDestroyed() {
   $('body').removeClass('man-background');
 }
 
@@ -20,33 +20,33 @@ function agentDataHelper() {
 }
 
 Template.manPage.helpers({
-  agent: agentDataHelper
+  agent: agentDataHelper,
 });
 
-Template.ManStats.helpers({
-  agent: agentDataHelper
+Template.manStats.helpers({
+  agent: agentDataHelper,
 });
 
-Template.ManActionShot.helpers({
-  agent: agentDataHelper
+Template.manActionShot.helpers({
+  agent: agentDataHelper,
 });
 
-Template.ManPOI.helpers({
-  agent: agentDataHelper
+Template.manPOI.helpers({
+  agent: agentDataHelper,
 });
 
-Template.ManSkills.helpers({
-  agent: agentDataHelper
+Template.manSkills.helpers({
+  agent: agentDataHelper,
 });
 
-Template.ManProjects.helpers({
-  agent: agentDataHelper
+Template.manProjects.helpers({
+  agent: agentDataHelper,
 });
 
-Template.ManMissions.helpers({
-  agent: agentDataHelper
+Template.manMissions.helpers({
+  agent: agentDataHelper,
 });
 
-Template.ManTraining.helpers({
-  agent: agentDataHelper
+Template.manTraining.helpers({
+  agent: agentDataHelper,
 });

@@ -1,4 +1,7 @@
-manData = {
+/* eslint max-len: "off" */
+/* eslint-env es6 */
+
+export const manData = {
   name: 'Andrew Page',
   location: {
     city: 'Charlevoix',
@@ -143,7 +146,7 @@ manData = {
     {
       name: 'AWS',
       category: 'web, cloud',
-    }
+    },
   ],
   missions: [
     {
@@ -161,7 +164,7 @@ manData = {
         'Collaborates with clients to ensure project techincal goals align with client architecture, integration strategy, and validation of project deliverables',
         'Improves productivity by innovating new tools and developing existing tools',
         'Provides technical sales support',
-        'Numerous engagements including: AACN, AHA, AMD, Dell, NHA, PRI of NY, and Prudential'
+        'Numerous engagements including: AACN, AHA, AMD, Dell, NHA, PRI of NY, and Prudential',
       ],
       description: 'Currently working in the online training and eductional sphere, Andrew is a key member of Enspire\'s team. Working with a variety of technologies including Node.js, JavaScript, HTML/CSS, Meteor, Java, MongoDB, and others keeps his mind quick and his fingers quicker. Andrew has a proven ability to communicate and deliver consistently on projects of all sizes.',
     },
@@ -176,7 +179,7 @@ manData = {
       tasks: [
         'Unified the web presence for both of PPP\'s major products',
         'Defined and implemented a process for converting Word manuscripts to eBooks',
-        'Built microsites for books and authors distributed by PPP'
+        'Built microsites for books and authors distributed by PPP',
       ],
       description: 'During his time at Park Place, Andrew was pivotal in unifying PPP\'s web presence and helping their business embrace the web as a means to grow.',
     },
@@ -192,7 +195,7 @@ manData = {
         'Built out new features for existing sites',
       ],
       description: 'Andrew worked as a freelance web developer while taking classes at ACC.',
-    }
+    },
   ],
   training: [
     {
@@ -205,7 +208,7 @@ manData = {
       name: 'Austin Community College',
       studied: 'Computer Science',
       attended: '2005-2009',
-    }
+    },
   ],
   projects: [
     {
@@ -215,14 +218,14 @@ manData = {
         {
           url: 'https://github.com/andyp22/unity_gov_game',
           text: 'Locked - Requires Special Clearance',
-          label: 'Source Code'
+          label: 'Source Code',
         },
         {
           url: 'https://www.youtube.com/playlist?list=PLl35Zi9-ZP3NCELzVYWbhSfF4yu0Ycju7',
           text: 'Surveillance Footage',
-          label: 'Video'
-        }
-      ]
+          label: 'Video',
+        },
+      ],
     },
     {
       name: 'DPLA Card Catalogue',
@@ -231,10 +234,10 @@ manData = {
         {
           url: 'https://github.com/andyp22/meteor-dpla',
           text: 'Leaked Source',
-          label: 'Source'
-        }
-      ]
-    }
+          label: 'Source',
+        },
+      ],
+    },
   ],
   poi: [  // points of interest
     'Former Chef, Pastry Chef, & Restaurant Owner',
@@ -244,5 +247,5 @@ manData = {
     'Loves Soccer',
     'Avid Camper and Hiker',
     'Former WoW Game Master',
-  ]
+  ],
 };

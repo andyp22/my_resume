@@ -1,3 +1,6 @@
+/* eslint meteor/no-session: "off" */
+/* eslint-env es6 */
+
 import './home.html';
 
 import { Template } from 'meteor/templating';

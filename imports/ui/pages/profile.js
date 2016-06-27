@@ -1,3 +1,6 @@
+/* eslint max-len: "off" */
+/* eslint-env es6 */
+
 import './profile.html';
 
 import { Template } from 'meteor/templating';
@@ -9,82 +12,83 @@ import { EventsLabels } from '../data/events.js';
 import { Events } from '/imports/api/events/events';
 import { resetCategory } from '/imports/api/events/methods';
 
-let templateName = new ReactiveVar('ProfileStats');
-let eventsCategory = new ReactiveVar('cookbook');
+const templateName = new ReactiveVar('profileStats');
+const eventsCategory = new ReactiveVar('cookbook');
 
 Template.profileView.helpers({
-  templateName: function()  {
+  templateName() {
     return templateName.get();
-  }
-});
-
-Template.ProfileStats.helpers({
-  handle: function()  {
-    if(Meteor.user()) {
-      return Meteor.user().profile.name;
-    } else {
-      return "";
-    }
   },
-  email: function()  {
-    if(Meteor.user()) {
-      return Meteor.user().emails[0].address;
-    } else {
-      return "";
+});
+
+Template.profileStats.helpers({
+  handle() {
+    if (Meteor.user()) {
+      return Meteor.user().profile.name;
     }
-  }
+    return '';
+  },
+  email() {
+    if (Meteor.user()) {
+      return Meteor.user().emails[0].address;
+    }
+    return '';
+  },
 });
 
-Template.ProfileActionShot.helpers({
-  actionShotUrl: function()  {
-    return "/images/mystery_man.png";
-  }
+Template.profileActionShot.helpers({
+  actionShotUrl() {
+    return '/images/mystery_man.png';
+  },
 });
 
-Template.UserProgression.helpers({
-  userEvents: function()  {
+Template.userProgression.helpers({
+  userEvents() {
     const ue = Events.find({ category: eventsCategory.get(), reset: false }).fetch();
-    let userEvents = [];
-    ue.forEach(function(userEvent, index, cursor) {
+    const userEvents = [];
+    ue.forEach((userEvent) => {
       userEvents.push({
-        name: (EventsLabels[userEvent.name]) ? EventsLabels[userEvent.name].label : EventsLabels['default_label'].label + userEvent.name,
+        name: (EventsLabels[userEvent.name]) ? EventsLabels[userEvent.name].label : EventsLabels.default_label.label + userEvent.name,
       });
     });
     return userEvents;
   },
-  cookbook: function() {
-    return eventsCategory.get() === 'cookbook' ? 'cat-selected': undefined;
+  cookbook() {
+    return eventsCategory.get() === 'cookbook' ? 'cat-selected' : undefined;
   },
-  computer: function() {
-    return eventsCategory.get() === 'computer' ? 'cat-selected': undefined;
-  }
+  computer() {
+    return eventsCategory.get() === 'computer' ? 'cat-selected' : undefined;
+  },
 });
 
-Template.UserProgression.events({
-  'click #cookbook-cat-btn': function()  {
+Template.userProgression.events({
+  'click #cookbook-cat-btn': () => {
     eventsCategory.set('cookbook');
   },
-  'click #computer-cat-btn': function()  {
+  'click #computer-cat-btn': () => {
     eventsCategory.set('computer');
   },
-  'click #reset-cat-btn': function() {
+  'click #reset-cat-btn': () => {
     BootstrapModalPrompt.prompt({
-      title: "Reset Events",
-      content: 'Do you really want to reset the ' + eventsCategory.get() + ' events?'
-    }, function(result) {
+      title: 'Reset Events',
+      content: `Do you really want to reset the ${eventsCategory.get()} events?`,
+    }, (result) => {
       if (result) {
         // Confirmed
         resetCategory.call({
           category: eventsCategory.get(),
           userId: Meteor.userId(),
-        }, (err, res) => {
+        }, (err) => {
           if (err) {
-            Meteor.call('Logger.client.logglyLog', 'Problem resetting ' + eventsCategory.get() + ' events for user(' + Meteor.userId() + '): ' + err);
-          } else {
-            Meteor.call('Logger.client.logglyLog', 'User(' + Meteor.userId() + ') reset ' + eventsCategory.get() + ' events.' + err);
+            Meteor.call(
+              'Logger.client.logglyLog',
+              `Problem resetting ${eventsCategory.get()} events for user(${Meteor.userId()}): ${err}`);
           }
+          Meteor.call(
+            'Logger.client.logglyLog',
+            `User(${Meteor.userId()}) reset ${eventsCategory.get()} events.`);
         });
       }
     });
-  }
+  },
 });
