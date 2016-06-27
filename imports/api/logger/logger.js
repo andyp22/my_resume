@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
-import winston from 'winston'; 
+import winston from 'winston';
 require('winston-loggly');
 
-var logger;
+let logger;
 
 module.exports = {
 
@@ -20,20 +20,20 @@ module.exports = {
    * @param config.loggly.tags
    */
   configs: {},
-  init: function(config) {
+  init: (config) => {
     this.configs = Object.assign({}, config);
-    
+
     this.configs.hostname = Meteor.absoluteUrl();
-    
+
     logger = new (winston.Logger)({
-      exitOnError: false
+      exitOnError: false,
     });
 
     logger.add(winston.transports.Console, {
       level: this.configs.isTrace ? 'debug' : 'info',
       handleExceptions: true,
       colorize: true,
-      prettyPrint: true
+      prettyPrint: true,
     });
 
     // for non-dev environments log to Loggly
@@ -43,26 +43,24 @@ module.exports = {
         subdomain: this.configs.subdomain,
         tags: this.configs.loggly.tags.concat([
           this.configs.hostname,
-          "env." + this.configs.env,
-          "instance." + this.configs.instance
+          `env.${this.configs.env}`,
+          `instance.${this.configs.instance}`,
         ]),
         json: true,
-        level: "info",
-        handleExceptions: true
+        level: 'info',
+        handleExceptions: true,
       });
     }
   },
 
-  getInstance: function() {
-    return logger;
-  },
-  
-  logglyLog: function(message)  {
+  getInstance: () => logger,
+
+  logglyLog: (message) => {
     check(message, String);
     logger.info(message, {
       hostname: this.configs.hostname,
       instance: this.configs.instance,
-      env: this.configs.env
+      env: this.configs.env,
     });
-  }
+  },
 };

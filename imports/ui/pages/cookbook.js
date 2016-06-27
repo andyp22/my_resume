@@ -1,11 +1,11 @@
 import './cookbook.html';
-import '../data/cookbook.js';
 import '../components/viewportSize.js';
 
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 import { $ } from 'meteor/jquery';
 import { insertEvent } from '/imports/api/events/methods';
+import { cookbookData } from '/imports/ui/data/cookbook.js';
 
 const Rellax = require('../../vendor/rellax.js').init();
 const COOKBOOK_CATEGORY = 'cookbook';

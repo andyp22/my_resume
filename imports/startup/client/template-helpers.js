@@ -17,7 +17,7 @@ function siteTitleHelper() {
 }
 
 function equalsHelper(a, b) {
-  return a == b;
+  return a === b;
 }
 
 function JSONHelper(context) {
@@ -28,6 +28,4 @@ Template.registerHelper('site_title', siteTitleHelper);
 Template.registerHelper('equals', equalsHelper);
 Template.registerHelper('json', JSONHelper);
 
-Template.registerHelper('loggedIn', function() {
-  return Meteor.userId();
-});
+Template.registerHelper('loggedIn', () => Meteor.userId());

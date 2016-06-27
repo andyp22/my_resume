@@ -1,5 +1,10 @@
+/* eslint func-names: "off" */
+/* eslint-env es6 */
+
+import { Meteor } from 'meteor/meteor';
 import { $ } from 'meteor/jquery';
 import { Router } from 'meteor/iron:router';
+import { cookbookData } from '/imports/ui/data/cookbook.js';
 
 // Import to load these templates
 import '../../ui/layouts/app-body.js';
@@ -21,11 +26,11 @@ Router.configure({
 });
 
 Router.onRun(function () {
-  $('#content').addClass('fadeIn').removeClass("hidden");
+  $('#content').addClass('fadeIn').removeClass('hidden');
   this.next();
 });
 
-Router.onStop(function () {
+Router.onStop(() => {
   $('#content').removeClass('fadeIn').addClass('hidden');
   $('body').removeClass('hide-scroll');
 });
@@ -61,9 +66,7 @@ Router.route('cookbook', {
     ApplicationHeader: { to: 'header' },
     ApplicationFooter: { to: 'footer' },
   },
-  subscriptions: function() {
-    return Meteor.subscribe('events.category', 'cookbook');
-  },
+  subscriptions: Meteor.subscribe('events.category', 'cookbook'),
 });
 
 Router.route('computer', {
@@ -74,9 +77,7 @@ Router.route('computer', {
     ApplicationHeader: { to: 'header' },
     ApplicationFooter: { to: 'footer' },
   },
-  subscriptions: function() {
-    return Meteor.subscribe('events.category', 'computer');
-  },
+  subscriptions: Meteor.subscribe('events.category', 'computer'),
 });
 
 Router.route('contact', {
@@ -97,28 +98,22 @@ Router.route('profile', {
     ApplicationHeader: { to: 'header' },
     ApplicationFooter: { to: 'footer' },
   },
-  onBeforeAction: function()  {
-    if(!Meteor.userId()) {
+  onBeforeAction() {
+    if (!Meteor.userId()) {
       Router.go('home');
-    } else {
-      this.next();
     }
+    this.next();
   },
-  onRerun: function()  {
-    if(!Meteor.userId()) {
+  onRerun() {
+    if (!Meteor.userId()) {
       Router.go('home');
-    } else {
-      this.next();
     }
+    this.next();
   },
   data: {
-    user: function() {
-      return Meteor.user();
-    }
+    user: Meteor.user(),
   },
-  subscriptions: function() {
-    return Meteor.subscribe('events.user');
-  },
+  subscriptions: Meteor.subscribe('events.user'),
 });
 
 Router.route('faq', {

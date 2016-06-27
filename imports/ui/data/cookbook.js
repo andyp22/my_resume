@@ -1,4 +1,4 @@
-cookbookData = [
+export const cookbookData = [
   {
     content: {
       images: [

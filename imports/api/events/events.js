@@ -17,15 +17,25 @@ Events.deny({
 Events.schema = new SimpleSchema({
   name: { type: String, denyUpdate: true }, // Event name, machine readable
   userId: { type: String, denyUpdate: true }, // User Id which triggered the event
-  category: { type: String, defaultValue: "global", denyUpdate: true, optional: true }, // Event category
+  category: { // Event category
+    type: String,
+    defaultValue: 'global',
+    denyUpdate: true,
+    optional: true,
+  },
   reset: { type: Boolean, defaultValue: false, optional: true },  // Has this event been reset?
-  createdAt: { type: Date, defaultValue: new Date(), denyUpdate: true, optional: true },  // When this event was triggered
+  createdAt: { // When this event was triggered
+    type: Date,
+    defaultValue: new Date(),
+    denyUpdate: true,
+    optional: true,
+  },
   resetAt: { type: Date, denyInsert: true, optional: true },  // When this event was reset
 });
 
 Events.publicFields = {
   name: 1,
-  category: 1
+  category: 1,
 };
 
 Events.attachSchema(Events.schema);

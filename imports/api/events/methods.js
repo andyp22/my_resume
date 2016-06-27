@@ -3,13 +3,14 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter';
 import { Roles } from 'meteor/alanning:roles';
+import { _ } from 'meteor/underscore';
 
 import { Events } from './events.js';
 
 const NAME_USERID_AND_CAT = new SimpleSchema({
   name: { type: String },
   userId: { type: String },
-  category: { type: String, optional: true, defaultValue: 'global' }
+  category: { type: String, optional: true, defaultValue: 'global' },
 }).validator();
 
 const USERID_AND_CAT_ONLY = new SimpleSchema({
@@ -20,39 +21,22 @@ const USERID_AND_CAT_ONLY = new SimpleSchema({
 export const insertEvent = new ValidatedMethod({
   name: 'Events.methods.insert',
   validate: Events.schema.validator(),
-  run({ name, userId, category}) {
-    const ue = Events.findOne({ name: name, userId: userId, reset: false });
-    if(!ue) {
-      return Events.insert({ name: name, userId: userId, category: category});
-    } else {
-      return 'An event by this name already exists.';
+  run({ name, userId, category }) {
+    const ue = Events.findOne({ name, userId, reset: false });
+    if (!ue) {
+      return Events.insert({ name, userId, category });
     }
+    return 'An event by this name already exists.';
   },
 });
 
-export const resetEvent = new ValidatedMethod({
-  name: 'Events.methods.updateReset',
-  validate: NAME_USERID_AND_CAT,
-  run({ name, userId, category}) {
-    const userEvents = Events.find({ name: name, userId: userId, reset: false });
-    return resetEventsList(userEvents);;
-  },
-});
-
-export const resetCategory = new ValidatedMethod({
-  name: 'Events.methods.resetCategory',
-  validate: USERID_AND_CAT_ONLY,
-  run({ userId, category }) {
-    const userEvents = Events.find({ userId: userId, category: category, reset: false });
-    return resetEventsList(userEvents);
-  },
-});
-
-function resetEventsList(userEvents)  {
-  let updatedEvents = { ids: [] };
-  if(userEvents.count() > 0)  {
-    userEvents.forEach(function(userEvent, index, cursor) {
-      if(userEvent.editableBy(userEvent.userId) || Roles.userIsInRole(this.userId, ['admin'], Roles.GLOBAL_GROUP))  {
+function resetEventsList(userEvents) {
+  const updatedEvents = { ids: [] };
+  if (userEvents.count() > 0) {
+    const userId = this.userId;
+    userEvents.forEach((userEvent) => {
+      if (userEvent.editableBy(userEvent.userId) ||
+        Roles.userIsInRole(userId, ['admin'], Roles.GLOBAL_GROUP)) {
         Events.update(userEvent._id, {
           $set: { reset: true, resetAt: new Date() },
         });
@@ -66,21 +50,40 @@ function resetEventsList(userEvents)  {
   return updatedEvents;
 }
 
+export const resetEvent = new ValidatedMethod({
+  name: 'Events.methods.updateReset',
+  validate: NAME_USERID_AND_CAT,
+  run({ name, userId }) {
+    const userEvents = Events.find({ name, userId, reset: false });
+    return resetEventsList(userEvents);
+  },
+});
+
+export const resetCategory = new ValidatedMethod({
+  name: 'Events.methods.resetCategory',
+  validate: USERID_AND_CAT_ONLY,
+  run({ userId, category }) {
+    const userEvents = Events.find({ userId, category, reset: false });
+    return resetEventsList(userEvents);
+  },
+});
+
 export const removeEvent = new ValidatedMethod({
   name: 'Events.methods.removeEvent',
   validate: NAME_USERID_AND_CAT,
   run({ name, userId }) {
     if (Roles.userIsInRole(this.userId, ['admin'], Roles.GLOBAL_GROUP)) {
-      const userEvents = Events.find({ name: name, userId: userId });
-      let removedEvents = { ids: [] };
-      userEvents.forEach(function(userEvent, index, cursor) {
+      const userEvents = Events.find({ name, userId });
+      const removedEvents = { ids: [] };
+      userEvents.forEach((userEvent) => {
         Events.remove(userEvent._id);
         removedEvents.ids.push(userEvent._id);
       });
       return removedEvents;
-    } else {
-      throw new Meteor.Error('Events.methods.remove', 'You do not have permission to remove events.');
     }
+    throw new Meteor.Error(
+      'Events.methods.remove',
+      'You do not have permission to remove events.');
   },
 });
 
