@@ -66,7 +66,9 @@ Router.route('cookbook', {
     applicationHeader: { to: 'header' },
     applicationFooter: { to: 'footer' },
   },
-  subscriptions: Meteor.subscribe('events.category', 'cookbook'),
+  subscriptions() {
+    return Meteor.subscribe('events.category', 'cookbook');
+  },
 });
 
 Router.route('computer', {
@@ -77,7 +79,9 @@ Router.route('computer', {
     applicationHeader: { to: 'header' },
     applicationFooter: { to: 'footer' },
   },
-  subscriptions: Meteor.subscribe('events.category', 'computer'),
+  subscriptions() {
+    return Meteor.subscribe('events.category', 'computer');
+  },
 });
 
 Router.route('contact', {
@@ -113,7 +117,9 @@ Router.route('profile', {
   data: {
     user: Meteor.user(),
   },
-  subscriptions: Meteor.subscribe('events.user'),
+  subscriptions() {
+    return Meteor.subscribe('events.user');
+  },
 });
 
 Router.route('faq', {
