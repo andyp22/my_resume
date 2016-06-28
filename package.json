@@ -1,7 +1,7 @@
 {
-  "name": "meteor_boilerplate",
-  "version": "0.5.4",
-  "description": "A simple MeteorJS project boilerplate.",
+  "name": "my_resume",
+  "version": "0.5.6",
+  "description": "A simple MeteorJS project to serve as my resume.",
   "main": "main.js",
   "scripts": {
     "start": "meteor run",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/andyp22/meteor_boilerplate.git"
+    "url": "https://github.com/andyp22/my_resume.git"
   },
   "keywords": [
     "meteor",
@@ -19,9 +19,9 @@
   "author": "Andrew Page",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andyp22/meteor_boilerplate/issues"
+    "url": "https://github.com/andyp22/my_resume/issues"
   },
-  "homepage": "https://github.com/andyp22/meteor_boilerplate",
+  "homepage": "https://github.com/andyp22/my_resume",
   "dependencies": {
     "meteor-node-stubs": "~0.2.0",
     "skrollr": "0.6.26",

@@ -1,3 +1,6 @@
+/* eslint new-cap: ["error", { "newIsCap": false }] */
+/* eslint-env es6 */
+
 import { Meteor } from 'meteor/meteor';
 import cleverbot from 'cleverbot.io';
 import Future from 'fibers/future';
@@ -22,31 +25,29 @@ if (Meteor.settings) {
 
 const bot = new cleverbot(cbuid, cbapi);
 
-function onCallingChatbot(userId)  {
-  var fut = new Future();
+function onCallingChatbot(userId) {
+  const fut = new Future();
   bot.setNick(userId);
-  bot.create(function(err, session) {
+  bot.create((err, session) => {
     if (err) {
       return fut.throw(err);
-    } else {
-      return fut.return(session);
     }
+    return fut.return(session);
   });
-  
+
   return fut.wait();
 }
 
-function onAskingChatbot(message)  {
-  var fut = new Future();
-  
-  bot.ask(message, function(err, response) {
+function onAskingChatbot(message) {
+  const fut = new Future();
+
+  bot.ask(message, (err, response) => {
     if (err) {
       return fut.throw(err);
-    } else {
-      return fut.return(response);
     }
+    return fut.return(response);
   });
-  
+
   return fut.wait();
 }
 

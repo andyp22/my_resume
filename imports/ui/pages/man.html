@@ -4,19 +4,19 @@
       <div class="page row">
         {{> topSecret}}
         <div id="stats" class="col-xs-6">
-          {{> ManStats}}
+          {{> manStats}}
         </div>
         <div id="actionShot" class="col-xs-6">
-          {{> ManActionShot}}
+          {{> manActionShot}}
         </div>
         <div id="skills" class="col-xs-12">
-          {{> ManSkills}}
+          {{> manSkills}}
         </div>
         <div id="interests" class="col-xs-12">
-          {{> ManPOI}}
+          {{> manPOI}}
         </div>
         <div id="projects" class="col-xs-12">
-          {{> ManProjects}}
+          {{> manProjects}}
         </div>
         <div id="classified-warning" class="col-xs-12">
           NOT TO BE TAKEN OFF FLOOR LEVEL 3!
@@ -27,17 +27,17 @@
       <div class="page row">
         {{> topSecret}}
         <div id="mission-history" class="col-xs-12">
-          {{> ManMissions}}
+          {{> manMissions}}
         </div>
         <div id="training" class="col-xs-12">
-          {{> ManTraining}}
+          {{> manTraining}}
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<template name="ManStats">
+<template name="manStats">
   <ul class="list-group">
     <li class="list-group-item"><span class="label">Name:</span> {{agent.name}}</li>
     <li class="list-group-item"><span class="label">Location:</span> {{agent.location.city}}, {{agent.location.state}}, {{agent.location.country}}</li>
@@ -50,7 +50,7 @@
   </ul>
 </template>
 
-<template name="ManActionShot">
+<template name="manActionShot">
   <img src="{{agent.actionShotUrl}}" />
 </template>
 
@@ -58,7 +58,7 @@
   <img class="stamp" src="/images/top_secret.png" />
 </template>
 
-<template name="ManPOI">
+<template name="manPOI">
   <h4>Points of Interest</h4>
   <div>
     {{#each agent.poi}}
@@ -67,7 +67,7 @@
   </div>
 </template>
 
-<template name="ManSkills">
+<template name="manSkills">
   <h4>Skills</h4>
   <div>
     {{#each agent.skills}}
@@ -76,7 +76,7 @@
   </div>
 </template>
 
-<template name="ManProjects">
+<template name="manProjects">
   <h4>Projects of Note</h4>
   <dl>
     {{#each agent.projects}}
@@ -95,7 +95,7 @@
   </dl>
 </template>
 
-<template name="ManMissions">
+<template name="manMissions">
   <h4>Mission History</h4>
   <dl>
     {{#each agent.missions}}
@@ -119,7 +119,7 @@
   </dl>
 </template>
 
-<template name="ManTraining">
+<template name="manTraining">
   <h4>Training</h4>
   <dl>
     {{#each agent.training}}

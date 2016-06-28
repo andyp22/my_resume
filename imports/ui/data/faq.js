@@ -1,3 +1,6 @@
+/* eslint max-len: "off" */
+/* eslint-env es6 */
+
 export const FAQs = [
   {
     question: 'What is this site?',
