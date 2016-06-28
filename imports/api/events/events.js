@@ -36,6 +36,7 @@ Events.schema = new SimpleSchema({
 Events.publicFields = {
   name: 1,
   category: 1,
+  reset: 1,
 };
 
 Events.attachSchema(Events.schema);
