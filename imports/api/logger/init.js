@@ -6,7 +6,7 @@ let loggingConfig = {
   env: 'dev',
   instance: 1,
   isDev: true,
-  isTrace: true
+  isTrace: true,
 };
 
 // Grab the configs from the settings if they exist. Usually only for live environments.
@@ -18,4 +18,4 @@ if (Meteor.settings) {
   }
 }
 Logger.init(loggingConfig);
-Logger.logglyLog("Starting up application");
+Logger.logglyLog('Starting up application');

@@ -1,5 +1,10 @@
+/* eslint func-names: "off" */
+/* eslint-env es6 */
+
+import { Meteor } from 'meteor/meteor';
 import { $ } from 'meteor/jquery';
 import { Router } from 'meteor/iron:router';
+import { cookbookData } from '/imports/ui/data/cookbook.js';
 
 // Import to load these templates
 import '../../ui/layouts/app-body.js';
@@ -17,15 +22,15 @@ import '../../ui/pages/faq.js';
  * Router settings for the iron:router package.
  */
 Router.configure({
-  layoutTemplate: 'ApplicationLayout',
+  layoutTemplate: 'applicationLayout',
 });
 
 Router.onRun(function () {
-  $('#content').addClass('fadeIn').removeClass("hidden");
+  $('#content').addClass('fadeIn').removeClass('hidden');
   this.next();
 });
 
-Router.onStop(function () {
+Router.onStop(() => {
   $('#content').removeClass('fadeIn').addClass('hidden');
   $('body').removeClass('hide-scroll');
 });
@@ -35,8 +40,8 @@ Router.route('home', {
   path: '/',
   template: 'homePage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
 });
 
@@ -45,8 +50,8 @@ Router.route('man', {
   path: '/man',
   template: 'manPage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
 });
 
@@ -58,10 +63,10 @@ Router.route('cookbook', {
     sections: cookbookData.sections,
   },
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
-  subscriptions: function() {
+  subscriptions() {
     return Meteor.subscribe('events.category', 'cookbook');
   },
 });
@@ -71,10 +76,10 @@ Router.route('computer', {
   path: '/computer',
   template: 'computerPage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
-  subscriptions: function() {
+  subscriptions() {
     return Meteor.subscribe('events.category', 'computer');
   },
 });
@@ -84,8 +89,8 @@ Router.route('contact', {
   path: '/contact',
   template: 'contactPage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
 });
 
@@ -94,29 +99,25 @@ Router.route('profile', {
   path: '/profile',
   template: 'profilePage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
-  onBeforeAction: function()  {
-    if(!Meteor.userId()) {
+  onBeforeAction() {
+    if (!Meteor.userId()) {
       Router.go('home');
-    } else {
-      this.next();
     }
+    this.next();
   },
-  onRerun: function()  {
-    if(!Meteor.userId()) {
+  onRerun() {
+    if (!Meteor.userId()) {
       Router.go('home');
-    } else {
-      this.next();
     }
+    this.next();
   },
   data: {
-    user: function() {
-      return Meteor.user();
-    }
+    user: Meteor.user(),
   },
-  subscriptions: function() {
+  subscriptions() {
     return Meteor.subscribe('events.user');
   },
 });
@@ -126,7 +127,7 @@ Router.route('faq', {
   path: '/faq',
   template: 'faqPage',
   yieldRegions: {
-    ApplicationHeader: { to: 'header' },
-    ApplicationFooter: { to: 'footer' },
+    applicationHeader: { to: 'header' },
+    applicationFooter: { to: 'footer' },
   },
 });

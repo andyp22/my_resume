@@ -13,10 +13,10 @@
         {{> Template.dynamic template=templateName}}
       </div>
       <div id="actionShot" class="col-xs-6">
-        {{> ProfileActionShot}}
+        {{> profileActionShot}}
       </div>
       <div id="progression" class="col-xs-12">
-        {{> UserProgression}}
+        {{> userProgression}}
       </div>
       <div id="classified-warning" class="col-xs-12">
           NOT TO BE TAKEN OFF FLOOR LEVEL 3!
@@ -25,18 +25,18 @@
   </div>
 </template>
 
-<template name="ProfileStats">
+<template name="profileStats">
   <ul class="list-group">
     <li class="list-group-item"><span class="label">Handle:</span> {{handle}}</li>
     <li class="list-group-item"><span class="label">Contact:</span> {{email}}</li>
   </ul>
 </template>
 
-<template name="ProfileActionShot">
+<template name="profileActionShot">
   <img src="{{actionShotUrl}}" />
 </template>
 
-<template name="UserProgression">
+<template name="userProgression">
   <div class="row">
     <h2>Progression</h2>
     <p>Choose a category to see your progression.</p>
