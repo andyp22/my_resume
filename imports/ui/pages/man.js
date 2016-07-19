@@ -4,16 +4,13 @@ import { Template } from 'meteor/templating';
 import { $ } from 'meteor/jquery';
 import { manData } from '/imports/ui/data/man.js';
 
-function onManPageRendered() {
+Template.manPage.onRendered(() => {
   $('body').addClass('man-background');
-}
+});
 
-function onManPageDestroyed() {
+Template.manPage.onDestroyed(() => {
   $('body').removeClass('man-background');
-}
-
-Template.manPage.onRendered(onManPageRendered);
-Template.manPage.onDestroyed(onManPageDestroyed);
+});
 
 Template.manStats.helpers({
   name() {
