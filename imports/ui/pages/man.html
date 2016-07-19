@@ -39,19 +39,19 @@
 
 <template name="manStats">
   <ul class="list-group">
-    <li class="list-group-item"><span class="label">Name:</span> {{agent.name}}</li>
-    <li class="list-group-item"><span class="label">Location:</span> {{agent.location.city}}, {{agent.location.state}}, {{agent.location.country}}</li>
-    <li class="list-group-item"><span class="label">Sex:</span> {{agent.sex}}</li>
-    <li class="list-group-item"><span class="label">Nationality:</span> {{agent.nationality}}</li>
-    <li class="list-group-item"><span class="label">Eyes:</span> {{agent.eyes}}</li>
-    <li class="list-group-item"><span class="label">Hair:</span> {{agent.hair}}</li>
-    <li class="list-group-item"><span class="label">D.O.B:</span> {{agent.dob}}</li>
-    <li class="list-group-item"><span class="label">Safehouse:</span> <a href="{{agent.github}}" target="_blank">Github</a></li>
+    <li class="list-group-item"><span class="label">Name:</span> {{name}}</li>
+    <li class="list-group-item"><span class="label">Location:</span> {{location.city}}, {{location.state}}, {{location.country}}</li>
+    <li class="list-group-item"><span class="label">Sex:</span> {{sex}}</li>
+    <li class="list-group-item"><span class="label">Nationality:</span> {{nationality}}</li>
+    <li class="list-group-item"><span class="label">Eyes:</span> {{eyes}}</li>
+    <li class="list-group-item"><span class="label">Hair:</span> {{hair}}</li>
+    <li class="list-group-item"><span class="label">D.O.B:</span> {{dob}}</li>
+    <li class="list-group-item"><span class="label">Safehouse:</span> <a href="{{github}}" target="_blank">Github</a></li>
   </ul>
 </template>
 
 <template name="manActionShot">
-  <img src="{{agent.actionShotUrl}}" />
+  <img src="{{actionShotUrl}}" />
 </template>
 
 <template name="topSecret">
@@ -61,8 +61,8 @@
 <template name="manPOI">
   <h4>Points of Interest</h4>
   <div>
-    {{#each agent.poi}}
-      <span class="agent-poi badge">{{this}}</span>
+    {{#each poi}}
+      <span class="agent-poi badge">{{name}}</span>
     {{/each}}
   </div>
 </template>
@@ -70,7 +70,7 @@
 <template name="manSkills">
   <h4>Skills</h4>
   <div>
-    {{#each agent.skills}}
+    {{#each skills}}
       <span class="agent-skill badge">{{name}}</span>
     {{/each}}
   </div>
@@ -79,7 +79,7 @@
 <template name="manProjects">
   <h4>Projects of Note</h4>
   <dl>
-    {{#each agent.projects}}
+    {{#each projects}}
       <dt>{{name}}</dt>
       <dd>
         <div>
@@ -98,7 +98,7 @@
 <template name="manMissions">
   <h4>Mission History</h4>
   <dl>
-    {{#each agent.missions}}
+    {{#each missions}}
       <div class="status">{{dates.start}}-{{dates.end}}</div>
       {{#if organization}}
         <dt>{{name}}, {{organization}}, {{location}}</dt>
@@ -122,7 +122,7 @@
 <template name="manTraining">
   <h4>Training</h4>
   <dl>
-    {{#each agent.training}}
+    {{#each training}}
       <dt>{{name}}</dt>
       {{#if degree}}
         <dd>Studied {{studied}} from {{attended}} and received an {{degree}}</dd>

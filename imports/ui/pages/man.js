@@ -15,38 +15,71 @@ function onManPageDestroyed() {
 Template.manPage.onRendered(onManPageRendered);
 Template.manPage.onDestroyed(onManPageDestroyed);
 
-function agentDataHelper() {
-  return manData;
-}
-
-Template.manPage.helpers({
-  agent: agentDataHelper,
-});
-
 Template.manStats.helpers({
-  agent: agentDataHelper,
+  name() {
+    return manData.name;
+  },
+  location() {
+    return manData.location;
+  },
+  sex() {
+    return manData.sex;
+  },
+  nationality() {
+    return manData.nationality;
+  },
+  eyes() {
+    return manData.eyes;
+  },
+  hair() {
+    return manData.hair;
+  },
+  dob() {
+    return manData.dob;
+  },
+  github() {
+    return manData.github;
+  },
 });
 
 Template.manActionShot.helpers({
-  agent: agentDataHelper,
+  actionShotUrl() {
+    return manData.actionShotUrl;
+  },
 });
 
 Template.manPOI.helpers({
-  agent: agentDataHelper,
+  poi() {
+    const pois = [];
+    for (let i = 0; i < manData.poi.length; i++) {
+      pois.push({
+        name: manData.poi[i],
+      });
+    }
+    return pois;
+  },
 });
 
 Template.manSkills.helpers({
-  agent: agentDataHelper,
+  skills() {
+    return manData.skills;
+  },
 });
 
 Template.manProjects.helpers({
-  agent: agentDataHelper,
+  projects() {
+    return manData.projects;
+  },
 });
 
 Template.manMissions.helpers({
-  agent: agentDataHelper,
+  missions() {
+    return manData.missions;
+  },
 });
 
 Template.manTraining.helpers({
-  agent: agentDataHelper,
+  training() {
+    return manData.training;
+  },
 });
