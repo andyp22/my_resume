@@ -59,6 +59,7 @@ iron:location@1.0.11
 iron:middleware-stack@1.1.0
 iron:router@1.0.13
 iron:url@1.0.11
+johanbrook:publication-collector@1.0.0
 jquery@1.11.9
 launch-screen@1.0.12
 less@2.6.5
@@ -120,3 +121,4 @@ underscore@1.0.9
 url@1.0.10
 webapp@1.2.11
 webapp-hashing@1.0.9
+xolvio:cleaner@0.3.1

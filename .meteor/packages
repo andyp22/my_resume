@@ -40,3 +40,7 @@ alanning:roles
 underscore
 theduke:bootstrap-modal-prompt
 practicalmeteor:mocha
+promise
+practicalmeteor:chai
+xolvio:cleaner
+johanbrook:publication-collector
