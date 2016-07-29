@@ -117,7 +117,7 @@ if (Meteor.isServer) {
           insertEvent._execute(methodInvocation, args);
 
           assert.equal(Events.findOne({ userId }).userId, userId);
-          assert.equal(Events.findOne({ userId }).userId, userId);
+          assert.equal(Events.findOne({ userId }).category, 'global');
           assert.equal(Events.find({ userId }).count(), 1);
         });
       });
