@@ -142,6 +142,9 @@ function onChatbotRendered() {
 function onComputerPageRendered() {
   $('#content').addClass('computer-page');
   $('#wrapper').addClass('computer-page');
+  if(Meteor.userId()) {
+    sessionNick.set(Meteor.userId());
+  }
   Meteor.call('callingChatbot', sessionNick.get(), callingChatbotCallback);
   setTime();
   intervalId = Meteor.setInterval(setTime, 1000);
