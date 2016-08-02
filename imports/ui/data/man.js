@@ -44,11 +44,11 @@ export const manData = {
       category: 'web, library, style',
     },
     {
-      name: 'Handlebars.js',
+      name: 'Underscore.js',
       category: 'web, library, templates',
     },
     {
-      name: 'Spacebars',
+      name: 'Blaze',
       category: 'web, library, templates',
     },
     {
@@ -116,7 +116,11 @@ export const manData = {
       category: 'quality',
     },
     {
-      name: 'Integration Testing',
+      name: 'Mocha',
+      category: 'quality',
+    },
+    {
+      name: 'Chai',
       category: 'quality',
     },
     {
@@ -146,6 +150,10 @@ export const manData = {
     {
       name: 'AWS',
       category: 'web, cloud',
+    },
+    {
+      name: 'ES2015',
+      category: 'standard',
     },
   ],
   missions: [
