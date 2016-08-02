@@ -43,6 +43,7 @@ AutoForm.hooks({
     onSubmit(insertDoc) {
       const contactEmail = Object.assign({}, insertDoc);
       contactEmail.to = 'andrew.page@mancookbookcomputer.com';
+      contactEmail.text = `From: ${contactEmail.name} <${contactEmail.from}> -- ${contactEmail.text}`; 
       Meteor.call('sendEmail', contactEmail);
 
       const thankYouEmail = Object.assign({}, insertDoc);
