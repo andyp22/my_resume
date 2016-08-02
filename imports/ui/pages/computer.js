@@ -45,7 +45,7 @@ function showMessage(message, classes) {
 function setTime() {
   const today = new Date();
   let hours = today.getHours();
-  const ampm = (hours > 11 || hours === 0) ? 'PM' : 'AM';
+  const ampm = (hours > 11 && hours < 24) ? 'PM' : 'AM';
   hours = (hours > 12) ? hours - 12 : hours;
   if (hours === 0) {
     hours = 12;
