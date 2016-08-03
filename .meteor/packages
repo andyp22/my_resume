@@ -4,43 +4,43 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-base             # Packages every Meteor app needs to have
-mobile-experience       # Packages for a great mobile UX
-mongo                   # The database Meteor supports right now
-blaze-html-templates    # Compile .html files into Meteor Blaze views
-session                 # Client-side reactive dictionary for your app
-jquery                  # Helpful client-side library
-tracker                 # Meteor's client-side reactive programming library
+meteor-base@1.0.4             # Packages every Meteor app needs to have
+mobile-experience@1.0.4       # Packages for a great mobile UX
+mongo@1.1.10                   # The database Meteor supports right now
+blaze-html-templates@1.0.4    # Compile .html files into Meteor Blaze views
+session@1.1.6                 # Client-side reactive dictionary for your app
+jquery@1.11.9                  # Helpful client-side library
+tracker@1.1.0                 # Meteor's client-side reactive programming library
 
-es5-shim                # ECMAScript 5 compatibility for older browsers.
-ecmascript              # Enable ECMAScript2015+ syntax in app code
+es5-shim@4.6.13                # ECMAScript 5 compatibility for older browsers.
+ecmascript@0.5.7              # Enable ECMAScript2015+ syntax in app code
 
 iron:router
-less
-accounts-password
-standard-minifier-css
-standard-minifier-js
+less@2.7.4
+accounts-password@1.2.12
+standard-minifier-css@1.1.8
+standard-minifier-js@1.1.8
 huttonr:bootstrap3
-random
-email
+random@1.0.10
+email@1.1.16
 meteorhacks:ssr
 aldeed:autoform
 aldeed:collection2
 aldeed:simple-schema
 okgrow:analytics
-accounts-github
-accounts-meteor-developer
-service-configuration
-accounts-ui
-ddp-rate-limiter
+accounts-github@1.0.10
+accounts-meteor-developer@1.0.10
+service-configuration@1.0.10
+accounts-ui@1.1.9
+ddp-rate-limiter@1.0.5
 dburles:factory
 mdg:validated-method
 dburles:collection-helpers
 alanning:roles
-underscore
+underscore@1.0.9
 theduke:bootstrap-modal-prompt
 practicalmeteor:mocha
-promise
+promise@0.8.3
 practicalmeteor:chai
 xolvio:cleaner
 johanbrook:publication-collector
