@@ -42,19 +42,27 @@ function showMessage(message, classes) {
   $('#chatbot2000').append(`<p class="${classes}">${message}</p>`);
 }
 
-function setTime() {
-  const today = new Date();
-  let hours = today.getHours();
+export function getTime(date) {
+  let hours = date.getHours();
   const ampm = (hours > 11 && hours < 24) ? 'PM' : 'AM';
   hours = (hours > 12) ? hours - 12 : hours;
   if (hours === 0) {
     hours = 12;
   }
-  let minutes = today.getMinutes();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  $('.time').html(`${hours}:${minutes} ${ampm}`);
+  return {
+    hours,
+    minutes,
+    ampm,
+  }
+}
+
+function setTime(date) {
+  const today = (date !== undefined) ? getTime(date) : getTime(new Date());
+  $('.time').html(`${today.hours}:${today.minutes} ${today.ampm}`);
 }
 
 function callingChatbotCallback(err) {
