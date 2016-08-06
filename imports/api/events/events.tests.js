@@ -7,7 +7,11 @@ import { chai, assert } from 'meteor/practicalmeteor:chai';
 //import { DDP } from 'meteor/ddp-client';
 
 import { Events } from './events.js';
-import { insertEvent } from './methods.js';
+import {
+  insertEvent,
+  resetEventsList,
+  resetEvent,
+} from './methods.js';
 
 if (Meteor.isServer) {
   import './server/publications.js';
@@ -34,6 +38,52 @@ if (Meteor.isServer) {
         assert.instanceOf(event.createdAt, Date);
         assert.isUndefined(event.resetAt);
       });
+    }); // END mutators
+    
+    describe('helpers', function () {
+      const uid = Random.id();
+      before(function () {
+        Events.remove({});
+
+        // create a global event 
+        _.times(1, () => createDefaultEvent('Event Name', uid));
+        // create some computer events
+        _.times(4, () => createEvent('Event Name ${Random.id()}', uid, 'computer'));
+      });
+      
+      describe('editableBy', function () {
+        it('has a successful check', function () {
+          const userEvents = Events.find({ name: 'Event Name', userId: uid, reset: false });
+          let editableBy = false;
+          userEvents.forEach((userEvent) => {
+            editableBy = userEvent.editableBy(uid);
+          });
+          assert.equal(editableBy, true);
+        });
+        
+        it('has a failing check', function () {
+          const userEvents = Events.find({ name: 'Event Name', userId: uid, reset: false });
+          let editableBy = true;
+          userEvents.forEach((userEvent) => {
+            editableBy = userEvent.editableBy(Random.id());
+          });
+          assert.equal(editableBy, false);
+        });
+      });
+      
+      describe('resetEventsList', function () {
+        it('resets all events in the list', function () {
+          let userEvents = Events.find({ userId: uid, category: 'computer', reset: false });
+          let updatedEvents = resetEventsList(userEvents);
+          assert.equal(updatedEvents.ids.length, 4);
+          
+          createEvent('Event Name ${Random.id()}', uid, 'computer');
+          userEvents = Events.find({ userId: uid, category: 'computer', reset: false });
+          updatedEvents = resetEventsList(userEvents);
+          assert.equal(updatedEvents.ids.length, 1);
+        });
+      });
+      
     }); // END mutators
 
     describe('publications', function () {
@@ -89,36 +139,42 @@ if (Meteor.isServer) {
     }); // END publications
     
     describe('methods', function () {
-      let userId;
-      const userName = 'John Buck';
+      const userId = Random.id();
+      const eventName = 'Event Name';
       
       beforeEach(function () {
         Events.remove({});
         
-        // Generate a 'user'
-        userId = Random.id();
-        
-        const name = 'Event Name';
-        // create 3 global events
-        //_.times(1, () => createDefaultEvent(`${name} ${Random.id()}`, userId));
-        // create 3 cookbook events
-        //_.times(3, () => createEvent(`${name} ${Random.id()}`, userId, 'cookbook'));
-        // create 3 computer events
-        //_.times(2, () => createEvent(`${name} ${Random.id()}`, userId, 'computer'));
+        // create a global event 
+        _.times(1, () => createDefaultEvent(eventName, userId));
+        // create some computer events
+        _.times(4, () => createEvent(`${eventName} ${Random.id()}`, userId, 'computer'));
         
       });
       
       describe('insertEvent', function () {
         it('inserts a new event', function () {
-          const methodInvocation = { userId };
-          const args = { name: userName, userId };
+          const uid = Random.id();
+          const methodInvocation = { userId: uid };
+          const args = { name: eventName, userId: uid };
 
-          // Works fine
           insertEvent._execute(methodInvocation, args);
 
-          assert.equal(Events.findOne({ userId }).userId, userId);
-          assert.equal(Events.findOne({ userId }).category, 'global');
-          assert.equal(Events.find({ userId }).count(), 1);
+          const event = Events.findOne({ userId: uid });
+          assert.equal(event.userId, uid);
+          assert.equal(event.category, 'global');
+          assert.equal(Events.find({ userId: uid }).count(), 1);
+        });
+      });
+      
+      describe('resetEvent', function () {
+        it('resets all events with the specified name', function () {
+          const methodInvocation = { userId };
+          const args = { name: eventName, userId };
+          
+          resetEvent._execute(methodInvocation, args);
+          assert.equal(Events.find({ name: eventName, userId, reset: false }).count(), 0);
+          assert.equal(Events.find({ name: eventName, userId, reset: true }).count(), 1);
         });
       });
       
