@@ -5,7 +5,7 @@
     </div>
     <div id="chatbot-container" class="hidden"></div>
     <div id="toolbar">
-      <span class="time">12:00 AM</span>
+      {{> computerTimeDisplay}}
     </div>
   </div>
 </template>
@@ -19,4 +19,8 @@
   <div id="userInput" class="col-xs-12">
     <input id="chatbotInput" type="text" />
   </div>
+</template>
+
+<template name="computerTimeDisplay">
+  <span class="time">12:00 AM</span>
 </template>

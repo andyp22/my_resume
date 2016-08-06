@@ -60,7 +60,7 @@ export function getTime(date) {
   }
 }
 
-function setTime(date) {
+export function setTime(date) {
   const today = (date !== undefined) ? getTime(date) : getTime(new Date());
   $('.time').html(`${today.hours}:${today.minutes} ${today.ampm}`);
 }
