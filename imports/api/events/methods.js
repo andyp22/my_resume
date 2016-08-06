@@ -30,7 +30,7 @@ export const insertEvent = new ValidatedMethod({
   },
 });
 
-function resetEventsList(userEvents) {
+export function resetEventsList(userEvents) {
   const updatedEvents = { ids: [] };
   if (userEvents.count() > 0) {
     const userId = this.userId;
