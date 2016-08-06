@@ -5,7 +5,7 @@ A list of helpful resources for Meteor and Unit testing:
  - [Mocha.js](https://mochajs.org)
  - [Chai.js](http://chaijs.com)
  
- ## Running Unit Tests
+## Running Unit Tests
 To run locally:
 ```bash
 meteor test --driver-package practicalmeteor:mocha --port 3100 --settings=settings.json
