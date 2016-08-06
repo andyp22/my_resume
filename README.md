@@ -117,3 +117,10 @@ the following properties as the value:
 
 ***
 ### Work in progress.
+Plans for the future, not in any particular order:
+ - Switch to FlowRouter
+ - Switch to React
+ - Add more unit tests
+ - Add some integration tests
+ - Make it work on mobile
+
