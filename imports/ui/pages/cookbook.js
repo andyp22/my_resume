@@ -34,4 +34,10 @@ Template.cookbookPage.onRendered(() => {
         `Problem inserting \'savory_pie_dough\' event: ${err}`);
     }
   });
+
+  $('body').addClass('hide-scroll-x');
+});
+
+Template.cookbookPage.onDestroyed(() => {
+  $('body').removeClass('hide-scroll-x');
 });

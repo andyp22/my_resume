@@ -131,6 +131,10 @@ nav.navbar {
   overflow: hidden;
 }
 
+.hide-scroll-x {
+  overflow-x: hidden;
+}
+
 .hidden {
   visibility: hidden;
 }
@@ -153,4 +157,12 @@ nav.navbar {
 
 #backButton a:hover {
   color: #777;
+}
+
+@media (max-width: @screen-xs-max) {
+  .hide-scroll {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }

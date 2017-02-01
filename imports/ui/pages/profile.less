@@ -13,6 +13,7 @@
 #profile-page {
   padding-right: @man-page-dossier-page-gutter;
   padding-left: 0;
+  margin-left: 21%;
 }
 
 #profile-page .list-group {
@@ -44,7 +45,7 @@
 
 #profile-page .stamp {
   top: 23%;
-  left:21%;
+  left: 21%;
 }
 
 #profile-page #classified-warning {
@@ -87,4 +88,41 @@
 
 #profile-page .cat-selected  {
   color: @section-border-color;
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  #profile-page {
+    margin-left: 13%;
+  }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  #profile-page {
+    margin-left: 4%;
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  #profile-page {
+    margin-left: 0%;
+  }
+
+  #progression {
+    margin-top: 0px;
+  }
+
+  #profile-page #actionShot img {
+    margin-left: -17px;
+  }
+
+  #profile-page .subnav-btn  {
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+  }
+
+  #profile-page .stamp {
+    top: 52%;
+    left: 8%;
+  }
 }
