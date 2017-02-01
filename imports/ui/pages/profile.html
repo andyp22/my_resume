@@ -5,14 +5,14 @@
 </template>
 
 <template name="profileView">
-  <div id="profile-page" class="col-xs-6 col-xs-offset-3">
+  <div id="profile-page" class="col-sm-6 col-xs-3">
     <div class="page row">
       <h1>Profile</h1>
       {{> topSecret}}
-      <div id="stats" class="col-xs-6">
+      <div id="stats" class="col-sm-6 col-xs-12">
         {{> Template.dynamic template=templateName}}
       </div>
-      <div id="actionShot" class="col-xs-6">
+      <div id="actionShot" class="col-sm-6 col-xs-12">
         {{> profileActionShot}}
       </div>
       <div id="progression" class="col-xs-12">

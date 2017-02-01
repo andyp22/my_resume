@@ -1,5 +1,5 @@
 #manPage {
-  height: 975px;
+  height: 1110px;
 }
 
 .dossier-page {
@@ -22,6 +22,7 @@
 #right-page {
   padding-right: 0;
   padding-left: @man-page-dossier-page-gutter;
+  margin-left: 50px;
 }
 
 .page {
@@ -91,7 +92,7 @@
 
 #classified-warning {
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
   color: #f09537;
   margin-top: -10px;
@@ -102,4 +103,87 @@
   padding-left: 15px;
   font-size: 80%;
   margin-top: 3px;
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  #manPage {
+    height: 1780px;
+  }
+
+  #left-page {
+    margin-left: 55px;
+  }
+
+  #right-page {
+    margin-left: 35px;
+    margin-top: 20px;
+  }
+
+  .dossier-page {
+    height: 49%;
+  }
+
+  #actionShot img {
+    margin-left: 30px;
+  }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  #manPage {
+    height: 1905px;
+  }
+
+  #left-page {
+    margin-left: 0px;
+  }
+
+  #right-page {
+    margin-left: -20px;
+    margin-top: 20px;
+  }
+
+  .dossier-page {
+    height: 49%;
+  }
+
+  #actionShot img {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  #manPage {
+    height: 4125px;
+  }
+
+  #left-page {
+    margin-left: 0px;
+    height: 46%;
+  }
+
+  #right-page {
+    margin-left: -313px;
+    margin-top: 1913px;
+    height: 52%;
+  }
+
+  #actionShot {
+    margin-top: 55px;
+  }
+
+  #actionShot img {
+    margin-left: -25px;
+  }
+
+  .man-footer {
+    margin-top: -65px;
+  }
+
+  .stamp {
+    left:9%;
+  }
+
+  #right-page .stamp {
+    left:14%;
+  }
 }
