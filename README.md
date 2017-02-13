@@ -1,6 +1,6 @@
 # My Digital Resume
 This is my digital resume. It was built using the following:
- - [Meteor v1.4.x](https://www.meteor.com) -- *currently at __v1.4.2.3__*
+ - [Meteor v1.4.x](https://www.meteor.com) -- *currently at __v1.4.2.6__*
  - Blaze and Iron Router
  - [Bootstrap 3](http://getbootstrap.com)
  - [Less.js](http://lesscss.org)
