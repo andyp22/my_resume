@@ -44,8 +44,8 @@ Template.manStats.helpers({
 });
 
 Template.manActionShot.helpers({
-  actionShotUrl() {
-    return manData.actionShotUrl;
+  actionShotFilename() {
+    return manData.actionShotFilename;
   },
 });
 
