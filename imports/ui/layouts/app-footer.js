@@ -4,6 +4,6 @@ import { Template } from 'meteor/templating';
 
 Template.applicationFooter.helpers({
   version() {
-    return 'v0.5.8';
+    return 'v0.5.9';
   },
 });

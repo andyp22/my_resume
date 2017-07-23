@@ -6,10 +6,14 @@ import { manData } from '/imports/ui/data/man.js';
 
 Template.manPage.onRendered(() => {
   $('body').addClass('man-background');
+  $('body').addClass('hide-scroll-x');
+  $('#footer').addClass('man-footer');
 });
 
 Template.manPage.onDestroyed(() => {
   $('body').removeClass('man-background');
+  $('body').removeClass('hide-scroll-x');
+  $('#footer').removeClass('man-footer');
 });
 
 Template.manStats.helpers({
@@ -40,8 +44,8 @@ Template.manStats.helpers({
 });
 
 Template.manActionShot.helpers({
-  actionShotUrl() {
-    return manData.actionShotUrl;
+  actionShotFilename() {
+    return manData.actionShotFilename;
   },
 });
 

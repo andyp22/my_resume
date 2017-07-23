@@ -1,12 +1,12 @@
 <template name="manPage">
   <div id="manPage" class="animated bounceInUp">
-    <div id="left-page" class="dossier-page col-xs-6">
+    <div id="left-page" class="dossier-page col-lg-5 col-md-8 col-sm-7 col-xs-3">
       <div class="page row">
         {{> topSecret}}
-        <div id="stats" class="col-xs-6">
+        <div id="stats" class="col-sm-6 col-xs-12">
           {{> manStats}}
         </div>
-        <div id="actionShot" class="col-xs-6">
+        <div id="actionShot" class="col-sm-6 col-xs-12">
           {{> manActionShot}}
         </div>
         <div id="skills" class="col-xs-12">
@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div id="right-page" class="dossier-page col-xs-6">
+    <div id="right-page" class="dossier-page col-lg-5 col-md-8 col-sm-7 col-xs-3">
       <div class="page row">
         {{> topSecret}}
         <div id="mission-history" class="col-xs-12">
@@ -46,16 +46,20 @@
     <li class="list-group-item"><span class="label">Eyes:</span> {{eyes}}</li>
     <li class="list-group-item"><span class="label">Hair:</span> {{hair}}</li>
     <li class="list-group-item"><span class="label">D.O.B:</span> {{dob}}</li>
-    <li class="list-group-item"><span class="label">Safehouse:</span> <a href="{{github}}" target="_blank">Github</a></li>
+    <li class="list-group-item"><span class="label">Safehouse:</span> <a href="{{github}}" target="_blank" title="Github User Account">Github</a></li>
   </ul>
 </template>
 
 <template name="manActionShot">
-  <img src="{{actionShotUrl}}" />
+  <picture>
+    <source srcset="images/{{actionShotFilename}}Closeup.jpg" media="(max-width: 992px)" />
+    <source srcset="images/{{actionShotFilename}}.jpg" media="(min-width: 993px)" />
+    <img src="images/{{actionShotFilename}}.jpg" alt="Image of the agent standing out in the open, surrounded by the environment." />
+  </picture>
 </template>
 
 <template name="topSecret">
-  <img class="stamp" src="/images/top_secret.png" />
+  <img class="stamp" src="/images/top_secret.png" alt="" />
 </template>
 
 <template name="manPOI">
@@ -86,7 +90,7 @@
           {{description}}
           <ul>
             {{#each links}}
-              <li>{{label}}: <a href="{{url}}" target="_blank">{{text}}</a></li>
+              <li>{{label}}: <a href="{{url}}" target="_blank" title="{{title}}">{{text}}</a></li>
             {{/each}}
           </ul>
         </div>

@@ -31,11 +31,19 @@ Template.contactFormSent.onDestroyed(() => {
 });
 
 Template.contactFormSent.onRendered(() => {
-  this.$('#contactFormSent').typed({
+  $('#contactFormSent').typed({
     strings: ['Your email has been sent. ^300 <br/><br/>Thank you.'],
     contentType: 'html',
     showCursor: false,
   });
+});
+
+Template.contactPage.onRendered(() => {
+  $('body').addClass('hide-scroll-x');
+});
+
+Template.contactPage.onDestroyed(() => {
+  $('body').removeClass('hide-scroll-x');
 });
 
 AutoForm.hooks({

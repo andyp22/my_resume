@@ -17,7 +17,7 @@ export const manData = {
   email: 'andrew.page32@gmail.com',
   blog: 'andypangus.com',
   github: 'https://github.com/andyp22/',
-  actionShotUrl: '/images/actionShot.jpg',
+  actionShotFilename: 'actionShot',
   skills: [
     {
       name: 'JavaScript',
@@ -227,11 +227,13 @@ export const manData = {
           url: 'https://github.com/andyp22/unity_gov_game',
           text: 'Locked - Requires Special Clearance',
           label: 'Source Code',
+          title: 'Github Repository',
         },
         {
           url: 'https://www.youtube.com/playlist?list=PLl35Zi9-ZP3NCELzVYWbhSfF4yu0Ycju7',
           text: 'Surveillance Footage',
           label: 'Video',
+          title: 'Youtube Video',
         },
       ],
     },
@@ -243,6 +245,7 @@ export const manData = {
           url: 'https://github.com/andyp22/meteor-dpla',
           text: 'Leaked Source',
           label: 'Source',
+          title: 'Github Repository',
         },
       ],
     },
