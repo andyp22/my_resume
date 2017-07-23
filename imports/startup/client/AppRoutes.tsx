@@ -1,76 +1,21 @@
 import * as React from 'react';
-import { Router, Route } from 'react-router';
+import { Router, Route, Switch } from 'react-router';
 import createBrowserHistroy from 'history/createBrowserHistory';
 import { Link } from 'react-router-dom';
 
 import { HeaderContainer } from '../../ui/components/Header';
 import { FooterContainer } from '../../ui/components/Footer';
+import { NotFoundContainer } from '../../ui/pages/NotFound';
+import { AdminContainer } from '../../ui/pages/Admin';
+import { ComputerContainer } from '../../ui/pages/Computer';
+import { ContactContainer } from '../../ui/pages/Contact';
+import { CookbookContainer } from '../../ui/pages/Cookbook';
+import { FAQContainer } from '../../ui/pages/FAQ';
+import { HomeContainer } from '../../ui/pages/Home';
+import { ManContainer } from '../../ui/pages/Man';
+import { ProfileContainer } from '../../ui/pages/Profile';
 
 const browserHistory = createBrowserHistroy();
-
-class AppContainer extends React.Component {
-  render() {
-    return (
-      <h1>This is the home page</h1>
-    );
-  }
-}
-
-class ManContainer extends React.Component {
-  render() {
-    return (
-      <h1>This is the man page</h1>
-    );
-  }
-}
-
-class CookbookContainer extends React.Component {
-  render() {
-    return (
-      <h1>This is the cookbook page</h1>
-    );
-  }
-}
-
-class ComputerContainer extends React.Component {
-  render() {
-    return (
-      <h1>This is the computer page</h1>
-    );
-  }
-}
-
-class ContactContainer extends React.Component {
-  render() {
-    return (
-      <h1>This is the contact page</h1>
-    );
-  }
-}
-
-class FAQContainer extends React.Component {
-  render() {
-    return (
-      <h1>This is the FAQ page</h1>
-    );
-  }
-}
-
-class UserProfileContainer extends React.Component {
-  render() {
-    return (
-      <h1>This is the user profile page</h1>
-    );
-  }
-}
-
-class AdminContainer extends React.Component {
-  render() {
-    return (
-      <h1>This is the admin page</h1>
-    );
-  }
-}
 
 export class AppRoutes extends React.Component {
   render() {
@@ -79,14 +24,17 @@ export class AppRoutes extends React.Component {
         <div className="app-container">
           <HeaderContainer />
           <div>
-            <Route exact path="/" component={AppContainer} />
-            <Route exact path="/man" component={ManContainer} />
-            <Route exact path="/cookbook" component={CookbookContainer} />
-            <Route exact path="/computer" component={ComputerContainer} />
-            <Route exact path="/contact" component={ComputerContainer} />
-            <Route exact path="/faq" component={ComputerContainer} />
-            <Route exact path="/profile" component={ComputerContainer} />
-            <Route exact path="/admin" component={ComputerContainer} />
+            <Switch>
+              <Route exact path="/" component={HomeContainer} />
+              <Route exact path="/man" component={ManContainer} />
+              <Route exact path="/cookbook" component={CookbookContainer} />
+              <Route exact path="/computer" component={ComputerContainer} />
+              <Route exact path="/contact" component={ContactContainer} />
+              <Route exact path="/faq" component={FAQContainer} />
+              <Route exact path="/profile" component={ ProfileContainer} />
+              <Route exact path="/admin" component={AdminContainer} />
+              <Route path="*" component={NotFoundContainer} />
+            </Switch>
           </div>
           <FooterContainer />
         </div>

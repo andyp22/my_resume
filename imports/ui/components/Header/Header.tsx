@@ -1,7 +1,6 @@
 require('./Header.scss');
 
 import * as React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 interface HeaderProps { }
@@ -25,30 +24,14 @@ export class HeaderComponent extends React.Component<HeaderProps, HeaderState> {
         </div>
         <div id="subnav" className="navbar navbar-right">
           <ul className="nav navbar-nav">
-            <li><Link to="/">My Profile</Link></li>
-            <li><Link to="/">Contact</Link></li>
+            <li><Link to="/profile">My Profile</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
       </div>
     );
   }
 }
-/*
-const mapStateToProps = (state: any) => {
-  return {
-    storeName: state.app.admin.storeName,
-    showUAB: state.app.admin.isUABEnabled
-  };
-};
 
-const mapDispatchToProps = (dispatch: any) => {
-  return {
-    onLogin: (data: any) => {
-      dispatch(changeStore(data));
-    }
-  };
-};
-
-export const Header: any = connect(mapStateToProps, mapDispatchToProps)(HeaderView);
-*/
 export const HeaderContainer: any = HeaderComponent;
+export default HeaderContainer;

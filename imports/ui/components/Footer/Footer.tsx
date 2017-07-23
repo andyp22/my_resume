@@ -1,7 +1,6 @@
 require('./Footer.scss');
 
 import * as React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 interface FooterProps { }
@@ -18,7 +17,7 @@ export class FooterComponent extends React.Component<FooterProps, FooterState> {
             className="col-lg-3 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 navbar"
           >
             <ul className="nav navbar-nav">
-              <li><Link to="/">FAQ</Link></li>
+              <li><Link to="/faq">FAQ</Link></li>
               <li><a href="http://andypangus.com" target="_blank">Blog</a></li>
             </ul>
           </div>
@@ -34,22 +33,6 @@ export class FooterComponent extends React.Component<FooterProps, FooterState> {
     );
   }
 }
-/*
-const mapStateToProps = (state: any) => {
-  return {
-    storeName: state.app.admin.storeName,
-    showUAB: state.app.admin.isUABEnabled
-  };
-};
 
-const mapDispatchToProps = (dispatch: any) => {
-  return {
-    onLogin: (data: any) => {
-      dispatch(changeStore(data));
-    }
-  };
-};
-
-export const Footer: any = connect(mapStateToProps, mapDispatchToProps)(FooterView);
-*/
 export const FooterContainer: any = FooterComponent;
+export default FooterContainer;
