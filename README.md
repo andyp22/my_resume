@@ -1,10 +1,9 @@
 # My Digital Resume
 This is my digital resume. It was built using the following:
- - [Meteor v1.4.x](https://www.meteor.com) -- *currently at __v1.4.2.6__*
- - Blaze and Iron Router
- - [Bootstrap 3](http://getbootstrap.com)
- - [Less.js](http://lesscss.org)
- - [rellax.js](https://github.com/dixonandmoe/rellax)
+ - [Meteor v1.5.x](https://www.meteor.com) -- *currently at __v1.5.1__*
+ - React and React Router
+ - [Semantic UI React](https://react.semantic-ui.com)
+ - [Sass.js](http://sass-lang.com)
  - [Animate.css](https://daneden.github.io/animate.css/)
  - [typed.js](https://github.com/mattboldt/typed.js/)
  - [cleverbot.io](https://cleverbot.io)
@@ -119,9 +118,9 @@ the following properties as the value:
 ***
 ### Work in progress.
 Plans for the future, not in any particular order:
- - Switch to FlowRouter
- - Switch to React
- - Add more unit tests
- - Add some integration tests
- - Make it work on mobile
+ - [X] Switch to React Router
+ - [X] Switch to React
+ - [ ] Add more unit tests
+ - [ ] Add some integration tests
+ - [ ] Make it work on mobile
 

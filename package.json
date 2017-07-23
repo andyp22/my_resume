@@ -1,12 +1,14 @@
 {
   "name": "my_resume",
-  "version": "0.5.8",
+  "private": false,
+  "version": "0.5.9",
   "description": "A simple MeteorJS project to serve as my resume.",
   "main": "main.js",
   "scripts": {
     "start": "meteor run",
     "lint": "eslint .",
-    "pretest": "npm run lint --silent"
+    "pretest": "npm run lint --silent",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -14,7 +16,12 @@
   },
   "keywords": [
     "meteor",
-    "boilerplate"
+    "react",
+    "reactjs",
+    "typescript",
+    "sass",
+    "portfolio",
+    "resume"
   ],
   "author": "Andrew Page",
   "license": "ISC",
@@ -23,33 +30,45 @@
   },
   "homepage": "https://github.com/andyp22/my_resume",
   "dependencies": {
-    "babel-runtime": "^6.22.0",
-    "bcrypt": "^1.0.2",
-    "cleverbot.io": "^1.0.4",
-    "fibers": "^1.0.10",
-    "meteor-node-stubs": "~0.2.0",
-    "skrollr": "0.6.26",
-    "typed.js": "^1.1.1",
-    "winston": "^2.2.0",
-    "winston-loggly": "^1.3.1"
+    "babel-runtime": "^6.20.0",
+    "history": "^4.6.3",
+    "meteor-node-stubs": "~0.2.4",
+    "meteor-typings": "^1.4.1",
+    "react": "^15.6.1",
+    "react-addons-pure-render-mixin": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.2",
+    "redux": "^3.7.2",
+    "semantic-ui-react": "^0.71.1"
   },
   "devDependencies": {
-    "eslint": "2.8.0",
-    "eslint-config-airbnb": "7.0.0",
-    "eslint-plugin-meteor": "3.5.2",
-    "events": "^1.1.1"
+    "@types/meteor": "^1.4.2",
+    "@types/node": "^8.0.15",
+    "@types/react": "^15.0.38",
+    "@types/react-dom": "^15.5.1",
+    "@types/react-router": "^4.0.14",
+    "autoprefixer": "^7.1.2",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-meteor": "^4.0.1",
+    "eslint-plugin-no-unused-vars-rest": "^1.0.6",
+    "eslint-plugin-react": "^7.1.0",
+    "tslint": "^5.5.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-react": "^3.0.0",
+    "typings": "^2.1.1"
   },
-  "peerDependencies": {
-    "eslint": ">=0.8.0"
-  },
-  "eslintConfig": {
-    "plugins": [
-      "meteor"
-    ],
-    "extends": [
-      "airbnb/base",
-      "plugin:meteor/recommended"
-    ],
-    "rules": {}
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions"
+        ]
+      }
+    }
   }
 }
