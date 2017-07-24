@@ -1,7 +1,7 @@
 require('./Contact.scss');
 
 import * as React from 'react';
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Form, Divider, Button } from 'semantic-ui-react';
 
 interface ContactProps { }
 interface ContactState { }
@@ -11,7 +11,25 @@ export class ContactComponent extends React.Component<ContactProps, ContactState
     const props = this.props;
     return (
       <Container className="contact-page page">
-        <Header as="h1">This is the contact page</Header>
+        <Header as="h1">Contact Me</Header>
+        <Divider />
+        <Form>
+          <Form.Field>
+            <label>Your Name</label>
+            <input placeholder='Your Name' />
+          </Form.Field>
+          <Form.Field>
+            <label>Email Address</label>
+            <input placeholder='Email Address' />
+          </Form.Field>
+          <Form.Field>
+            <label>Subject</label>
+            <input placeholder='Subject' />
+          </Form.Field>
+          <Form.TextArea label="Message" placeholder="Message" />
+          <Button type='cancel'>Cancel</Button>
+          <Button type='submit'>Submit</Button>
+        </Form>
       </Container>
     );
   }
