@@ -1,7 +1,7 @@
 /* eslint max-len: "off" */
 /* eslint-env es6 */
 
-export const FAQs = [
+export default FAQs = [
   {
     question: 'What is this site?',
     answer: 'This site is an effort to digitize my resume and have some fun with the process.',
