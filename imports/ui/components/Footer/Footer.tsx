@@ -2,13 +2,14 @@ require('./Footer.scss');
 
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+const pckgJson = require('../../../../package.json');
 
 interface FooterProps { }
 interface FooterState { }
  
 export class FooterComponent extends React.Component<FooterProps, FooterState> {
   render() {
-    const props = Object.assign({}, this.props, { version: '0.6.0' });
+    const props = Object.assign({}, this.props, { version: pckgJson.version });
     return (
       <div id="footer" className="col-lg-11 col-md-9 col-sm-7 col-xs-3">
         <div className="row">
