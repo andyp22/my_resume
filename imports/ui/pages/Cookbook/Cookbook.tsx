@@ -11,7 +11,7 @@ export class CookbookComponent extends React.Component<CookbookProps, CookbookSt
     const props = this.props;
     return (
       <Container className="cookbook-page page">
-        <Header as="h1">This is the home page</Header>
+        <Header as="h1">This is the cookbook page</Header>
       </Container>
     );
   }
