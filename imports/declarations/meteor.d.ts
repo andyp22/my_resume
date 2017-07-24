@@ -1079,6 +1079,14 @@ declare module 'meteor/alanning:roles' {
   }
 }
 
+declare module 'meteor/okgrow:accounts-ui-react' {
+  export var LoginButtons: any;
+}
+
+declare module 'meteor/service-configuration' {
+  export var ServiceConfiguration: any;
+}
+
 declare module 'meteor/reactrouter:react-router-ssr' {
   export namespace ReactRouterSSR { function Run(routes: any): any; }
 }

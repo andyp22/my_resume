@@ -20,6 +20,25 @@ fourseven:scss
 
 practicalmeteor:mocha             # A package for writing and running your meteor app and package tests with mocha
 johanbrook:publication-collector  # Test a Meteor publication by collecting its output
-static-html
 react-meteor-data
 barbatus:typescript
+okgrow:accounts-ui-react
+accounts-password
+accounts-github
+accounts-meteor-developer
+service-configuration
+accounts-ui
+blaze-html-templates
+alanning:roles
+email
+check
+meteorhacks:ssr
+mdg:validated-method
+aldeed:simple-schema
+practicalmeteor:chai
+ddp-rate-limiter
+underscore
+random
+dburles:factory
+aldeed:collection2
+dburles:collection-helpers
