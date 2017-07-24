@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Router, Route, Switch } from 'react-router';
 import createBrowserHistroy from 'history/createBrowserHistory';
-import { Link } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
+const pckgJson = require('../../../package.json');
 
 import { HeaderContainer } from '../../ui/components/Header';
 import { FooterContainer } from '../../ui/components/Footer';
@@ -21,9 +22,9 @@ export class AppRoutes extends React.Component {
   render() {
     return (
       <Router history={browserHistory}>
-        <div className="app-container">
+        <Container className="app-container">
           <HeaderContainer />
-          <div>
+          <Container className="content-container" role="main">
             <Switch>
               <Route exact path="/" component={HomeContainer} />
               <Route exact path="/man" component={ManContainer} />
@@ -31,13 +32,13 @@ export class AppRoutes extends React.Component {
               <Route exact path="/computer" component={ComputerContainer} />
               <Route exact path="/contact" component={ContactContainer} />
               <Route exact path="/faq" component={FAQContainer} />
-              <Route exact path="/profile" component={ ProfileContainer} />
+              <Route exact path="/profile" component={ProfileContainer} />
               <Route exact path="/admin" component={AdminContainer} />
               <Route path="*" component={NotFoundContainer} />
             </Switch>
-          </div>
-          <FooterContainer />
-        </div>
+          </Container>
+          <FooterContainer version={pckgJson.version} />
+        </Container>
       </Router>
     );
   }

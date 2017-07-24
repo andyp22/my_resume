@@ -1,6 +1,7 @@
 require('./Cookbook.scss');
 
 import * as React from 'react';
+import { Container, Header } from 'semantic-ui-react';
 
 interface CookbookProps { }
 interface CookbookState { }
@@ -9,7 +10,9 @@ export class CookbookComponent extends React.Component<CookbookProps, CookbookSt
   render() {
     const props = this.props;
     return (
-      <h1>This is the Cookbook page</h1>
+      <Container className="cookbook-page page">
+        <Header as="h1">This is the home page</Header>
+      </Container>
     );
   }
 }
