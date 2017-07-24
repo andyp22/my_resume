@@ -13,7 +13,6 @@ interface HeaderState { }
 export class HeaderComponent extends React.Component<HeaderProps, HeaderState> {
   render() {
     const props = this.props;
-    console.log(props);
     return (
       <header id="header">
         <Container id="title-and-logo" role="banner" aria-label="Site title and logo">
