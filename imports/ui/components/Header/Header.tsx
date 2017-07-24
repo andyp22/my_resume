@@ -14,7 +14,7 @@ export class HeaderComponent extends React.Component<HeaderProps, HeaderState> {
     return (
       <header id="header">
         <Container id="title-and-logo" role="banner" aria-label="Site title and logo">
-          <Link to="/" title="mancookbookcomputer.com">
+          <Link to="/" title="Man, Cookbook, Computer">
             <Container id="flame" className="animated fadeIn row">
               <div className="flame-container">
                 <div className="red-flame flame" />
