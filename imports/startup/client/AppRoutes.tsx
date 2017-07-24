@@ -18,12 +18,33 @@ import { ProfileContainer } from '../../ui/pages/Profile';
 
 const browserHistory = createBrowserHistroy();
 
-export class AppRoutes extends React.Component {
+interface AppRoutesState {
+  location: string;
+}
+
+export class AppRoutes extends React.Component<undefined, AppRoutesState> {
+  unlisten: any;
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      location: browserHistory.location.pathname,
+    }
+  }
+
+  componentWillMount() {
+    this.unlisten = browserHistory.listen((location, action) => {
+      console.log(location, action);
+      this.setState({ location: location.pathname });
+    });
+  }
+
   render() {
     return (
       <Router history={browserHistory}>
         <Container className="app-container">
-          <HeaderContainer />
+          <HeaderContainer location={this.state.location} />
           <Container className="content-container" role="main">
             <Switch>
               <Route exact path="/" component={HomeContainer} />
