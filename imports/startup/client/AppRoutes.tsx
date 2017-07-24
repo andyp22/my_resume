@@ -35,7 +35,6 @@ export class AppRoutes extends React.Component<undefined, AppRoutesState> {
 
   componentWillMount() {
     this.unlisten = browserHistory.listen((location, action) => {
-      console.log(location, action);
       this.setState({ location: location.pathname });
     });
   }
