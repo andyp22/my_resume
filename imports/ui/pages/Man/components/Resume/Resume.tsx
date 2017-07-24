@@ -1,8 +1,10 @@
 require('./Resume.scss');
 
 import * as React from 'react';
-import { Container, Header, Checkbox, Segment, Divider, List } from 'semantic-ui-react';
+import { Container, Header, Checkbox, Segment, Divider, List, Card } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import { JobCardComponent } from './components/JobCard';
+import { ProjectComponent } from './components/Project';
 
 import data from '../../../../data/man';
 
@@ -37,30 +39,36 @@ export class ResumeComponent extends React.Component {
       mode: 'normal',
     }
   }
-  render() {
-    const props = this.props;
-    const skills = {};
-    data.skills.forEach(skill => {
+
+  formatSkills(skillsList: any[]): any {
+const skills = {};
+    skillsList.forEach(skill => {
       if (skills[skill.category]) {
         skills[skill.category] = `${skills[skill.category]}, ${skill.name}`;
       } else {
         skills[skill.category] = skill.name;
       }
     });
+    return skills;
+  }
+
+  render() {
+    const props = this.props;
+    const skills = this.formatSkills(data.skills);
     return (
       <Container>
-        <Segment>
+        <Segment id="resume-header">
           <Header as="h2">{data.name}</Header>
           <p>{data.email} / {data.blog}</p>
         </Segment>
         <Divider />
-        <Segment>
+        <Segment id="resume-summary">
           <p><span className="bolded">Summary of expertise:</span>{data.summary}</p>
           <Header as="h3">Relevant Skills</Header>
           <List>
             {categories.map((cat, index) => {
               return (
-                <List.Item>
+                <List.Item key={index}>
                   <List.Content>
                     <List.Header>{cat.name}</List.Header>
                     <List.Description>{skills[cat.id]}</List.Description>
@@ -68,7 +76,7 @@ export class ResumeComponent extends React.Component {
                 </List.Item>
               );
             })}
-            <List.Item>
+            <List.Item key={categories.length}>
               <List.Content>
                 <List.Header>Github:</List.Header>
                 <List.Description>
@@ -79,6 +87,53 @@ export class ResumeComponent extends React.Component {
           </List>
         </Segment>
         <Divider />
+        <Segment id="resume-experience">
+          <Header as="h3">Experience</Header>
+          <List>
+            {data.missions.map((mission, index) => {
+              return (
+                <List.Item key={index}>
+                  <List.Content>
+                    <JobCardComponent job={mission} />
+                  </List.Content>
+                </List.Item>
+              );
+            })}
+          </List>
+        </Segment>
+        <Divider />
+        <Segment id="resume-education">
+          <Header as="h3">Education</Header>
+          <List>
+            {data.training.map((training, index) => {
+              return (
+                <List.Item key={index}>
+                  <List.Content>
+                    {training.attended} {training.name}, {(training.degree) ? `${training.degree} `: ''}{training.studied}
+                  </List.Content>
+                </List.Item>
+              );
+            })}
+          </List>
+        </Segment>
+        <Segment id="resume-projects">
+          <Header as="h3">Personal Projects</Header>
+          <List>
+            {data.projects.map((project, index) => {
+              return (
+                <List.Item key={index}>
+                  <List.Content>
+                    <ProjectComponent project={project} />
+                  </List.Content>
+                </List.Item>
+              );
+            })}
+          </List>
+        </Segment>
+        <Segment id="resume-interests">
+          <Header as="h3">Interests</Header>
+          <p>{data.poi.join(', ')}</p>
+        </Segment>
       </Container>
     );
   }

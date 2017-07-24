@@ -225,7 +225,7 @@ export default manData = {
       ],
       resume_tasks: [
         'Creates interactive online training and educational experiences and integrates courseware with various Learning Management Systems. Tech stacks include: Backbone, HTML4/5, CSS2/3, jQuery, Grunt and React, Redux, TypeScript, SASS, Webpack',
-        '<ul><li>Optimize productivity:<ul><li>Project Management System - built a system which allows producers to manage project releases, data, and other client deliverables. Serves as a semi-continuous-integration server with granular control over builds. Tech stack: Drupal 7, ANT</li><li>Content Authoring Environment - built a system which allows content writers to work collaboritivey on projects in almost real-time. Templatized some aspects of content creation making the same work less prone to errors. Tech stack: Meteor.js, Less, Blaze</li></ul></li></ul>',
+        'Optimize productivity:<ul><li>Project Management System - built a system which allows producers to manage project releases, data, and other client deliverables. Serves as a semi-continuous-integration server with granular control over builds. Tech stack: Drupal 7, ANT</li><li>Content Authoring Environment - built a system which allows content writers to work collaboritivey on projects in almost real-time. Templatized some aspects of content creation making the same work less prone to errors. Tech stack: Meteor.js, Less, Blaze</li></ul>',
         'Technical project lead responsible for coordinating timelines, internal workloads, and client end delivery dates.',
         'Consult and collaborate with client-side technology leaders to ensure techincal goals align with client architecture, integration strategy, and testing and validation of project deliverables.',
         'Research, analyze, and test new and alternative technical solutions, methodoligies, and practices.',
@@ -255,15 +255,15 @@ export default manData = {
   ],
   training: [
     {
+      name: 'Austin Community College',
+      studied: 'Computer Science',
+      attended: '2005-2009',
+    },
+    {
       name: 'New England Culinary Institute',
       studied: 'Culinary Arts',
       degree: 'AOS',
       attended: '1996-1998',
-    },
-    {
-      name: 'Austin Community College',
-      studied: 'Computer Science',
-      attended: '2005-2009',
     },
   ],
   projects: [
@@ -273,7 +273,7 @@ export default manData = {
       links: [
         {
           url: 'https://www.npmjs.com/package/react-tabs-container',
-          text: 'Download Package',
+          text: 'NPM',
           fun_text: 'Classified - Not to leave level 3',
           label: 'Source Code',
           title: 'NPM Package',
@@ -286,14 +286,14 @@ export default manData = {
       links: [
         {
           url: 'https://github.com/andyp22/unity_gov_game',
-          text: 'Source Code',
+          text: 'Source',
           fun_text: 'Locked - Requires Special Clearance',
           label: 'Source Code',
           title: 'Github Repository',
         },
         {
           url: 'https://www.youtube.com/playlist?list=PLl35Zi9-ZP3NCELzVYWbhSfF4yu0Ycju7',
-          text: 'Youtube Video',
+          text: 'Videos',
           fun_text: 'Surveillance Footage',
           label: 'Video',
           title: 'Youtube Video',
@@ -306,7 +306,7 @@ export default manData = {
       links: [
         {
           url: 'https://github.com/andyp22/meteor-dpla',
-          text: 'Source Code',
+          text: 'Source',
           fun_text: 'Leaked Source',
           label: 'Source',
           title: 'Github Repository',
