@@ -3,8 +3,8 @@ require('./Resume.scss');
 import * as React from 'react';
 import { Container, Header, Checkbox, Segment, Divider, List, Card } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import { JobCardComponent } from './components/JobCard';
-import { ProjectComponent } from './components/Project';
+import { JobCardComponent } from '../JobCard';
+import { ProjectComponent } from '../Project';
 
 import data from '../../../../data/man';
 
@@ -41,7 +41,7 @@ export class ResumeComponent extends React.Component {
   }
 
   formatSkills(skillsList: any[]): any {
-const skills = {};
+    const skills = {};
     skillsList.forEach(skill => {
       if (skills[skill.category]) {
         skills[skill.category] = `${skills[skill.category]}, ${skill.name}`;
@@ -109,7 +109,7 @@ const skills = {};
               return (
                 <List.Item key={index}>
                   <List.Content>
-                    {training.attended} {training.name}, {(training.degree) ? `${training.degree} `: ''}{training.studied}
+                    {training.attended} {training.name}, {(training.degree) ? `${training.degree} ` : ''}{training.studied}
                   </List.Content>
                 </List.Item>
               );

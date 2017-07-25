@@ -15,7 +15,7 @@ export class ManComponent extends React.Component<ManProps, ManState> {
     super(props);
 
     this.state = {
-      mode: 'normal',
+      mode: localStorage.getItem('man-state') || 'normal',
     }
   }
   render() {
@@ -27,7 +27,9 @@ export class ManComponent extends React.Component<ManProps, ManState> {
           toggle
           checked={(this.state.mode === 'normal' ? false : true)}
           onClick={() => {
-            this.setState({ mode: (this.state.mode === 'normal' ? 'fun' : 'normal') });
+            const mode = (this.state.mode === 'normal' ? 'fun' : 'normal');
+            localStorage.setItem('man-state', mode);
+            this.setState({ mode });
           }}
         />
         {(this.state.mode === 'normal')
