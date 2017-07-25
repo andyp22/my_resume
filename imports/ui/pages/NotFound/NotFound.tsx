@@ -13,7 +13,7 @@ export class NotFoundComponent extends React.Component<NotFoundProps, NotFoundSt
     return (
       <Container className="not-found-page page">
         <Container className="not-found-image">
-          <Image src="/img/404.svg" alt="" />
+          <Image src="/images/404.svg" alt="" />
         </Container>
         <Container className="not-found-title">
           <Header as="h1">Sorry, that page doesn't exist</Header>
