@@ -15,7 +15,7 @@ export class RecipeComponent extends React.Component<RecipeProps, RecipeState> {
       <Container>
         <Header as="h1">
           {recipe.title}
-          <span className="recipe-makes">{recipe.makes}</span>
+          <span className="recipe-makes">Makes: {recipe.makes}</span>
         </Header>
         <Segment className="recipe-info">
           <Image src={recipe.image} alt={`A picture of ${recipe.title}`} />
