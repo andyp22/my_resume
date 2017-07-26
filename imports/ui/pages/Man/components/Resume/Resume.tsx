@@ -56,14 +56,15 @@ export class ResumeComponent extends React.Component {
     const props = this.props;
     const skills = this.formatSkills(data.skills);
     return (
-      <Container>
-        <Segment id="resume-header">
+      <Container id="resume" textAlign="left">
+        <Segment id="resume-header" textAlign="center">
           <Header as="h2">{data.name}</Header>
           <p>{data.email} / {data.blog}</p>
         </Segment>
         <Divider />
         <Segment id="resume-summary">
-          <p><span className="bolded">Summary of expertise:</span>{data.summary}</p>
+          <Header as="h2">Summary of expertise</Header>
+          <p>{data.summary}</p>
           <Header as="h3">Relevant Skills</Header>
           <List>
             {categories.map((cat, index) => {

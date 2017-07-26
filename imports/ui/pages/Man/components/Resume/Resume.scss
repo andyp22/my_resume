@@ -1,0 +1,39 @@
+#resume {
+  margin-top: 14px;
+  color: black !important;
+
+  .ui.header {
+    color: black !important;
+    margin-top: 0 !important;
+  }
+
+  .job-info {
+    padding-bottom: 2em !important;
+
+    .description {
+      position: relative;
+      span {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+      }
+
+      .job-title {
+        left: 0;
+        font-weight: bold;
+      }
+
+      .job-dates {
+        right: 0;
+      }
+    }
+  }
+
+  li {
+    margin-left: 15px;
+  }
+
+  .project-name {
+    font-weight: bold;
+  }
+}

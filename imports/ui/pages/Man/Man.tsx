@@ -21,8 +21,8 @@ export class ManComponent extends React.Component<ManProps, ManState> {
   render() {
     const props = this.props;
     return (
-      <Container className="man-page page">
-        <Header as="h1">{(this.state.mode === 'normal') ? 'Resume' : 'The Man'}</Header>
+      <Container className="man-page page" textAlign="center">
+        <Header as="h1">{(this.state.mode === 'normal') ? 'Resume' : 'Dossier'}</Header>
         <Checkbox
           toggle
           checked={(this.state.mode === 'normal' ? false : true)}

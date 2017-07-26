@@ -1,4 +1,6 @@
-.faq-page {
+.faq-page.ui.container {
+  max-width: 800px !important;
+
   .item {
     padding-bottom: 10px;
 

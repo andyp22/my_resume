@@ -1,7 +1,110 @@
 #fun-resume {
-  .badge {
-    padding-left: 2px;
-    padding-right: 2px;
-    display: inline-block;
+  $man-page-action-shot-rotation: -7deg;
+  color: black !important;
+
+  .ui.header {
+    color: black !important;
+    margin-top: 0 !important;
+  }
+  .ui.segment {
+    .ui.header {
+      margin-top: 10px !important;
+      margin-bottom: 5px !important;
+    }
+
+    .badge {
+      padding-left: 5px;
+      padding-right: 5px;
+      display: inline-block;
+    }
+
+    li {
+      margin-left: 15px;
+    }
+
+    .project-name {
+      font-weight: bold;
+    }
+
+    #agent-information {
+      position: relative;
+      .agent-image {
+        padding: 10px;
+        background-color: white;
+        -webkit-transform: rotate($man-page-action-shot-rotation);
+        -moz-transform: rotate($man-page-action-shot-rotation);
+        -o-transform: rotate($man-page-action-shot-rotation);
+        -ms-transform: rotate($man-page-action-shot-rotation);
+        transform: rotate($man-page-action-shot-rotation);
+        margin-top: 0;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .ui.list {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 20px;
+        font-size: 16px;
+        width: 230px;
+
+        .label {
+          font-weight: bold;
+        }
+      }
+    }
+
+    #agent-skills {
+      margin-top: 30px;
+    }
+  }
+  
+  .stamp {
+    position: absolute;
+    top: 50%;
+    left:37%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  #fun-resume {
+    .ui.segment {
+      #agent-information {
+        .ui.list {
+          position: relative;
+          right: initial;
+          top: 10px;
+          width: 100%;
+        }
+      }
+    }
+
+    #agent-skills {
+      margin-top: 20px !important;
+    }
+    
+    .stamp {
+      left:27%;
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  #fun-resume {
+    .ui.segment {
+      #agent-information {
+        .ui.list {
+          position: relative;
+          right: initial;
+          top: 10px;
+          width: 100%;
+        }
+      }
+    }
+
+    #agent-skills {
+      margin-top: 20px !important;
+    }
   }
 }
