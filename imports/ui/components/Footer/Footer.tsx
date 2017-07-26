@@ -15,6 +15,7 @@ export class FooterComponent extends React.Component<FooterProps, FooterState> {
       <footer id="footer">
         <Container id="footer-links" className="navbar" role="navigation" aria-label="Informational links">
           <List className="nav navbar-nav">
+            <List.Item><Link to="/contact">Contact</Link></List.Item>
             <List.Item><Link to="/faq">FAQ</Link></List.Item>
             <List.Item><Link to="http://andypangus.com" target="_blank">Blog</Link></List.Item>
           </List>

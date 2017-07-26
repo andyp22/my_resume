@@ -1,6 +1,8 @@
 #header {
   #title-and-logo {
     width: 100%;
+    margin-top: -30px;
+
     .logo-link {
       display: inline-block;
       position: relative;
@@ -14,7 +16,8 @@
       text-decoration: none;
       position: absolute;
       left: 50%;
-      top: 170px;
+      //top: 170px;
+      top: 140px;
       margin-left: -300px;
     }
     .title-link:hover {
@@ -53,7 +56,8 @@
 
     #main-links {
       position: absolute;
-      top: 200px;
+      //top: 200px;
+      top: 170px;
       left: 50%;
       width: initial;
       margin-left: -115px !important;

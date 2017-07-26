@@ -32,13 +32,13 @@ export class HeaderComponent extends React.Component<HeaderProps, HeaderState> {
         </Container>
         <Container id="header-controls">
           <div id="login-container">
-            <LoginButtons />
+            {/* <LoginButtons /> */}
           </div>
           <div id="helpful-links" role="navigation" aria-label="Helpful links">
-            <List>
+            {/* <List>
               <List.Item><Link to="/profile">My Profile</Link></List.Item>
               <List.Item><Link to="/contact">Contact</Link></List.Item>
-            </List>
+            </List> */}
           </div>
           {(props.location !== '/'
             ? (
