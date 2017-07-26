@@ -1,3 +1,5 @@
+require('../imports/ui/stylesheets/index');
+
 import { Meteor } from 'meteor/meteor';
 import * as React from 'react';
 import { render } from 'react-dom';

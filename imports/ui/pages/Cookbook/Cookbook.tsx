@@ -66,7 +66,7 @@ export class CookbookComponent extends React.Component<CookbookProps, CookbookSt
 
   render() {
     return (
-      <Container className="cookbook-page page">
+      <Container className="cookbook-page page" textAlign="center">
         <Header as="h1">My Cookbook</Header>
         <p>I love to cook. These are some of my favorite recipes.</p>
         <TabsContainer {...this.getTabContainerProps() } />

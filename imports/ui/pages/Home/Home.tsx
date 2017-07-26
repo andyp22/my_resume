@@ -12,20 +12,20 @@ export class HomeComponent extends React.Component<HomeProps, HomeState> {
     const props = this.props;
     return (
       <Container className="home-page page">
-        <Container className="home-navigation" role="navigation" aria-label="Home Page Links">
+        <Container className="home-navigation" textAlign="center" role="navigation" aria-label="Home Page Links">
           <Card>
             <Card.Content>
-              <Link to="/man"><Image src="/images/man.png" alt="Man" /></Link>
+              <Link to="/man" title="Man"><Image src="/images/man.png" alt="Man" size="small" /></Link>
             </Card.Content>
           </Card>
           <Card>
             <Card.Content>
-              <Link to="/cookbook"><Image src="/images/cookbook.png" alt="Cookbook" /></Link>
+              <Link to="/cookbook" title="Cookbook"><Image src="/images/cookbook.png" alt="Cookbook" size="small" /></Link>
             </Card.Content>
           </Card>
           <Card>
             <Card.Content>
-              <Link to="/computer"><Image src="/images/computer.png" alt="Computer" /></Link>
+              <Link to="/computer" title="Computer"><Image src="/images/computer.png" alt="Computer" size="small" /></Link>
             </Card.Content>
           </Card>
         </Container>

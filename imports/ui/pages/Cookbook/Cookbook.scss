@@ -1,0 +1,81 @@
+.cookbook-page {
+  $blue: #1168BF;
+  .react-tabs {
+    $corner-radius: 0.35rem;
+    position: relative;
+    height: 100%;
+
+    .react-tabs__tab:focus {
+      box-shadow: none;
+    }
+
+    .react-tabs__tab:focus:after {
+      background: inherit;
+    }
+
+    .react-tabs__tab-list {
+      margin: 0;
+      padding: 0;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      .react-tabs__tab {
+        //background-color: #eee;
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.95);
+        padding: .92em 1.42em;
+        user-select: none;
+        list-style: none;
+        width: 200px;
+      }
+      
+      .react-tabs__tab:hover {
+        background-color: #333;
+      }
+
+      .react-tabs__tab:first-child {
+        //border-radius: $corner-radius 0 0 0;
+      }
+
+      .react-tabs__tab:last-child {
+        //border-radius: 0 0 0 $corner-radius;
+      }
+
+      .react-tabs__tab--selected {
+        background-color: #333;
+        color: $blue;
+        border: none;
+        font-weight: 700;
+      }
+    }
+
+    .react-tabs__tab-panel {
+      //background-color: #eee;
+      color: white;
+      padding: 1em;
+      display: none;
+      position: relative;
+      top: 0;
+      left: 200px;
+      height: 100%;
+      width: 82%;
+      //border-radius: 0 $corner-radius $corner-radius $corner-radius;
+      overflow-x: hidden;
+      overflow-y: auto;
+      
+      .ui.header {
+        margin-top: 0 !important;
+        text-align: left;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+    }
+    .react-tabs__tab-panel--selected {
+      display: block;
+    }
+  }
+}

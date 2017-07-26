@@ -12,7 +12,7 @@ export class FAQComponent extends React.Component<FAQProps, FAQState> {
   render() {
     const props = this.props;
     return (
-      <Container className="faq-page page">
+      <Container className="faq-page page" textAlign="center">
         <Header as="h1">FAQs</Header>
         <List>
           {FAQs.map((faq, index) => {

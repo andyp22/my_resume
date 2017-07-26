@@ -1,0 +1,27 @@
+$red: #B21E1E;
+$green: #1EB21E;
+$blue: #1168BF;
+
+body {
+  background-color: black;
+  color: white;
+}
+
+a:hover {
+  color: $blue !important;
+}
+
+.ui.header {
+  color: white !important;
+  margin-top: 20px !important;
+}
+
+.cancel-btn {
+  background-color: $red !important;
+  color: white !important;
+}
+
+.submit-btn {
+  background-color: $green !important;
+  color: white !important;
+}

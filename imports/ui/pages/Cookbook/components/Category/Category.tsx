@@ -23,10 +23,10 @@ export class CategoryTabComponent extends React.Component<CategoryProps, Categor
 
   getRecipeList(recipes) {
     return (
-      <List>
+      <List as="ul" className="category-recipe-list">
         {recipes.map((recipe, index) => {
           return (
-            <List.Item
+            <List.Item as="li"
               key={index}
               onClick={(evt, target) => {
                 this.setState({ recipeId: recipe.id });
@@ -53,7 +53,7 @@ export class CategoryTabComponent extends React.Component<CategoryProps, Categor
       );
     }
     return (
-      <Container>
+      <Container textAlign="right">
         <Button onClick={() => {
           this.setState({ recipeId: '-1' })
         }}>
@@ -67,10 +67,7 @@ export class CategoryTabComponent extends React.Component<CategoryProps, Categor
   render() {
     const props = this.props;
     return (
-      <Container>
-        {this.state.recipeId !== '-1'
-          ? ''
-          : <Header>Please select a recipe:</Header>}
+      <Container textAlign="center" className="category-display">
         {this.state.recipeId !== '-1'
           ? this.getRecipeComponent(props.recipes.find(recipe => (recipe.id === this.state.recipeId)))
           : this.getRecipeList(props.recipes)}

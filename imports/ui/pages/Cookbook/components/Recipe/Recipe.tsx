@@ -12,9 +12,9 @@ export class RecipeComponent extends React.Component<RecipeProps, RecipeState> {
   render() {
     const recipe = this.props.recipe;
     return (
-      <Container>
+      <Container className="recipe-component">
         <Header as="h1">
-          {recipe.title}
+          <span className="recipe-title">{recipe.title}</span>
           <span className="recipe-makes">Makes: {recipe.makes}</span>
         </Header>
         <Segment className="recipe-info">

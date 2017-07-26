@@ -1,0 +1,32 @@
+#footer {
+  position: relative;
+
+  #footer-links {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: initial;
+    margin-left: -63px !important;
+
+    .item {
+      display: inline-block;
+      padding-left: 15px;
+      padding-right: 15px;
+
+      a {
+        color: white;
+        font-size: 18px;
+      }
+    }
+  }
+
+  #copyright-and-version {
+    position: absolute;
+    top: 40px;
+
+    p {
+      text-align: center;
+      margin-bottom: 3px;
+    }
+  }
+}

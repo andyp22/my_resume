@@ -10,9 +10,8 @@ export class ContactComponent extends React.Component<ContactProps, ContactState
   render() {
     const props = this.props;
     return (
-      <Container className="contact-page page">
+      <Container className="contact-page page" textAlign="center">
         <Header as="h1">Contact Me</Header>
-        <Divider />
         <Form>
           <Form.Field>
             <label>Your Name</label>
@@ -27,8 +26,8 @@ export class ContactComponent extends React.Component<ContactProps, ContactState
             <input placeholder='Subject' />
           </Form.Field>
           <Form.TextArea label="Message" placeholder="Message" />
-          <Button type='cancel'>Cancel</Button>
-          <Button type='submit'>Submit</Button>
+          <Button className="cancel-btn" type='cancel'>Cancel</Button>
+          <Button className="submit-btn" type='submit'>Submit</Button>
         </Form>
       </Container>
     );

@@ -16,8 +16,8 @@ export class HeaderComponent extends React.Component<HeaderProps, HeaderState> {
     return (
       <header id="header">
         <Container id="title-and-logo" role="banner" aria-label="Site title and logo">
-          <Link to="/" title="Man, Cookbook, Computer">
-            <Container id="flame" className="animated fadeIn row" aria-hidden="true">
+          <Link className="logo-link" to="/" title="Man, Cookbook, Computer">
+            <div id="flame" className="animated fadeIn row" aria-hidden="true">
               <div className="flame-container">
                 <div className="red-flame flame" />
                 <div className="orange-flame flame" />
@@ -26,29 +26,29 @@ export class HeaderComponent extends React.Component<HeaderProps, HeaderState> {
                 <div className="blue-flame circle-flame" />
                 <div className="black-flame circle-flame" />
               </div>
-            </Container>
-            mancookbookcomputer.com
+            </div>
           </Link>
+          <Link className="title-link" to="/" title="Man, Cookbook, Computer">mancookbookcomputer.com</Link>
         </Container>
         <Container id="header-controls">
-          <Container id="login-container">
+          <div id="login-container">
             <LoginButtons />
-          </Container>
-          <Container id="helpful-links" role="navigation" aria-label="Helpful links">
+          </div>
+          <div id="helpful-links" role="navigation" aria-label="Helpful links">
             <List>
               <List.Item><Link to="/profile">My Profile</Link></List.Item>
               <List.Item><Link to="/contact">Contact</Link></List.Item>
             </List>
-          </Container>
+          </div>
           {(props.location !== '/'
             ? (
-              <Container id="main-links" role="navigation" aria-label="Main links">
+              <div id="main-links" role="navigation" aria-label="Main links">
                 <List>
                   <List.Item><Link to="/man">Man</Link></List.Item>
                   <List.Item><Link to="/cookbook">Cookbook</Link></List.Item>
                   <List.Item><Link to="/computer">Computer</Link></List.Item>
                 </List>
-              </Container>
+              </div>
             )
             : ""
           )}
