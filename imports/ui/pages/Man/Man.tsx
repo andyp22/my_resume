@@ -5,38 +5,21 @@ import { Container, Header, Checkbox } from 'semantic-ui-react';
 import { ResumeComponent } from './components/Resume';
 import { FunResumeComponent } from './components/FunResume';
 
-interface ManProps { }
-interface ManState {
-  mode: string;
-}
+import { SwitchPageComponent } from '../components/SwitchPage';
 
-export class ManComponent extends React.Component<ManProps, ManState> {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      mode: localStorage.getItem('man-state') || 'normal',
-    }
+export class ManComponent extends SwitchPageComponent {
+  getPageTitles(): any {
+    return {
+      state_a: 'Resume',
+      state_b: 'Dossier',
+    };
   }
-  render() {
-    const props = this.props;
-    return (
-      <Container className="man-page page" textAlign="center">
-        <Header as="h1">{(this.state.mode === 'normal') ? 'Resume' : 'Dossier'}</Header>
-        <Checkbox
-          toggle
-          checked={(this.state.mode === 'normal' ? false : true)}
-          onClick={() => {
-            const mode = (this.state.mode === 'normal' ? 'fun' : 'normal');
-            localStorage.setItem('man-state', mode);
-            this.setState({ mode });
-          }}
-        />
-        {(this.state.mode === 'normal')
-          ? <ResumeComponent />
-          : <FunResumeComponent />}
-      </Container>
-    );
+
+  getComponents(): any {
+    return {
+      state_a: ResumeComponent,
+      state_b: FunResumeComponent,
+    };
   }
 }
 

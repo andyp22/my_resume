@@ -47,7 +47,7 @@ export class AppRoutes extends React.Component<undefined, AppRoutesState> {
           <Container className="content-container" role="main">
             <Switch>
               <Route exact path="/" component={HomeContainer} />
-              <Route exact path="/man" component={ManContainer} />
+              <Route exact path="/man" component={() => { return <ManContainer pageName="man" />; }} />
               <Route exact path="/cookbook" component={CookbookContainer} />
               <Route exact path="/computer" component={ComputerContainer} />
               <Route exact path="/contact" component={ContactContainer} />
