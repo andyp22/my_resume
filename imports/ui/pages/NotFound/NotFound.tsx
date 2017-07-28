@@ -11,14 +11,14 @@ export class NotFoundComponent extends React.Component<NotFoundProps, NotFoundSt
   render() {
     const props = this.props;
     return (
-      <Container className="not-found-page page">
-        <Container className="not-found-image">
+      <Container className="not-found-page page" textAlign="center">
+        <div className="not-found-image">
           <Image src="/images/404.svg" alt="" />
-        </Container>
-        <Container className="not-found-title">
-          <Header as="h1">Sorry, that page doesn't exist</Header>
-          <Link to="/" className="gotohomepage">Go to home</Link>
-        </Container>
+        </div>
+        <div className="not-found-title">
+          <Header as="h1">Sorry, that page doesn't exist.</Header>
+          <Link to="/" className="gotohomepage">Take me home</Link>
+        </div>
       </Container>
     );
   }

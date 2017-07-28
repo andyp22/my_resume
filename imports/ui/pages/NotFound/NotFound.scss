@@ -1,9 +1,14 @@
-#not-found {
-  width: 700px;
-  margin: 0 auto;
+.not-found-page {
+  width: 700px !important;
+  margin: 35px auto 0;
+  display: block;
+
   .not-found-image {
-    width: 25%;
-    float: left;
+    display: inline;
+    .ui.image {
+      width: 25% !important;
+      display: inline-block;
+    }
   }
   .not-found-title {
     width: 70%;
@@ -13,11 +18,13 @@
     background-position: center;
     background-size: contain;
     min-height: 400px;
+    padding-left: 20px;
+
     h1 {
       font-size: 30px;
       color: #1f2128;
       margin-bottom: 20px;
-      margin-top: 155px;
+      margin-top: 50px !important;
     }
     a.gotohomepage {
       background-color: #de4f4f;
@@ -30,6 +37,7 @@
       text-decoration: none;
       text-transform: uppercase;
       height: 40px;
+      margin: 0 auto;
     }
   }
 }
