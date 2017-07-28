@@ -1,0 +1,20 @@
+.story-slide-content {
+  $border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .foreground-layer,
+  .midground-layer,
+  .background-layer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //border-radius: $border-radius;
+    background-repeat: no-repeat;
+  }
+}

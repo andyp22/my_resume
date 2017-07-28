@@ -25,3 +25,12 @@ a:hover {
   background-color: $green !important;
   color: white !important;
 }
+
+.hidden {
+	display: none;
+}
+
+.alphadOut {
+	opacity: 0;
+	visibility: hidden;
+}

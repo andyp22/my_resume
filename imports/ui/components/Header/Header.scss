@@ -184,3 +184,15 @@ $flame-three-twentieths-width: ( $flame-twentieth-width * 3 );
   80%  {transform: rotate(-2deg) scaleY(0.92);}
   100% {transform: rotate(1deg);}
 }
+
+@media only screen and (max-width: 767px) {
+  #header {
+    #header-controls {
+      width: 100% !important;
+
+      #main-links {
+        margin-left: -140px !important;
+      }
+    }
+  }
+}
