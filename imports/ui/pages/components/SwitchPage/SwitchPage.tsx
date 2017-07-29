@@ -26,7 +26,7 @@ export class SwitchPageComponent extends React.Component<SwitchPageProps, Switch
   render() {
     const props = this.props;
     return (
-      <Container className={`${props.pageName}-page page`} textAlign="center">
+      <Container className={`${props.pageName}-page switch-page page`} textAlign="center">
         <Header as="h1">{(this.state.mode === 'state_a') ? this.getPageTitles().state_a : this.getPageTitles().state_b}</Header>
         <Checkbox
           toggle
