@@ -1,0 +1,80 @@
+.story-slide-content-4 {
+  $ship-rotation: 65deg;
+  .background-layer {
+    background-color: #303030;
+  }
+  .planet-1 {
+    position: absolute;
+    top: -240px;
+    left: 100%;
+    height: 240px;
+    width: 240px;
+  }
+
+  .planet-2{
+    position: absolute;
+    top: -250px;
+    left: 100%;
+    height: 250px;
+    width: 250px;
+  }
+
+  .planet-3 {
+    position: absolute;
+    top: -303px;
+    left: 100%;
+    height: 303px;
+    width: 437px;
+  }
+
+  .planet-4 {
+    position: absolute;
+    top: -264px;
+    left: 100%;
+    height: 264px;
+    width: 264px;
+  }
+  
+  .earth {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    height: 310px;
+    width: 333px;
+    margin-left: (-1 * (310px/2)) !important;
+  }
+
+  .rotate-ship {
+    transform: rotate($ship-rotation);
+    -ms-transform: rotate($ship-rotation);
+    -moz-transform: rotate($ship-rotation);
+    -webkit-transform: rotate($ship-rotation);
+    -o-transform: rotate($ship-rotation);
+  }
+
+  .whole-ship {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 189px;
+    height: 447px;
+    margin-left: (-1 * (189px/2)) !important;
+  }
+
+  .spaceship {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 331px;
+    width: 189px;
+  }
+
+  .engine-flames {
+    position: absolute;
+    top: 288px;
+    left: 57px;
+    height: 116px;
+    width: 75px;
+  }
+
+}
