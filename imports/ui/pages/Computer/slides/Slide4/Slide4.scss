@@ -44,14 +44,6 @@
     margin-left: (-1 * (310px/2)) !important;
   }
 
-  .rotate-ship {
-    transform: rotate($ship-rotation);
-    -ms-transform: rotate($ship-rotation);
-    -moz-transform: rotate($ship-rotation);
-    -webkit-transform: rotate($ship-rotation);
-    -o-transform: rotate($ship-rotation);
-  }
-
   .whole-ship {
     position: absolute;
     top: 20px;
