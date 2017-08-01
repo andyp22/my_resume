@@ -39,7 +39,6 @@ export class SlideComponent extends React.Component<SlideProps, SlideState> {
 
   initTimeline(paused: boolean, transition: boolean) {
     this.tl = new TimelineMax({ paused });
-    console.log(transition);
     if (transition) {
       this.tl.fromTo(
         document.getElementsByClassName('story-slide-content')[0],
