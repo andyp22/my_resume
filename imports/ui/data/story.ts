@@ -5,6 +5,7 @@
 interface IStoryBit {
   text: string;
   character?: string;
+  transition?: boolean;
 }
 
 interface ITLQ {
@@ -41,7 +42,8 @@ TLQ.part1 = [
     text: 'For decades, Multivac had helped design the ships and plot the trajectories that enabled man to reach the Moon, Mars, and Venus, but past that, Earth\'s poor resources could not support the ships. Too much energy was needed for the long trips. Earth exploited its coal and uranium with increasing efficiency, but there was only so much of both.'
   },
   {
-    text: 'But slowly Multivac learned enough to answer deeper questions more fundamentally, and on May 14, 2061, what had been theory, became fact.'
+    text: 'But slowly Multivac learned enough to answer deeper questions more fundamentally, and on May 14, 2061, what had been theory, became fact.',
+    transition: false
   },
   {
     text: 'The energy of the sun was stored, converted, and utilized directly on a planet-wide scale. All Earth turned off its burning coal, its fissioning uranium, and flipped the switch that connected all of it to a small station, one mile in diameter, circling the Earth at half the distance of the Moon. All Earth ran by invisible beams of sunpower.'

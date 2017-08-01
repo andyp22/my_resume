@@ -48,13 +48,17 @@ export class StoryBoardComponent extends React.Component<StoryBoardProps, StoryB
 
   getNextSlide() {
     const slideNumber = this.state.textIndex + 1;
+    const nextSlideData = this.props.storyText[this.state.textIndex];
+    console.log(nextSlideData.transition);
     const name = `Slide${slideNumber}Container`;
     if (Slides[name]) {
+      console.log(nextSlideData.transition);
       return React.createElement(
         Slides[name],
         {
           imageDir: `part1/slide${slideNumber}`,
-          paused: false
+          paused: false,
+          transition: (nextSlideData.transition !== undefined) ? nextSlideData.transition : true,
         }
       );
     } else {

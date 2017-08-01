@@ -8,6 +8,7 @@ import { GSAP } from '../../../../../utils/GsapEnhancer';
 export interface SlideProps {
   imageDir: string;
   paused: boolean;
+  transition: boolean;
 }
 
 export interface SlideState { }
@@ -18,6 +19,8 @@ export class SlideComponent extends React.Component<SlideProps, SlideState> {
 
   constructor(props: any) {
     super(props);
+
+    console.log(props);
   }
 
   render(): any {
@@ -28,33 +31,36 @@ export class SlideComponent extends React.Component<SlideProps, SlideState> {
   }
 
   componentDidMount(): void {
-    this.initTimeline(this.props.paused);
+    this.initTimeline(this.props.paused, this.props.transition);
     this.buildTimeline();
   }
 
   addAnimation(moveAnimation: any, options: any = {}): any { }
 
-  initTimeline(paused: boolean) {
+  initTimeline(paused: boolean, transition: boolean) {
     this.tl = new TimelineMax({ paused });
-    this.tl.fromTo(
-      document.getElementsByClassName('story-slide-content')[0],
-      0.5,
-      { autoAlpha: 0 },
-      { autoAlpha: 1 },
-      0);
+    console.log(transition);
+    if (transition) {
+      this.tl.fromTo(
+        document.getElementsByClassName('story-slide-content')[0],
+        0.5,
+        { autoAlpha: 0 },
+        { autoAlpha: 1 },
+        0);
+    }
   }
 
   buildTimeline(): void { }
 
   getComponentClasses(classes: string = '') {
-    return `story-slide-content ${classes} alphadOut`;
+    return `story-slide-content ${classes} ${this.props.transition ? 'alphadOut' : ''}`;
   }
 
   getImageUrl() {
     return `/images/story/${this.props.imageDir}`;
   }
 
-  getBackgroundImageStyle(filename: string, filepath:string = this.getImageUrl()) {
+  getBackgroundImageStyle(filename: string, filepath: string = this.getImageUrl()) {
     return {
       backgroundImage: `url('${filepath}/${filename}')`,
     };
