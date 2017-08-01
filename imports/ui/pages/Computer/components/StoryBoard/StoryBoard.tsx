@@ -85,6 +85,16 @@ export class StoryBoardComponent extends React.Component<StoryBoardProps, StoryB
     }
   }
 
+  onBackButtonClicked() {
+    if (this.state.started) {
+      if (this.state.textIndex === 0) {
+        this.setState({ started: false });
+      } else {
+        this.setState({ textIndex: this.state.textIndex - 1 });
+      }
+    }
+  }
+
   render() {
     const props = this.props;
     const nextText = props.storyText[this.state.textIndex].text;
@@ -99,7 +109,14 @@ export class StoryBoardComponent extends React.Component<StoryBoardProps, StoryB
           <p className={`story-slide-captions story-slide-captions${this.state.textIndex} alphadOut`} dangerouslySetInnerHTML={{ __html: ((this.state.started) ? nextText : '') }} />
         </div>
         <div className="presentation-controls">
-          <Button onClick={() => {
+          {
+            (this.state.started)
+              ? <Button className="back-btn" onClick={() => {
+                this.onBackButtonClicked();
+              }}>Back</Button>
+              : ''
+          }
+          <Button className="next-btn" onClick={() => {
             this.onNextButtonClicked();
           }}>
             {
