@@ -9,7 +9,7 @@ import { SlideComponent } from '../../components/Slide';
 class SlideTemplateComponent extends SlideComponent {
   render() {
     return (
-      <div className={this.getComponentClasses()}>
+      <div className={this.getComponentClasses('story-slide-content-0')}>
         <div className="background-layer" style={this.getBackgroundImageStyle('bgPlate.png')}></div>
         <div className="midground-layer"></div>
         <div className="foreground-layer"></div>

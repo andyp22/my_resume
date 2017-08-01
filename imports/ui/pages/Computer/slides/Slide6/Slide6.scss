@@ -1,0 +1,30 @@
+.story-slide-content-6 {
+  .background-layer {
+    background-color: #303030;
+    .purple-bg {
+      height: 480px;
+      width: 750px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .midground-layer {
+    .exploded-bg {
+      height: 480px;
+      width: 750px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .foreground-layer {
+    .sun {
+      height: 431px;
+      width: 750px;
+      position: absolute;
+      top: 100px;
+      left: 0;
+    }
+  }
+}
