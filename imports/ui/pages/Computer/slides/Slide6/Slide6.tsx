@@ -35,7 +35,7 @@ class Slide6Component extends SlideComponent {
       0.3,
       { autoAlpha: 0 },
       { autoAlpha: 1 },
-      5.2);
+      9);
   }
 }
 
