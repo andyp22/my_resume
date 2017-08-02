@@ -1,0 +1,52 @@
+.story-slide-content {
+  .adell {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 350px;
+    width: 257px;
+  }
+
+  .adell.facing-left {
+    background-position-x: 257px;
+  }
+
+  .lupov {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 350px;
+    width: 263px;
+  }
+
+  .lupov.facing-left {
+    background-position-x: 263px;
+  }
+
+  .table-bg {
+    height: 480px;
+    width: 750px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    background-position-y: 0px;
+    background-repeat: no-repeat;
+  }
+
+  .whiskey-bottle {
+    height: 374px;
+    width: 110px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+
+  .glass {
+    height: 90px;
+    width: 83px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

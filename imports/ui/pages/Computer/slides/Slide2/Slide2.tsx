@@ -1,3 +1,4 @@
+require('../slides.scss');
 require('./Slide2.scss');
 
 import * as React from 'react';
