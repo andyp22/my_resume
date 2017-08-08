@@ -1,19 +1,24 @@
-.story-slide-content-8 {
+.story-slide-content-9 {
+  .background-layer {
+    .table-bg {
+      background-position-y: -270px;
+    }
+  }
   .midground-layer {
     .whiskey-bottle {
-      top: 260px;
+      top: -10px;
       left: 265px;
     }
   }
 
   .foreground-layer {
     .glass-1 {
-      top: 600px;
+      top: 330px;
       left: 50px;
     }
 
     .glass-2 {
-      top: 560px;
+      top: 290px;
       left: 575px;
     }
   }
