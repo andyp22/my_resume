@@ -7,6 +7,10 @@ import { Slide6Container } from './Slide6';
 import { Slide7Container } from './Slide7';
 import { Slide8Container } from './Slide8';
 import { Slide9Container } from './Slide9';
+import { Slide38Container } from './Slide38';
+import { Slide39Container } from './Slide39';
+import { Slide40Container } from './Slide40';
+import { Slide41Container } from './Slide41';
 import { ConversationSlideContainer } from './ConversationSlide';
 
 const Slides = {
@@ -19,6 +23,10 @@ const Slides = {
   Slide7Container,
   Slide8Container,
   Slide9Container,
+  Slide38Container,
+  Slide39Container,
+  Slide40Container,
+  Slide41Container,
   ConversationSlideContainer,
 }
 
