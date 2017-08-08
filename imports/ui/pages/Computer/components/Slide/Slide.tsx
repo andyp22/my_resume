@@ -9,6 +9,7 @@ export interface SlideProps {
   imageDir: string;
   paused: boolean;
   transition: boolean;
+  data: any;
 }
 
 export interface SlideState { }
@@ -16,12 +17,6 @@ export interface SlideState { }
 export class SlideComponent extends React.Component<SlideProps, SlideState> {
   animationController: any;
   tl: TimelineMax;
-
-  constructor(props: any) {
-    super(props);
-
-    console.log(props);
-  }
 
   render(): any {
     const classes: string = this.getComponentClasses();

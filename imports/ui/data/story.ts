@@ -6,6 +6,7 @@ interface IStoryBit {
   text: string;
   character?: string;
   transition?: boolean;
+  slide?: string;
 }
 
 interface ITLQ {
@@ -60,115 +61,171 @@ TLQ.part1 = [
   },
   {
     text: '"Oh, hell, just about forever. Till the sun runs down, Bert."',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"That\'s not forever."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"All right, then. Billions and billions of years. Ten billion, maybe. Are you satisfied?"',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: 'Lupov put his fingers through his thinning hair as though to reassure himself that some was still left and sipped gently at his own drink. "Ten billion years isn\'t forever."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"Well, it will last our time, won\'t it?"',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"So would the coal and uranium."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"All right, but now we can hook up each individual spaceship to the Solar Station, and it can go to Pluto and back a million times without ever worrying about fuel. You can\'t do that on coal and uranium. Ask Multivac, if you don\'t believe me."',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"I don\'t have to ask Multivac. I know that."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"Then stop running down what Multivac\'s done for us," said Adell, blazing up, "It did all right."',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"Who says it didn\'t? What I say is that a sun won\'t last forever. That\'s all I\'m saying. We\'re safe for ten billion years, but then what?" Lupov pointed a slightly shaky finger at the other. "And don\'t say we\'ll switch to another sun."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: 'There was silence for a while. Adell put his glass to his lips only occasionally, and Lupov\'s eyes slowly closed. They rested.<br/><br/>Then Lupov\'s eyes snapped open. "You\'re thinking we\'ll switch to another sun when ours is done, aren\'t you?"',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"I\'m not thinking."',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"Sure you are. You\'re weak on logic, that\'s the trouble with you. You\'re like the guy in the story who was caught in a sudden shower and who ran to a grove of trees and got under one. He wasn\'t worried, you see, because he figured when one tree got wet through, he would just get under another one."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"I get it," said Adell. "Don\'t shout. When the sun is done, the other stars will be gone, too."',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"Darn right they will," muttered Lupov. "It all had a beginning in the original cosmic explosion, whatever that was, and it\'ll all have an end when all the stars run down. Some run down faster than others. Hell, the giants won\'t last a hundred million years. The sun will last ten billion years and maybe the dwarfs will last two hundred billion for all the good they are. But just give us a trillion years and everything will be dark. Entropy has to increase to maximum, that\'s all."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"I know all about entropy," said Adell, standing on his dignity.',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"The hell you do."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"I know as much as you do."',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"Then you know everything\'s got to run down someday."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"All right. Who says they won\'t?"',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"You did, you poor sap. You said we had all the energy we needed, forever. You said \'forever.\'',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: 'It was Adell\'s turn to be contrary. "Maybe we can build things up again someday," he said.',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"Never."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"Why not? Someday."',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"Never."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"Ask Multivac."',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: '"You ask Multivac. I dare you. Five dollars says it can\'t be done."',
-    character: 'Lupov'
+    character: 'Lupov',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: 'Adell was just drunk enough to try, just sober enough to be able to phrase the necessary symbols and operations into a question which, in words, might have corresponded to this: "Will mankind one day without the net expenditure of energy be able to restore the sun to its full youthfulness even after it had died of old age?"<br/><br/>"Or maybe it could be put more simply like this: How can the net amount of entropy of the universe be massively decreased?"',
-    character: 'Adell'
+    character: 'Adell',
+    slide: 'ConversationSlideContainer',
+    transition: false
   },
   {
     text: 'Multivac fell dead and silent. The slow flashing of lights ceased, the distant sounds of clicking relays ended.'

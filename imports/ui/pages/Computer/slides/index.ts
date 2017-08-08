@@ -7,6 +7,7 @@ import { Slide6Container } from './Slide6';
 import { Slide7Container } from './Slide7';
 import { Slide8Container } from './Slide8';
 import { Slide9Container } from './Slide9';
+import { ConversationSlideContainer } from './ConversationSlide';
 
 const Slides = {
   Slide1Container,
@@ -18,6 +19,7 @@ const Slides = {
   Slide7Container,
   Slide8Container,
   Slide9Container,
+  ConversationSlideContainer,
 }
 
 export default Slides;

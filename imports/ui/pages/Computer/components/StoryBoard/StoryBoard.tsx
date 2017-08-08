@@ -49,7 +49,7 @@ export class StoryBoardComponent extends React.Component<StoryBoardProps, StoryB
   getNextSlide() {
     const slideNumber = this.state.textIndex + 1;
     const nextSlideData = this.props.storyText[this.state.textIndex];
-    const name = `Slide${slideNumber}Container`;
+    const name = nextSlideData.slide ? nextSlideData.slide : `Slide${slideNumber}Container`;
     if (Slides[name]) {
       return React.createElement(
         Slides[name],
@@ -57,6 +57,7 @@ export class StoryBoardComponent extends React.Component<StoryBoardProps, StoryB
           imageDir: `part1/slide${slideNumber}`,
           paused: false,
           transition: (nextSlideData.transition !== undefined) ? nextSlideData.transition : true,
+          data: nextSlideData,
         }
       );
     } else {
@@ -131,7 +132,6 @@ export class StoryBoardComponent extends React.Component<StoryBoardProps, StoryB
   }
 
   componentDidMount(): void {
-    console.log('mounted');
     this.initTimeline(true);
   }
 
