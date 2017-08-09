@@ -1,4 +1,3 @@
-require('../slides.scss');
 require('./Slide38.scss');
 
 import * as React from 'react';
@@ -10,61 +9,49 @@ import { SlideComponent } from '../../components/Slide';
 class Slide38Component extends SlideComponent {
   render() {
     return (
-      <div className={this.getComponentClasses('story-slide-content-9')}>
+      <div className={this.getComponentClasses('story-slide-content-38')}>
         <div className="background-layer">
-          <div className="table-bg " style={this.getBackgroundImageStyle('table-background.png', '/images/story/part1')} />
+          <div className="ai-bg" style={this.getBackgroundImageStyle('ai-bg.png')} />
         </div>
         <div className="midground-layer">
-          <div className="whiskey-bottle " style={this.getBackgroundImageStyle('whiskey.png', '/images/story/part1')} />
-          <div className="adell alphadOut" style={this.getBackgroundImageStyle('Adell.png', '/images/story/part1')} />
-          <div className="lupov facing-left alphadOut" style={this.getBackgroundImageStyle('Lupov.png', '/images/story/part1')} />
+          <div className="ai-top" style={this.getBackgroundImageStyle('ai-top.png')} />
+          <div className="ai-bottom" style={this.getBackgroundImageStyle('ai-bottom.png')} />
         </div>
         <div className="foreground-layer">
-          <div className="glass-1 glass " style={this.getBackgroundImageStyle('highball.png', '/images/story/part1')} />
-          <div className="glass-2 glass " style={this.getBackgroundImageStyle('highball.png', '/images/story/part1')} />
+          <div className="eyes-1" style={this.getBackgroundImageStyle('eyes-1.png')} />
+          <div className="eyes-3" style={this.getBackgroundImageStyle('eyes-3.png')} />
         </div>
       </div>
     );
   }
 
   buildTimeline(): void {
-    this.tl.fromTo(
-      document.getElementsByClassName('adell')[0],
-      0.5,
-      { autoAlpha: 0 },
-      { autoAlpha: 1 },
-      1);
     this.tl.to(
-      document.getElementsByClassName('glass-2')[0],
-      0.5,
+      document.getElementsByClassName('eyes-1')[0],
+      1,
       { autoAlpha: 0 },
       1);
-    this.tl.to(
-      document.getElementsByClassName('glass-2')[0],
-      0.5,
-      { top: 340, left: 585 },
-      3);
     this.tl.fromTo(
-      document.getElementsByClassName('lupov')[0],
-      0.8,
+      document.getElementsByClassName('eyes-3')[0],
+      1,
       { autoAlpha: 0 },
       { autoAlpha: 1 },
-      10);
+      1.5);
     this.tl.to(
-      document.getElementsByClassName('adell')[0],
-      0.8,
+      document.getElementsByClassName('ai-top')[0],
+      1,
       { autoAlpha: 0 },
-      10);
+      2);
     this.tl.to(
-      document.getElementsByClassName('glass-1')[0],
-      0.8,
+      document.getElementsByClassName('ai-bottom')[0],
+      1,
       { autoAlpha: 0 },
-      10);
+      2.5);
     this.tl.to(
-      document.getElementsByClassName('glass-2')[0],
-      0.8,
-      { autoAlpha: 1 },
-      10);
+      document.getElementsByClassName('eyes-3')[0],
+      1,
+      { autoAlpha: 0 },
+      3.5);
   }
 }
 

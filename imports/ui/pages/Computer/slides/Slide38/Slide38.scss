@@ -1,25 +1,45 @@
 .story-slide-content-38 {
   .background-layer {
-    .table-bg {
-      background-position-y: -270px;
+    .ai-bg {
+      height: 750px;
+      width: 750px;
+      background-position-y: -150px;
+      background-repeat: no-repeat;
     }
   }
   .midground-layer {
-    .whiskey-bottle {
-      top: -10px;
-      left: 265px;
+    .ai-top {
+      height: 375px;
+      width: 750px;
+      top: -60px;
+      left: 0;
+      position: absolute;
+    }
+
+    .ai-bottom {
+      height: 375px;
+      width: 750px;
+      top: 230px;
+      left: 0;
+      position: absolute;
     }
   }
 
   .foreground-layer {
-    .glass-1 {
-      top: 330px;
-      left: 50px;
+    .eyes-1 {
+      height: 133px;
+      width: 400px;
+      top: 100px;
+      left: 175px;
+      position: absolute;
     }
 
-    .glass-2 {
-      top: 290px;
-      left: 575px;
+    .eyes-3 {
+      height: 137px;
+      width: 400px;
+      top: 96px;
+      left: 175px;
+      position: absolute;
     }
   }
 }
