@@ -24,7 +24,9 @@ export class CategoryTabComponent extends React.Component<CategoryProps, Categor
   getRecipeList(recipes) {
     return (
       <List as="ul" className="category-recipe-list">
-        {recipes.map((recipe, index) => {
+        {recipes.sort((a, b) => {
+          return (a.title > b.title) ? 1 : (a.title === b.title) ? 0 : -1;
+        }).map((recipe, index) => {
           return (
             <List.Item as="li"
               key={index}
