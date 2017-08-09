@@ -1,3 +1,20 @@
 .contact-page.ui.container {
   max-width: 800px !important;
+
+  h2 {
+    color: white !important;
+  }
+
+  .ui.form {
+    label {
+      color: black !important;
+      text-align: left;
+      color: rgba(0, 0, 0, 0.6) !important;
+      font-size: 1em;
+    }
+
+    label:after {
+      margin: 0 !important;
+    }
+  }
 }
