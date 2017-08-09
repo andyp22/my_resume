@@ -42,6 +42,8 @@ export class StoryBoardComponent extends React.Component<StoryBoardProps, StoryB
     return (
       <div className="closing-slide">
         <Header as="h2">Credits</Header>
+        <p><a href="files/LQ.pdf" target="_blank">Story by Isaac Asimov</a></p>
+        <p>All art designed by: <a href="http://www.freepik.com" target="_blank">Harryarts/Freepik</a></p>
       </div>
     );
   }
