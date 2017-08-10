@@ -1,7 +1,7 @@
 {
   "name": "my_resume",
   "private": false,
-  "version": "0.5.9",
+  "version": "0.6.0",
   "description": "A simple MeteorJS project to serve as my resume.",
   "main": "main.js",
   "scripts": {
