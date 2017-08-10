@@ -10,8 +10,6 @@ This is my digital resume. It was built using the following:
  - [typed.js](https://github.com/mattboldt/typed.js/)
  - [cleverbot.io](https://cleverbot.io)
 
-Live build: [http://www.mancookbookcomputer.com](http://www.mancookbookcomputer.com)
-
 This is no longer the active version. Please see the [master branch](https://github.com/andyp22/my_resume/tree/master) for the most recent version of source code.
 
 ## Installation
