@@ -4,9 +4,7 @@ This is my digital resume. It was built using the following:
  - React and React Router
  - [Semantic UI React](https://react.semantic-ui.com)
  - [Sass.js](http://sass-lang.com)
- - [Animate.css](https://daneden.github.io/animate.css/)
- - [typed.js](https://github.com/mattboldt/typed.js/)
- - [cleverbot.io](https://cleverbot.io)
+ - [Greensock](https://greensock.com)
 
 Live build: [http://www.mancookbookcomputer.com](http://www.mancookbookcomputer.com)
 
@@ -17,19 +15,6 @@ git clone https://https:github.com/andyp22/my_resume
 cd my_resume
 npm install
 meteor --settings=settings.json
-```
-
-## Cleverbot
-You will need to add a [cleverbot.io userId and API key](https://cleverbot.io/keys) to the settings.json for all functionality to work properly.
-```json
-{
-  ...
-  "private": {
-    "cleverbot_userid": "your_user_id",
-    "cleverbot_api_key": "your_api_key"
-  } 
-  ...
-}
 ```
 
 ## Email
