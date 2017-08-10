@@ -17,5 +17,5 @@ ehthumbs.db
 [Tt]humbs.db
 
 .project
-local-settings.json
-live-settings.json
+settings-local.json
+settings-live.json
