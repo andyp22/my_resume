@@ -118,8 +118,8 @@ export class FunResumeComponent extends React.Component {
                         <List.Header>{training.name}</List.Header>
                         <List.Description>
                           {training.degree
-                            ? (`Studied ${training.studied} from ${training.attended} and received an ${training.degree}`)
-                            : (`Studied ${training.studied} off and on from ${training.attended}`)}
+                            ? (`Studied ${training.studied} and received an ${training.degree}`)
+                            : (`Studied ${training.studied}`)}
                         </List.Description>
                       </List.Content>
                     </List.Item>

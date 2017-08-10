@@ -211,7 +211,7 @@ export default manData = {
       organization: 'Enspire',
       location: 'Austin, TX',
       dates: {
-        start: '10/2009',
+        start: '10/2012',
         end: 'Currently Active',
       },
       tasks: [
@@ -225,32 +225,53 @@ export default manData = {
       ],
       resume_tasks: [
         'Creates interactive online training and educational experiences and integrates courseware with various Learning Management Systems. Tech stacks include: Backbone, HTML4/5, CSS2/3, jQuery, Grunt and React, Redux, TypeScript, SASS, Webpack',
-        'Optimize productivity:<ul><li>Project Management System - built a system which allows producers to manage project releases, data, and other client deliverables. Serves as a semi-continuous-integration server with granular control over builds. Tech stack: Drupal 7, ANT</li><li>Content Authoring Environment - built a system which allows content writers to work collaboritivey on projects in almost real-time. Templatized some aspects of content creation making the same work less prone to errors. Tech stack: Meteor.js, Less, Blaze</li></ul>',
+        'Optimize productivity:<ul><li>Content Authoring Environment - built a system which allows content writers to work collaboritivey on projects in almost real-time. Templatized some aspects of content creation making the same work less prone to errors. Tech stack: Meteor.js, Less, Blaze</li></ul>',
         'Technical project lead responsible for coordinating timelines, internal workloads, and client end delivery dates.',
         'Consult and collaborate with client-side technology leaders to ensure techincal goals align with client architecture, integration strategy, and testing and validation of project deliverables.',
         'Research, analyze, and test new and alternative technical solutions, methodoligies, and practices.',
+        'Manages the internal project architecture and systems used to develop client projects.'
       ],
       description: 'Currently working in the online training and eductional sphere, Andrew is a key member of Enspire\'s team. Working with a variety of technologies including React, Redux, JavaScript, HTML/CSS, Meteor, Backbone, MongoDB, and others keeps his mind quick and his fingers quicker. Andrew has a proven ability to communicate and deliver consistently on projects of all sizes.',
     },
     {
-      name: 'Web Manager',
-      organization: 'Park Place Publications',
+      name: 'Developer',
+      organization: 'Enspire',
       location: 'Austin, TX',
       dates: {
-        start: '08/2008',
-        end: '09/2009',
+        start: '06/2011',
+        end: '10/2012',
       },
       tasks: [
-        'Unified the web presence for both of PPP\'s major products',
-        'Defined and implemented a process for converting Word manuscripts to eBooks',
-        'Built microsites for books and authors distributed by PPP',
+        'Lead tech on some of the biggeset projects at Enspire',
+        'Collaborates with clients to ensure project techincal goals align with client architecture, integration strategy, and validation of project deliverables',
+        'Improves productivity by innovating new tools and developing existing tools',
+        'Part of a team responsible for upgrading Enspire\'s technical capabilities',
       ],
       resume_tasks: [
-        'Unified the web presence for both of Park Place Publication\'s major products.',
-        'Defined and implemented a process for converting Word manuscripts to eBooks using the ePub format.',
-        'Built microsites for books and authors distributed by Park Place.',
+        'Served as technical lead on client projects. Responsible for coordinating internal workloads and assisting other project leads as needed.',
+        'Optimize productivity:<ul><li>Project Management System - built a system which allows producers to manage project releases, data, and other client deliverables. Serves as a semi-continuous-integration server with granular control over builds. Tech stack: Drupal 7, ANT</li></ul>',
+        'Consult and collaborate with client-side technology leaders to ensure techincal goals align with client architecture, integration strategy, and testing and validation of project deliverables.',
+        'Worked as part of a team to re-develop our internal project architecture.',
       ],
-      description: 'During his time at Park Place, Andrew was pivotal in unifying PPP\'s web presence and helping their business embrace the web as a means to grow.',
+      description: 'As Andrew\'s skills developed he was given more responsibility as a technical lead. He successfully built and managed several vital pieces of Enspire\'s internal systems and architecture while collaborating with client-side leaders to ensure that project work went smoothly.',
+    },
+    {
+      name: 'Junior Developer',
+      organization: 'Enspire',
+      location: 'Austin, TX',
+      dates: {
+        start: '10/2009',
+        end: '06/2011',
+      },
+      tasks: [
+        'Created interactive online training and educational experiences',
+        'Assisted other developers with project work',
+      ],
+      resume_tasks: [
+        'Created interactive online training and educational experiences and integrates courseware with various Learning Management Systems.',
+        'Assisted other developers with project work including bux fixes and new feature requests.',
+      ],
+      description: 'Andrew\'s first development job, he worked in a support role assisting more senior developers with project work as he learned the ropes and advanced his skills.',
     },
   ],
   training: [

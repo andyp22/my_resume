@@ -110,7 +110,7 @@ export class ResumeComponent extends React.Component {
               return (
                 <List.Item key={index}>
                   <List.Content>
-                    {training.attended} {training.name}, {(training.degree) ? `${training.degree} ` : ''}{training.studied}
+                    {training.name}, {(training.degree) ? `${training.degree} ` : ''}{training.studied}
                   </List.Content>
                 </List.Item>
               );
